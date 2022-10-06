@@ -373,39 +373,21 @@ today's takeaway
 
 --------------------------
 
-
+2022/8/15
 --------------------------
 
 
 words
 =======
-
-
-today's takeaway
-==================
-
-
-
-
-
-
-
-
-
---------------------------
-
-
---------------------------
-
-
-words
-=======
-
+* drugmaker
+* pharmasticul company
+* 
 
 today's takeaway
 ==================
-
-
+* reporting verbs
+* claim,allege 事実かどうかは分からないが総主張している
+* say
 
 
 
@@ -438,13 +420,167 @@ today's takeaway
 
 --------------------------
 
-
+2022/9/26
 --------------------------
-
 
 words
 =======
+* serve つくす
+* ascent the throne 地位を継ぐ
+* longest-reigning 最長の在位
+* make the loyal family more open
+* declare 誓う
 
 
 today's takeaway
 ==================
+serviceはもともと「人に仕えること、奉仕」という意味です。そこから、国に仕えれば「公務」となりますし、軍に仕えれば「兵役」、客に仕えれば「サービス」となります。また、serviceには「礼拝」という意味もありますが、これは神に仕えるからです。
+このように、英語のserviceには「無料、値引き、おまけ」といったニュアンスはありません。
+
+和訳
+======================
+イギリスとイギリス連邦諸国の人々に尽くしたエリザベス女王ですが、その姿は世界中の人々に感動を与えました。
+
+エリザベス女王は１９２６年４月、のちに国王ジョージ６世となるヨーク公の第１子として生まれました。
+女王（当時は王女）は１９４７年、ラジオを通じて「私は皆さん全ての前で誓います。私の人生が長くても短くても、この生涯を皆さんに、そして私たちが属する偉大なる帝国の連邦に捧げることを」と語っていました。
+エリザベス女王は１９５２年、国王の死去に伴って２５歳で王位を継承し、２０１５年には史上最も長く在位したイギリス君主になりました。
+
+今年６月には、エリザベス女王の在位７０年を記念する祝賀行事「プラチナ・ジュビリー」が行われるなど、イギリスの統合を象徴する存在として敬愛されました。
+女王はまた、王室をより開かれたものにするための取り組みの一環として、人々と積極的にコミュニケーションをはかってきました。
+
+原文
+=============================
+
+The queen served her nation and countries throughout the Commonwealth, but she touched people around the world.再生解説
+
+Queen Elizabeth was born in April 1926. She was the first child of the Duke of York, who later became King George VI.再生解説
+
+
+(Queen Elizabeth)
+“I declare before you all that my whole life, whether it be long or short, shall be devoted to your service and to the service of our great imperial family to which we all belong.”再生解説
+
+
+She ascended the throne at the age of 25 after the king died in 1952. She became the longest-reigning British monarch in 2015.再生解説
+
+Platinum Jubilee events in June marked Queen Elizabeth's 70 years on the throne. 再生解説
+She was beloved as a symbol of the unity of the United Kingdom.再生解説
+
+The queen actively sought to communicate with the public as part of her efforts to make the royal family more open
+
+
+
+--------------------------
+
+2022/9/27
+--------------------------
+
+words
+=======
+* counterpart:
+* debut novel
+* come from north eastern Japan:東北出身
+* accolade:称賛
+* widow ↔ widower
+* dipict:pint with words
+* dialect
+* solitude ,loneliness
+* aging society
+* old age
+* encourage her to work even harder
+* work,novel:作品
+* 
+
+ 
+
+today's takeaway
+==================
+
+
+
+
+--------------------------
+
+2022/9/27
+--------------------------
+
+words
+=======
+* health care workers；介護人材
+* spend time at a facility ;visitの言い換えspend time in もある
+* 
+*
+*
+
+ 
+
+today's takeaway
+==================
+
+
+
+
+
+
+--------------------------
+
+2022/9/29
+--------------------------
+
+words
+=======
+* launch a cyber-attack
+* claim  credit:犯行を認める claim responsibility,take a responsibility
+*  
+ 
+
+today's takeaway
+==================
+* ニュースのsay
+* 直近の過去は臨場感を守らせるために現在形にする
+
+和訳
+=========================
+日本政府は、政府が運営する複数の（行政）ネットワークが火曜日（９月６日）にサイバー攻撃を受けたと発表しました。政府は、ロシアを支持するハッカー集団が行った「ＤＤｏＳ攻撃」と呼ばれる攻撃によるものと見ています。これは、ハッカー集団がネットワークやサーバーへのウェブ上の通信に負荷をかけようと試みたことを意味します。
+
+デジタル庁によりますと、火曜日の午後に、政府の複数のウェブサイトでアクセス障害が起きました。その中には、行政情報を提供する重要なポータルサイトも含まれていました。この（サイバー）攻撃は、大量のデータを同時に送りつけて、システムを機能停止に追い込むものです。
+
+これについて、ハッカー集団の「キルネット」はＳＮＳ上に、自分たちが攻撃を行ったと主張するメッセージを投稿しました。キルネットは、アメリカやリトアニアなどで起きた有名なサイバー攻撃についても、自分たちが行ったと主張しています。
+日本がこの集団の攻撃対象になったのは、今回が初めてだと見られます。
+
+原文
+========================
+Japan's government says a number of its networks were hit by cyberattacks on Tuesday.再生解説
+Officials believe a pro-Russian hacker group may have launched a so-called DDoS attack. That means it tried to overwhelm web traffic to the network or servers.再生解説
+
+The Digital Agency says access to some government websites was disrupted on Tuesday afternoon. That includes a critical portal which provides administrative information.再生解説
+The attacks sent huge amounts of data at once in order to crash the system.再生解説
+
+A hacker group named Killnet posted a message on social media, claiming credit.再生解説
+Killnet has taken responsibility for high-profile cyberattacks in places like the U.S. and Lithuania.再生解説
+This is believed to be the first time the group has targeted Japan.
+
+
+
+--------------------------
+
+2022/9/29
+--------------------------
+
+words
+=======
+* is good for you; good for your heealthより自然
+* cardio
+
+today's takeaway
+==================
+* suggetst
+* 控えめな提案、示唆する、ほのめかす
+* proposeは積極的な提案
+* 
+
+和訳
+=========================
+
+原文
+========================
+
