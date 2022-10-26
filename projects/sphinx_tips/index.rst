@@ -9,11 +9,12 @@ Welcome to intro's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+    
+   notebooks/pandas
 
 
 ------------------------
-tips
+sphinx-tips
 ------------------------
 よく使う機能の一覧
 
@@ -135,3 +136,12 @@ conf.pyに以下を記述しておくと図番号が表示される
   .. _kong:
 
   .. figure:: img/kiddykong.jpg
+
+jupyter連携
+------------
+
+::
+  
+
+
+ 
