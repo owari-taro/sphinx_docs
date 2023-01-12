@@ -10,3 +10,4 @@ IT docs
     
    aws_network/index
    airflow
+   python/pytest

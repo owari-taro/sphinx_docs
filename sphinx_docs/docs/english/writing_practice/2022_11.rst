@@ -52,3 +52,27 @@ taking care of both kids and their parents.
 Even a weibo post claming that  one child is enough attracted many agreements from Chinese users .
 
 Experts pointed out just rasing the number of kids coules can have isnt' enough.
+
+
+
+============================================================
+AI are detcting and creating fake news
+=========================================================
+Although AI to combat fake news is progressing day by day,
+the AI to create fake news is also improving.;The last resot may be huamn after all.
+
+Fake news is one of the serious problems online world,triggering politifcal polication,further 
+ partisanship, and increased distrust in media and politics. 
+Researchers climas that it has morelike ly to spread than real news with its appealing to sns users
+, a tricky problem. Socialn networking companies like Facebook, annoucned they would improved their AI Thechnology to idengtify fakenws on their platforms, 
+though  researchers are cautious about the lijmits of the AI, saying that 
+It can becomr rat race among both fake and detector AI
+
+The best way to stop the spread of the fake news is analog one: improving human bevaibous.
+Users should think twice about the validity of the information before sharing it,because 
+it can lends credence to the fake information.
+Also people shoud be exposed to accurate news as much as possible ,
+As It raise poeples ability to detect fake news easily.
+
+
+

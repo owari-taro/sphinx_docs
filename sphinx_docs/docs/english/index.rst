@@ -9,3 +9,4 @@ english
 
    news_english/2022_11
    english_tips
+   useful_example

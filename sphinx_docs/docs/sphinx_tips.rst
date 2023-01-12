@@ -167,6 +167,38 @@ clickのドキュメント化
    :prog: sphinx_click_test
    :show-nested:
 
+
+docstringの生成
+====================
+| docstringからhtmlドキュメントを作ることができる。
+| **shinx-apidoc** で.pyファイルからrstを生成し、あとはいつもと同様にhtml出力すればよい。
+
+:: 
+
+   #rst生成
+   #-o {出力先} {対象dir}
+   sphinx-apidoc -f -o ./docs/src  src
+   
+   #html生成
+   ./auto.sh
+
+
+comment out
+=======================
+comentoutは **..** にスペースをつけて書けばよい
+
+
+.. aoiifasdf
+   adslkjfalkdfalsd
+
+
+::
+
+   ..  adfasdfasd;aksdjflaskjflkasjdasd
+      fdfl;l;lkjadflkasdflkjasdl
+      
+
+
 github noteとの連携
 ============================
 * hoge

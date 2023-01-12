@@ -1,0 +1,55 @@
+==================================
+2023/1
+==================================
+------------------------------
+
+-------------------------------
+
+| Major Japanese telecom companies are to start using the networks of rival carriers in the case of disruptions. The aim is to maintain service for their customers.
+
+| A communications outage in July for KDDI affected nearly 31 million subscribers.
+| It disrupted corporate logistics systems and other services such as bank ATMs and public transport IC cards.
+
+| KDDI will start later this month to allow companies and local governments to use the networks of NTT Docomo and SoftBank as a backup.
+| KDDI's network will automatically switch to that of one of the rival firms when a disruption is detected.
+
+| KDDI subscribers need to pay only for the data they use. 
+| The company says the cost **would** be lower than **making a new contract** with a rival operator. 
+
+* wouldで仮定のニュアンスを出す
+
+NTT Communications will also start a similar service this month
+
+-----------------------------
+
+-----------------------------
+German prosecutors say they've **foiled a plot** by a terrorist group to try to overthrow their government.
+
+| About 3,000 officers **raided** more than 130 locations in Germany, Austria, and Italy.
+| They arrested 25 suspected members and supporters of a group of far-right and ex-military figures.
+
+| Prosecutors say a man named Heinrich XIII and a former serviceman are believed to be **ringleaders**.
+| They suspect some of the group's members planned to **storm the parliament building.**
+
+| Members are said to **believe in a conspiracy theory **that Germany is controlled by a so-called deep state.
+| And a plot to **install their own government** had been in the works since around November last year.
+
+Prosecutors say the group had its own cabinet and **a military wing**, and was trying to recruit people in the German military and police.
+
+* wing:（組織の）部門
+
+
+-------------------------------------
+
+--------------------------------------
+People here in Japan are reflecting on what kind of year 2022 has been.
+And many have chosen the kanji character meaning “war” or “battle” as the one best symbolizing the past 12 months.
+
+Kanji are **the ideograms** used in written Japanese, adapted from Chinese characters.
+A Kyoto-based association promoting the use of kanji **conducts the poll every year.**
+It announced the result with a calligraphy performance at Kiyomizu Temple in the city.
+
+Association officials say Russia's invasion of Ukraine **dealt a psychological blow** to many people, 
+who are also **wrestling with** higher prices and the weaker yen.
+
+The officials also cite Japan's fierce battles in international sports events, such as its victories over Germany and Spain in the men's FIFA World Cup group round.
