@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>aws network試験 &#8212; sphinx_docs  documentation</title>
+    <title>decorator &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/drawio.css" />
@@ -40,9 +40,7 @@
     
 
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="VPC" href="vpc.html" />
-    <link rel="prev" title="IT docs" href="../index.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -56,16 +54,9 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="vpc.html" title="VPC"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../index.html" title="IT docs"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">IT docs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">aws network試験</a></li> 
+        <li class="nav-item nav-item-this"><a href="">decorator</a></li> 
       </ul>
     </div>
     </div>
@@ -76,14 +67,54 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="aws-network">
-<h1>aws network試験<a class="headerlink" href="#aws-network" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vpc.html">VPC</a></li>
-</ul>
-</div>
+  <section id="decorator">
+<h1>decorator<a class="headerlink" href="#decorator" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>引数付きdecorator<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<section id="id2">
+<h3>多重化<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>デコレータをデコレートしたい場合の実装方法。
+あまり使う機会はない。decoratorをそのまま使うとsphinxでdocstringが無効かされてしまうというときに使った。</p>
+<dl>
+<dt>::</dt><dd><p>from retry import retry
+from functools import wraps</p>
+<dl>
+<dt>def classpropertymethod(<a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs1):</dt><dd><p>def outer(func):</p>
+<blockquote>
+<div><p>&#64;wraps(func)
+&#64;retry(<a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs1)
+def wrapped(<a href="#id7"><span class="problematic" id="id8">*</span></a>args,**kwargs):</p>
+<blockquote>
+<div><p>return func(<a href="#id9"><span class="problematic" id="id10">*</span></a>args,**kwargs)</p>
+</div></blockquote>
+<p>return wrapped</p>
+</div></blockquote>
+<p>return outer</p>
+</dd>
+</dl>
+<p>&#64;classpropertymethod(tries=12)
+def fetch_data(url:str):</p>
+<blockquote>
+<div><p>&quot;&quot;&quot;
+| fetch data from url
+| when failed,raise ssome exception</p>
+<dl class="field-list simple">
+<dt class="field-odd">param str url<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">return _type_<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+</dl>
+<p>&quot;&quot;&quot;
+print(&quot;hogehoge&quot;)
+raise Exception</p>
+</div></blockquote>
+<p>fetch_data(&quot;test&quot;)</p>
+</dd>
+</dl>
+</section>
+</section>
 </section>
 
 
@@ -92,21 +123,23 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div class="sphinxprev">
-    <h4>Previous page</h4>
-    <p class="topless"><a href="../index.html"
-                          title="Previous page">&larr; IT docs</a></p>
-  </div>
-  <div class="sphinxnext">
-    <h4>Next page</h4>
-    <p class="topless"><a href="vpc.html"
-                          title="Next page">&rarr; VPC</a></p>
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../../../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">decorator</a><ul>
+<li><a class="reference internal" href="#id1">引数付きdecorator</a><ul>
+<li><a class="reference internal" href="#id2">多重化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/docs/IT/aws_network/index.rst.txt"
+      <li><a href="../../../_sources/docs/IT/python/decorator.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -152,16 +185,9 @@
         <li class="right" >
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="vpc.html" title="VPC"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../index.html" title="IT docs"
-             >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">aws network試験</a></li> 
+        <li class="nav-item nav-item-this"><a href="">decorator</a></li> 
       </ul>
     </div>
     </div>

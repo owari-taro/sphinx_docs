@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/drawio.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
     
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="IT docs" href="IT/index.html" />
-    <link rel="prev" title="Welcome to intro&#39;s documentatio!" href="../index.html" /> 
+    <link rel="prev" title="Welcome to sphinx documentatio!" href="../index.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -59,7 +60,7 @@
           <a href="IT/index.html" title="IT docs"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to intro&#39;s documentatio!"
+          <a href="../index.html" title="Welcome to sphinx documentatio!"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
 
@@ -202,6 +203,48 @@ sphinx背景テーマの変更
 </pre></div>
 </div>
 </section>
+<section id="docstring">
+<h3>docstringの生成<a class="headerlink" href="#docstring" title="Permalink to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line">docstringからhtmlドキュメントを作ることができる。</div>
+<div class="line"><strong>shinx-apidoc</strong> で.pyファイルからrstを生成し、あとはいつもと同様にhtml出力すればよい。</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#rst生成</span>
+<span class="c1">#-o {出力先} {対象dir}</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">o</span> <span class="o">./</span><span class="n">docs</span><span class="o">/</span><span class="n">src</span>  <span class="n">src</span>
+
+<span class="c1">#html生成</span>
+<span class="o">./</span><span class="n">auto</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="comment-out">
+<h3>comment out<a class="headerlink" href="#comment-out" title="Permalink to this heading">¶</a></h3>
+<p>comentoutは <strong>..</strong> にスペースをつけて書けばよい</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>  <span class="n">adfasdfasd</span><span class="p">;</span><span class="n">aksdjflaskjflkasjdasd</span>
+   <span class="n">fdfl</span><span class="p">;</span><span class="n">l</span><span class="p">;</span><span class="n">lkjadflkasdflkjasdl</span>
+</pre></div>
+</div>
+</section>
+<section id="github-note">
+<h3>github noteとの連携<a class="headerlink" href="#github-note" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>hoge</p></li>
+</ul>
+<blockquote class="epigraph">
+<div><p>No matter where you go, there you are.</p>
+<p class="attribution">—Buckaroo Banzai</p>
+</div></blockquote>
+<div class="compound">
+<p>The 'rm' command is very dangerous.  If you are logged
+in as root and enter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>you will erase the entire contents of your file system.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -230,6 +273,9 @@ sphinx背景テーマの変更
 <li><a class="reference internal" href="#id8">画像挿入</a></li>
 <li><a class="reference internal" href="#jupyter">jupyter連携</a></li>
 <li><a class="reference internal" href="#click">clickのドキュメント化</a></li>
+<li><a class="reference internal" href="#docstring">docstringの生成</a></li>
+<li><a class="reference internal" href="#comment-out">comment out</a></li>
+<li><a class="reference internal" href="#github-note">github noteとの連携</a></li>
 </ul>
 </li>
 </ul>
@@ -240,7 +286,7 @@ sphinx背景テーマの変更
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="../index.html"
-                          title="Previous page">&larr; Welcome to intro's documentatio!</a></p>
+                          title="Previous page">&larr; Welcome to sphinx documentatio!</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
@@ -300,7 +346,7 @@ sphinx背景テーマの変更
           <a href="IT/index.html" title="IT docs"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../index.html" title="Welcome to intro&#39;s documentatio!"
+          <a href="../index.html" title="Welcome to sphinx documentatio!"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
 

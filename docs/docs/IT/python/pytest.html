@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>aws network試験 &#8212; sphinx_docs  documentation</title>
+    <title>pytest-tips &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/drawio.css" />
@@ -41,8 +41,8 @@
 
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="VPC" href="vpc.html" />
-    <link rel="prev" title="IT docs" href="../index.html" /> 
+    <link rel="next" title="english" href="../../english/index.html" />
+    <link rel="prev" title="apache-airflow" href="../airflow.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -57,15 +57,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="vpc.html" title="VPC"
+          <a href="../../english/index.html" title="english"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../index.html" title="IT docs"
+          <a href="../airflow.html" title="apache-airflow"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">IT docs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">aws network試験</a></li> 
+        <li class="nav-item nav-item-this"><a href="">pytest-tips</a></li> 
       </ul>
     </div>
     </div>
@@ -76,14 +76,49 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="aws-network">
-<h1>aws network試験<a class="headerlink" href="#aws-network" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vpc.html">VPC</a></li>
-</ul>
+  <section id="pytest-tips">
+<h1>pytest-tips<a class="headerlink" href="#pytest-tips" title="Permalink to this heading">¶</a></h1>
+<section id="fixture">
+<h2>fixture<a class="headerlink" href="#fixture" title="Permalink to this heading">¶</a></h2>
+<p>test実行前のsetup部分をテストコードとは独立させて、テスト関数で再利用できるようにする仕組み。
+例えば次のようにdatabaseをsetupするときに使う。このようにするとtest自体のboiltplateなコードが消えて
+テストしているaction自体が見やすい。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">init_db</span><span class="p">():</span>
+  <span class="k">with</span> <span class="n">TempotaryDirectory</span><span class="p">()</span><span class="n">n</span> <span class="k">as</span> <span class="n">db_dir</span><span class="p">:</span>
+    <span class="n">db_path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="n">db_dir</span><span class="p">)</span>
+    <span class="n">db_</span><span class="o">=</span><span class="n">cards</span><span class="o">.</span><span class="n">CardsDb</span><span class="p">(</span><span class="n">db_path</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="n">db_</span>
+    <span class="n">db_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 </div>
+<section id="id1">
+<h3>一覧確認<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>既存のfixtureの一覧を見たい場合</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">fixtures</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+</section>
+<section id="scope">
+<h3>scope<a class="headerlink" href="#scope" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>defaultはfunction</p></li>
+<li><p>時間のかかるもので複数回実行する必要がないものはmoduleやsessionにすることで実行回数を減らせる。</p></li>
+<li><p>ユニットテストでは実行速度も需要なので遅い場合はfixtureで調整することも選択肢。特にgeodjangoなどは処理速度が遅いので注意!</p></li>
+</ul>
+<blockquote>
+<div><p>例えば下記のようにmoduleにすると同じmoduleないで使った場合は再実行されない。</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3>長さ<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>名前である程度何が行われているかわかるようにす</p></li>
+<li><p>dbに複数objを登録するときなどは、fixtureをcallする側で値を設定するような方式にしたほうが
+テストを読んだときにわかりやすい</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -92,21 +127,35 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../../../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">pytest-tips</a><ul>
+<li><a class="reference internal" href="#fixture">fixture</a><ul>
+<li><a class="reference internal" href="#id1">一覧確認</a></li>
+<li><a class="reference internal" href="#scope">scope</a></li>
+<li><a class="reference internal" href="#id2">長さ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div class="sphinxprev">
     <h4>Previous page</h4>
-    <p class="topless"><a href="../index.html"
-                          title="Previous page">&larr; IT docs</a></p>
+    <p class="topless"><a href="../airflow.html"
+                          title="Previous page">&larr; apache-airflow</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="vpc.html"
-                          title="Next page">&rarr; VPC</a></p>
+    <p class="topless"><a href="../../english/index.html"
+                          title="Next page">&rarr; english</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/docs/IT/aws_network/index.rst.txt"
+      <li><a href="../../../_sources/docs/IT/python/pytest.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -153,15 +202,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="vpc.html" title="VPC"
+          <a href="../../english/index.html" title="english"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../index.html" title="IT docs"
+          <a href="../airflow.html" title="apache-airflow"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">aws network試験</a></li> 
+        <li class="nav-item nav-item-this"><a href="">pytest-tips</a></li> 
       </ul>
     </div>
     </div>
