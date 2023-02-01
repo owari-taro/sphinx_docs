@@ -8,8 +8,6 @@ IT docs
    :maxdepth: 1
    :caption: Contents:
     
-   aws_network/index
-   airflow
-   python/index
-   database/index
-   
+   django
+   pytest
+   poetry

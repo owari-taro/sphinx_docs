@@ -42,14 +42,198 @@ Prosecutors say the group had its own cabinet and **a military wing**, and was t
 -------------------------------------
 
 --------------------------------------
-People here in Japan are reflecting on what kind of year 2022 has been.
-And many have chosen the kanji character meaning “war” or “battle” as the one best symbolizing the past 12 months.
+| People here in Japan are reflecting on what kind of year 2022 has been.
+| And many have chosen the kanji character meaning “war” or “battle” as the one best symbolizing the past 12 months.
 
-Kanji are **the ideograms** used in written Japanese, adapted from Chinese characters.
-A Kyoto-based association promoting the use of kanji **conducts the poll every year.**
-It announced the result with a calligraphy performance at Kiyomizu Temple in the city.
+| Kanji are **the ideograms** used in written Japanese, adapted from Chinese characters.
+| A Kyoto-based association promoting the use of kanji **conducts the poll every year.**
+| It announced the result **with a calligraphy performance**  at Kiyomizu Temple in the city.
 
-Association officials say Russia's invasion of Ukraine **dealt a psychological blow** to many people, 
-who are also **wrestling with** higher prices and the weaker yen.
+| Association officials say Russia's invasion of Ukraine **dealt a psychological blow** to many people, 
+| who are also **wrestling with** higher prices and the weaker yen.
 
-The officials also cite Japan's fierce battles in international sports events, such as its victories over Germany and Spain in the men's FIFA World Cup group round.
+| The officials also cite Japan's fierce battles **in** international sports events, 
+| such as its **victories over** Germany and Spain **in** the men's FIFA World Cup group round.
+
+---------------------------
+
+---------------------------
+
+
+| The Japanese government will set up a new entity to 
+| prevent high-end domestic fruit and other farm products from being illegally grown overseas.
+
+| This comes after items such as Shine Muscat and Ruby Roman grapes were found growing in other countries.
+| The revised **Plant Variety Protection and Seed Act** took effect last year. 
+| It bans taking **seeds and seedlings** abroad without permission.
+
+The agriculture ministry says the new entity will help product developers with the registration process for each country.
+This has so far been a burden for them.
+
+| The entity will be established **in cooperation with** prefectural governments and the National Agriculture and Food Research Organization.
+| It will **collect license fees** for varieties authorized for overseas cultivation.
+| The ministry plans to introduce the system from the fiscal year starting in April.
+
+※番組やホームページで題材にする英語ニュースは
+
+
+---------------------------
+
+---------------------------
+Scientists have been making great strides in cultivating meat in the lab.
+It's been touted as a way to deal with food shortages and mitigate climate change.
+But it's a largely unregulated world, so one Japanese industry group is proposing a set of rules.
+
+* gaining steam
+* lab-grown
+
+Cultured meat is made with tissue cultivated from animal cells in vitro.
+The Japan Association for Cellular Agriculture has been working on rules to govern the production and marketing of such meat.
+The organization says any products containing it should be clearly labeled.
+
+It says safety standards for the meat should be based on rules for regenerative medicine and pharmaceutical products along with current food sanitation laws.
+
+And the association's members are worried that cells from brand-name cattle could be appropriated, so they want rules to protect that as intellectual property.
+
+
+-----------------------
+
+-----------------------
+
+More businesses in Japan are introducing technology and services to reduce the amount of edible food that is wasted.
+
+Major food delivery company Oisix Ra Daichi has started processing substandard vegetables and other foodstuffs at a facility near Tokyo.
+
+The vegetables that can be sold fresh are cut into pieces.
+Those parts close to the peel or stalk are turned into ready-to-eat ingredients using the firm's proprietary technologies for heating or freezing them.
+
+Meanwhile, the Japan Department Stores Association is conducting trials to encourage restaurant customers to take home their leftovers.
+Eateries at 18 department stores are taking part.
+
+Food waste is a major social problem in Japan. An estimated 5.2 million tons were dumped in fiscal 202
+
+----------------------
+Interpol
+----------------------
+Interpol has been cracking down on the illegal trade in endangered wildlife and timber around the world.
+During a month-long operation, the global police agency says thousands of items were seized.
+
+Interpol and the World Customs Organization spent most of October cooperating with relevant authorities in 125 countries in a fight against trafficking networks.
+More than 930 suspects were identified during the operation, code-named “Thunder 2022.”
+
+Searches at an airport in Thailand resulted in the seizure of 81 tortoises found hidden in snack bags inside a passenger's luggage.
+At an airport in India, about 1,200 reptiles were found in cardboard boxes imported from Malaysia.
+
+Authorities are on alert for a possible increase in smuggling due to the easing of COVID-19 border controls.
+
+* luggage:旅行用かばん　アメリカではbagaggeも
+* persol
+* shipment,freight:貨物　shipmentは米では陸路・空路も含む、イギリスでは船の荷物
+
+----------------------------------
+Riot occupy Brazilian Congress
+----------------------------------
+Authorities in Brazil's capital have removed supporters of former president Jair Bolsonaro who'd been occupying Congress and other key buildings.
+
+The crowd breached security barricades Sunday and gained access to the congressional building in Brasilia.
+They also invaded the Supreme Court and presidential palace buildings in the neighborhood.
+
+Brazilian media reports say about 4,000 people were involved in the invasion and about 300 have been arrested.
+
+In October, Luiz Inacio Lula da Silva won a presidential runoff by a slim margin and took office on January 1.
+Some of Bolsonaro's supporters have refused to accept Lula's victory and have staged protests around federal buildings.
+
+Lula later told reporters anyone involved in the rioting will be found and punished.
+
+
+
+和訳
+==============
+ブラジルの首都（ブラジリア）の当局は、連邦議会やその他の重要な（政府機関の）建物を占拠していた、ジャイル・ボルソナロ前大統領の支持者を排除しました。
+群衆は日曜日（１月８日）に警備のバリケードを破り、ブラジリアにある連邦議会と、その近くにある最高裁判所や大統領府の建物に侵入しました。
+ブラジルのメディアは、およそ４０００人がこの侵入に関わっていて、３００人ほどが逮捕されたと伝えています。
+ブラジルでは（２０２２年）１０月に行われた大統領選挙の決選投票で、ルイス・イナシオ・ルーラ・ダシルバ氏が（ボルソナロ前大統領に）僅差で勝利し、１月１日に大統領に就任しましたが、ボルソナロ前大統領の支持者の一部は結果を受け入れず、連邦政府の建物の周辺で抗議行動を行ってきました。
+この事件を受けてルーラ大統領は、暴動に関わった全ての人を見つけて処罰すると、記者団に述べました
+----------------------------------------------------
+SOMPO suied over its ownership of the Sunflower
+----------------------------------------------------
+
+| A Japanese insurance giant has been sued by heirs of the former owner of a **treasured** Vincent van Gogh painting.
+| The U.S. lawsuit seeks the return of **the artwork** and about 750 million dollars in damages.
+
+| Sompo Holdings owns the “Sunflowers” **masterpiece** through predecessor Yasuda Fire and Marine Insurance.
+| Yasuda paid about 40 million dollars for it in a 1987 auction. That was a record for a painting at the time.
+
+* predecessor:前身
+
+| The three heirs say the Nazis forced the owner of the artwork to sell it in 1934 as part of a persecution campaign 
+| against Jews. They argue that the Japanese firm unjustifiably profited by acquiring the Van Gogh despite 
+| knowing its **provenance**. The suit was filed in an Illinois federal court.
+
+* persecution:迫害
+* unjustifiably:不当に
+
+| Sompo Holdings said it has yet to receive the complaint.
+| The insurer also said that it was purchased legitimately through an auction 35 years ago and there is no room for doubt over its ownershi
+
+* persecution:迫害
+
+和訳
+===========
+| 日本の保険大手が、フィンセント・ファン・ゴッホの貴重な絵画の所有権をめぐり、
+| 元の所有者の相続人から訴えられました。アメリカで起こされた訴えによりますと、絵画の返還と、損害賠償としておよそ７億５０００万ドル（１０００億円）の支払いが求められています。
+
+| ＳＯＭＰＯホールディングスは、前身の安田火災海上保険を通じて、名画「ひまわり」を所有しています。
+| 安田火災海上保険は１９８７年のオークションで、「ひまわり」におよそ４０００万ドル（５３億円）を支払いました。これは、当時の絵画の落札額としては過去最高でした。
+
+| 相続人の３人は、ユダヤ人に対するナチス・ドイツの迫害で、１９３４年に「ひまわり」を強制的に売却させられたとしています。
+| ３人は、ＳＯＭＰＯホールディングス（安田火災海上保険）が絵画の由来を知りながらゴッホの作品を購入し、不当に利益を得たとして、（アメリカの）イリノイ州の連邦地方裁判所に訴状を提出しました。
+| これに対しＳＯＭＰＯ側は、まだ訴状を受け取っていないとしたうえで、「ひまわり」は３５年前にオークションを通じて合法的に購入したもので、所有権（の正当性）に疑いの余地はないと述べました。
+
+
+
+
+
+
+----------------------
+
+----------------------
+| Russia's defense ministry has announced **a shake-up** of its military leadership 
+| to oversee operations in Ukraine.
+
+| Defense Minister Sergei Shoigu appointed Chief of the General Staff Valery Gerasimov as the overall commander.
+| It is unusual for a chief of staff to take command on his own.
+
+* Chief of the General Staff:参謀総長
+* overall commander:
+
+| The ministry also said Sergei Surovikin, who'd been the commander since October, 
+| and two other senior officers will now be subordinate to Gerasimov.
+| It says the new appointments are related to the “broader scope of tasks” 
+| and the need for closer coordination between all military branches and services. 
+
+| There are reports of discord between Russian regular forces and the Wagner Group private military.
+| The latest move is thought to be aimed at **clarifying the chain of command** and better controlling troops.
+
+ロシア国防省は、ウクライナでの作戦を監督するため、軍の指揮官の再編を発表しました。
+セルゲイ・ショイグ国防相は、ワレリー・ゲラシモフ参謀総長を（軍事侵攻の）総司令官に任命しました。参謀総長が自ら作戦の指揮を執るのは異例のことです。
+国防省はまた、去年１０月から総司令官を務めていたセルゲイ・スロビキン氏と別の２人の上級将校が今後、ゲラシモフ総司令官の副指令官になると発表しました。この新しい人事は、「より幅広い任務」を遂行し、作戦に関わる全ての部隊がより緊密に協調していくために必要なものだとしています。
+ウクライナへの軍事進攻をめぐっては、ロシアの正規軍と民間軍事会社「ワグネル・グループ」との間にあつれきがあると伝えられていて、今回の動きは、指揮命令系統を明確化し、部隊をよりうまく統制するねらいがあるものと見られています。
+
+
+-----------------------------------------------------------
+IEA predict clean energy market will triple by 2030
+-------------------------------------------------------
+
+| **The world's top energy body** says clean technologies could triple in value by the end of the decade, 
+| creating millions of jobs in the process.再生解説
+| But it says this will only happen if countries fully implement their energy and climate pledges.
+
+| The International Energy Agency says in a new report that the world is entering an age of clean energy manufacturing.再生解説
+| It says industries for solar panels, wind, electric vehicles, and their batteries are already **flourishing**.
+
+| It predicts that if countries make good on their promises, the market for these and other green technologies will balloon to around 650 billion dollars by 2030.再生解説
+| That will generate roughly 8 million jobs.
+
+| But the report comes with a warning. It says resource mining, processing, and manufacturing are concentrated in too few hands.再生解説
+| One example is lithium, essential for EV batteries. Australia, Chile, and China account for more than 90 percent of global production.再生

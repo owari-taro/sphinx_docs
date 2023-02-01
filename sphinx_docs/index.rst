@@ -3,13 +3,40 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 =================================
-Welcome to intro's documentation!
+Welcome to sphinx documentatio!
 =================================
+table of contents!
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
     
    docs/sphinx_tips
-   notebooks/pandas
+   docs/IT/index
    docs/english/index
+   docs/IT/aws/index
+   docs/src/modules
+
+
+.. oembed:: https://twitter.com/attakei/status/1517152841550376961
+
+.. oembed:: https://www.youtube.com/watch?v=D3nBkJwEUB4&t=3953s
+
+
+.. click:: hello_world:greet
+   :prog: sphinx_click_test
+   :show-nested:
+
+
+
+
+.. |ss| raw:: html
+
+   <strike>
+
+.. |se| raw:: html
+
+   </strike>
+
+
+|ss| asdfasdfas |se|
