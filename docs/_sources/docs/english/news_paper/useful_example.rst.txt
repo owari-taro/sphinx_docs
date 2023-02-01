@@ -1,0 +1,36 @@
+====================================
+examples from real news article
+====================================
+読んだ記事のなかで使えそうな表現とかをまとめたもの
+
+-------------------------
+2022/12
+------------------------
+
+* 気象の数値の扱いかたや気象事態の表現
+ Heavy snow falls across Japn as some cities renew recore
+=======================================================================
+|Meanwhile, Engaru in Hokkaido **renewed its December snowfall record** 
+|by registering over 80 cm in a 24-hour period through Friday morning.
+* renew its record　記録更新
+* register 〇cm で記録
+
+|The prefectural capital Kanazawa **saw 20 cm of snow** by 8 a.m., with some bullet train services 
+|briefly disrupted at Kanazawa Station when snow blew against the platform doors.
+* saw ?? cm of snow で積雪記録
+
+|It forecasts 100 cm of snowfall in parts of the Hokuriku region in the 24 hours through 6 a.m. Saturday, 
+|with 70 cm in the Tohoku, Tokai, and Chugoku regions, 60 cm in the Hokkaido and Kinki regions, and 50 cm in Shikoku.
+ * with 他の地域について追加する
+ * 
+
+ Journalists Tiktok data miused in probe
+=============================================
+| BuzzFeed News spokesperson Lizzie Grams said the company was deeply disturbed by the report, 
+| saying it showed “a **blatant disregard** for the privacy and rights of journalists as well as TikTok users.”
+ * blatant 露骨な
+
+| Republican Sen. Marco Rubio said of the incident that ByteDance “is desperate to **tamp down growing bipartisan concerns** about 
+| how it enables the Chinese Communist Party to use **— and potentially weaponize —** the data of American citizens. Every day it becomes more clear that we need to ban TikTok.”
+* ダッシュの使い方  
+  

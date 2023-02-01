@@ -7,4 +7,6 @@ english
    :caption: Contents:
     
 
-   news_english/2022_11
+   news_english/index
+   english_tips
+   useful_example

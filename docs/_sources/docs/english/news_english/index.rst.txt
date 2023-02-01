@@ -1,15 +1,11 @@
 =================================
-IT docs
+ニュースで学ぶ現代英語
 =================================
-
-
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
     
-   aws_network/index
-   airflow
-   python/index
-   database/index
+
+   2023_1
    

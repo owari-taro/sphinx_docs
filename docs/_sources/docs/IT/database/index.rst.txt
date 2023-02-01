@@ -1,5 +1,5 @@
 =================================
-IT docs
+database
 =================================
 
 
@@ -8,8 +8,4 @@ IT docs
    :maxdepth: 1
    :caption: Contents:
     
-   aws_network/index
-   airflow
-   python/index
-   database/index
-   
+   tatsujin_sql

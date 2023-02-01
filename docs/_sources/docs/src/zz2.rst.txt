@@ -1,0 +1,7 @@
+zz2 module
+==========
+
+.. automodule:: zz2
+   :members:
+   :undoc-members:
+   :show-inheritance:
