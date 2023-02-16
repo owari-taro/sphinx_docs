@@ -221,19 +221,70 @@ SOMPO suied over its ownership of the Sunflower
 ウクライナへの軍事進攻をめぐっては、ロシアの正規軍と民間軍事会社「ワグネル・グループ」との間にあつれきがあると伝えられていて、今回の動きは、指揮命令系統を明確化し、部隊をよりうまく統制するねらいがあるものと見られています。
 
 
------------------------------------------------------------
+-------------------------------------------------------
 IEA predict clean energy market will triple by 2030
 -------------------------------------------------------
 
 | **The world's top energy body** says clean technologies could triple in value by the end of the decade, 
 | creating millions of jobs in the process.再生解説
-| But it says this will only happen if countries fully implement their energy and climate pledges.
+| But it says this will only happen if countries fully implement their energy and climate **pledges**.
 
 | The International Energy Agency says in a new report that the world is entering an age of clean energy manufacturing.再生解説
 | It says industries for solar panels, wind, electric vehicles, and their batteries are already **flourishing**.
 
-| It predicts that if countries make good on their promises, the market for these and other green technologies will balloon to around 650 billion dollars by 2030.再生解説
+| It predicts that if countries make good on their **promises**, the market for these and other green technologies 
+| will **balloon to** around 650 billion dollars by 2030.再生解説
 | That will generate roughly 8 million jobs.
 
-| But the report comes with a warning. It says resource mining, processing, and manufacturing are concentrated in too few hands.再生解説
+| But the report comes with a warning. It says resource mining, processing, and **manufacturing** are concentrated **in too few hands.**再生解説
 | One example is lithium, essential for EV batteries. Australia, Chile, and China account for more than 90 percent of global production.再生
+
+
+和訳
+====================
+| エネルギー問題に関する世界の最高機関（ＩＥＡ＝国際エネルギー機関）は、クリーンエネルギー技術が生み出す価値は２０２０年代末までに（現在の）３倍になり、
+| その過程で数百万の雇用を生み出すことができるという見通しを示しました。
+| しかしそれは、各国がエネルギーと気候変動に関する公約を完全に実行した場合にのみ実現するとしています。
+
+| ＩＥＡは新しい報告書の中で、世界はクリーンエネルギーを製造する **時代に 入りつつある** として、
+| 太陽光パネルや風力発電、ＥＶ＝電気自動車、そしてそのバッテリーを作る産業はすでに活況を呈していると述べています。
+| そして、各国がエネルギーと気候変動に関する公約を守れば、
+| これらの技術やその他の環境保全技術の市場は、２０３０年までにおよそ６５００億ドル（日本円で８４兆円余り）規模にまで拡大し、
+| およそ８００万の雇用が創出されると予測しています。
+
+| 一方で、この報告書は警告も発しています。それは、クリーンエネルギー技術の資源の採掘や加工、製造があまりにも少数の国に集中しているという点です。
+| その一例はＥＶのバッテリーに欠かせないリチウムで、オーストラリアとチリ、そして中国が世界全体の生産量の９０％以上を占めています
+
+-----------------------------------------------------
+new falicty to promote more rice consumption
+-----------------------------------------------------
+
+
+| Rice consumption has been on the decline in Japan, but one Japanese company is looking to change that.再生解説
+| The firm is **opening a complex** in Tokyo meant to help people see rice as more than just a dinner-table staple.再生解説
+
+
+| Yanmar **Holdings** is operating six shops and restaurants in the same building that are all about rice. 
+| One of them **deals in** varieties of **brand-name** rice **from across** Japan.再生解説
+
+* deals in :販売
+  
+
+The store shows **their levels of**  stickiness, texture, grain size, and more **on five-tier scales** . 再生解説
+It allows people to find just the type they're looking for.再生解説
+
+Another shop is an Italian restaurant offering pasta made from **rice flour**.再生解説
+The grain is even on the dessert menu, with tiramisu that uses rice shochu liquor.再生解説
+
+和訳
+=================
+
+| 日本ではコメの消費量が減少傾向にありますが、ある日本企業がそれを変えようとしています。
+| この会社は、コメを単に食卓にのぼる主食以上のものとして人々に見てもらおうと、東京に（コメをテーマにした）商業施設をオープンすることになりました。
+
+| ヤンマーホールディングスは、同じ建物の中で６つの店舗やレストランを運営しますが、それらはいずれもコメにこだわっています。
+| そのうちの１つは、日本各地のさまざまなブランド米を扱う店です。
+| 店内には **粘りけ** や食感、粒の大きさなどが **５段階で表示され** 、人々は自分の好みにぴったりのコメを見つけることができるようになっています。
+
+| また別の店舗はイタリア料理のレストランで、 **米粉** で作ったパスタのほか、
+| デザートメニューとして **米焼酎** を使ったティラミスまで提供しています。

@@ -1,0 +1,82 @@
+==========================
+utils
+==========================
+便利関数とか
+
+-----------------
+library管理
+-----------------
+
+pipenv
+=======
+install
+----------
+installすればPipfileを生成して、記録してくれる。  
+
+
+.. code-block:: shell
+    
+    pip isntall pipenv
+    #.envを読み込みたくない場合↓
+    export PIPENV_DONT_LOAD_ENV=1 
+    pipenv install django requests
+    #dev用のライブラリ
+    pipenv isntall -d pytest pylint
+ 
+.. warning:: 
+    
+    ver指定してない限りは Pipfileにverは記載されない
+    
+:: 
+    
+    pipenv install numpy==1.14
+
+
+
+lockファイル生成
+------------------
+installしたverまで残したいときは
+
+.. code-block:: shell
+
+       #lockファイルの生成.
+    pipenv requirements > requirements.lock
+    pipenv requirements -dev >requirements_dev.lock
+    #ライブラリの依存関係の表示
+    pipenv graph
+    
+環境の再現
+-----------
+すでに作成済みのPipfileやrequirements.lockなどと同じ環境を再現したい場合は
+
+.. code-block:: shell
+
+    pipenv install 
+    pipenv isntall --dev
+    #verまで合わせたいとき
+    pipenv sync
+    pipenv sync --d
+
+
+poetry
+======
+pipenvより高速に実行できる.
+
+
+------------------------
+正規表現
+------------------------
+
+
+
+------------------------
+日付関数
+------------------------
+
+
+
+
+
+--------------------------
+csv
+--------------------------

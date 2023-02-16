@@ -2,6 +2,15 @@
 pytest-tips
 =====================
 
+--------------
+install
+--------------
+
+.. code-block:: python
+   pip install pytest
+   #django使ってるならこっち
+   pip install pytest-django
+
 
 -------------
 fixture
@@ -10,9 +19,21 @@ test実行前のsetup部分をテストコードとは独立させて、テス�
 例えば次のようにdatabaseをsetupするときに使う。このようにするとtest自体のboiltplateなコードが消えて
 テストしているaction自体が見やすい。
 
+.. code-block:: python
+  
+    import pytest
+    @pytest.fixture()
+    def some_data():
+      return 41
+    
+    def test_some_data(some_data):
+        assert some_data==41
 
 
-::
+
+yieldの後はテスト終了後の後処理を記述する
+
+.. code-block:: python
 
     @pytest.fixture(scope="session")
     def init_db():
@@ -22,7 +43,11 @@ test実行前のsetup部分をテストコードとは独立させて、テス�
         yield db_
         db_.close()
 
-    
+    def test_db(init_db):
+        assert init_db.count()==0
+        init_db.add(cards.Card("test"))
+        assert init_db.count()==1
+
 
 一覧確認
 =========================

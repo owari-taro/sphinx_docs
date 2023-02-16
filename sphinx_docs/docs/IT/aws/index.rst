@@ -8,3 +8,4 @@ aws service
    :caption: Contents:
     
    aws_lambda
+   aws_network/index

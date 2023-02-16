@@ -37,13 +37,13 @@ article
 
 adding articles
 -------------------------
-1. *
+1. *:
 2.  *
 3.  The
-4.  a 
-5.  a 
+4.  a :
+5.   
 6.  a 
-7. an
+7. avfvfvn:
 8. an
 9. The 
 10.  a 

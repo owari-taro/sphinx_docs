@@ -21,3 +21,18 @@ lambda制限
 
    最大実行時間
      **15分** 
+
+
+.. warning:: コンソールでlambda作成してsamをダウンロードしてもトリガーがなぜか反映されていない。本だとコンソール上から作成したものがsamにはんえいされるはずなのだが
+
+第5章
+========
+
+
+::
+
+    #build
+    sam build --user-container
+    #local test
+    sam local invoke -e event/s3-event.json HellloWorldFunction
+
