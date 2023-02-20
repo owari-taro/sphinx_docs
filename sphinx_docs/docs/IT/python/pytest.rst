@@ -13,6 +13,24 @@ install
 
 
 -------------
+設定ファイル
+-------------
+
+pytest.ini
+==========
+
+.. code-block::shell
+
+    [pytest]
+    python_files=test*.py
+    markers=
+        slow: test consuming lots of time
+        smoke:  subset of tests you are handling with
+    addopts=
+        --strict-markers
+  
+
+-------------
 fixture
 -------------
 test実行前のsetup部分をテストコードとは独立させて、テスト関数で再利用できるようにする仕組み。
@@ -47,6 +65,38 @@ yieldの後はテスト終了後の後処理を記述する
         assert init_db.count()==0
         init_db.add(cards.Card("test"))
         assert init_db.count()==1
+
+**conftest.py ** にfixtureを記述することでimportなしで使用できる。
+aws
+======================
+| awsを使ったモジュールをテストしたい場合はmotoが便利（ただしs3など一部のサービスに限られる）
+| 例えば下記のようにbucketを作るfixtureが書ける。
+
+.. code-block:: python
+    
+    import pytest
+    from moto import mock_s3
+    import boto3
+    from typing import Callable
+    @pytest.fixture(scope="function")
+    def create_dummy_bucket():
+        """
+        """    
+        def _create(bucket_name:str):
+            client = boto3.client("s3", region_name="us-east-1")
+            return  client.create_bucket(Bucket=bucket_name)
+        with mock_s3():
+            yield _create
+
+
+
+.. code-block:: python
+
+  def test_upload(create_dummy_bucket):
+      create_dummy_bucket("test")
+      upload("test","test.txt")
+
+
 
 
 一覧確認

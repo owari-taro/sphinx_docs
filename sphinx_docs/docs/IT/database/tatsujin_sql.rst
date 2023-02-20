@@ -2,11 +2,43 @@
 達人に学ぶsql徹底指南書
 ============================
 
+
+
+
+
+
+
+
+
+
 ----------------
 練習問題
 ----------------
+
+3章自己結合
+===========
+
+inner　joinを自己結合で書き換え。
+::
+
+    postgres=# select t1.name,t1.price from sample_product t1 where exists(select * from sample_product t2 where t1.name<>t2.name and t1.price=t2.price);
+
+
+
+
+
+
+
 4章
 =============
+p73のnot existsによる書き換え。条件を否定形に変換するときの不等号の条件に注意
+
+::
+
+    postgres=# select * from sample_classa t1 
+        where not exists(select * from sample_classb t2 where t2.city='tokyo'and t1.age>=t2.age);
+
+
 
 dbごとでのnullに関する挙動の違いを確かめる。
 ここではpostgresqlを使用
@@ -146,6 +178,3 @@ dbごとでのnullに関する挙動の違いを確かめる。
 
         select S.name,sum(case when S.item in (select name from sample_item) then 1 else 0 end) as item, 
           count(I.name)  from sample_shop S inner join sample_item I on S.item=I.name group by S.name;
-
-
-

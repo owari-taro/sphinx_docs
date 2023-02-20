@@ -12,28 +12,6 @@ model関連
     https://stackoverflow.com/questions/30682264/how-to-apply-in-constraint-to-the-fields-of-django-models
 
 
-安全なmigrationしたい
-======================
-意図せぬmigrateを避けるために、migrate実行前に次の二点を確認する。
-
-1. 実行されていないmigration
-2. 1のmigrationの具体的な中身
-  
-.. caution::
-    
-   | makemigrationsしていないのにmigrateしてしまうということがある。
-   | この現象はdjango-authtoolkitのverを切り替えたときに発生した。
-   | 古いverではsecret_idを平文でdbに保存していたのがhash化されて保存されるように仕様が変わったのだが
-   | この変更はmakemigrationsしていなくてもmigrateコマンドに含まれるため、意図せずmigrationが実行されてしまうのだ。
-   
-
-
-.. code-block::
-    
-    python  mamage.py makemigratins {app}
-
-
-
 テーブル名を指定したい
 ==========================
 **Meta** クラスを作ってdb_tableで指定する
@@ -46,9 +24,10 @@ model関連
 
         class Meta:
             db_table = '従業員'             # テーブル名：'従業員
-
-複合ユニーク制約
+制約
 =====================
+複合ユニーク
+--------------
 Metaクラス内にconstraintsを指定する。複数指定も可能。
 
 ::
@@ -69,6 +48,35 @@ Metaクラス内にconstraintsを指定する。複数指定も可能。
             ),
         ]
 
+時刻制約
+---------------------
+sqlパズルの第一問の制約をdjangoで記述したもの↓
+
+
+.. https://stackoverflow.com/questions/21286516/django-filter-by-month-and-year
+.. code-block::python
+
+    from django.db import models
+    from django.db.models.functions import Now
+    from django.db.models import Q,F   
+    from datetime import timedelta
+    class FiscalYear(models.Model):
+        fiscal_year=models.IntegerField(unique=True)
+        start_date=models.DateField(unique=True)
+        end_date=models.DateField(unique=True)
+
+        class Meta:
+            db_table="fisical_year"
+            constraints=[
+                models.CheckConstraint(
+                check=Q(end_date__gte=F("start_date")+timedelta(days=365)),
+                name="end_date must be")            
+            ,
+                models.CheckConstraint(
+                check=Q(end_date__month="9"),
+                name="month constraint")
+            
+            ]
 
 
 
@@ -139,12 +147,38 @@ migrationを戻したい
     :~/git_repos/database/sample_dj$ python manage.py migrate sample 0015_rename_prc_amt_prc
 
 
-==================
-
-
-
 raw-sqlで使用したい
 ===================
+
+
+-------------------
+運用
+-------------------
+
+
+
+安全なmigrationしたい
+======================
+意図せぬmigrateを避けるために、migrate実行前に次の二点を確認する。
+
+1. 実行されていないmigration
+2. 1のmigrationの具体的な中身
+  
+.. caution::
+    
+   | makemigrationsしていないのにmigrateしてしまうということがある。
+   | この現象はdjango-authtoolkitのverを切り替えたときに発生した。
+   | 古いverではsecret_idを平文でdbに保存していたのがhash化されて保存されるように仕様が変わったのだが
+   | この変更はmakemigrationsしていなくてもmigrateコマンドに含まれるため、意図せずmigrationが実行されてしまうのだ。
+   
+
+
+.. code-block::
+    
+    python  mamage.py makemigratins {app}
+
+
+
 
 
 
