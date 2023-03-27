@@ -8,13 +8,12 @@ Welcome to sphinx documentatio!
 table of contents!
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
     
    docs/sphinx_tips
    docs/IT/index
    docs/english/index
-   docs/IT/aws/index
    docs/src/modules
 
 

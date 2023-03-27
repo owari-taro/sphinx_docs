@@ -20,11 +20,11 @@ python製ドキュメントツール。基本的な使い方は以下のshpinx�
 毎回コマンドを打つのは面倒なので以下をインストールして実行すれば
 rstが保存されるたびにbuildしてくれる
 
-
-::
+.. code-block:: 
 
    pip isntall sphinx-autobuild
-   sphinx-autobuild . _build/html
+   #出力dirを指定
+   sphinx-autobuild . ../docs/
 
 
 .. _theme:
@@ -40,6 +40,10 @@ sphinx背景テーマの変更
    #conf.pyに書き込み↓
    html_theme = 'cloud'
 
+
+サンプル
+==================
+html-themeの各ページにお手本を参考にすると早い `cloud <https://sphinx-themes.org/sample-sites/cloud-sptheme/>`__ の場合
 
 リンク
 ======================
@@ -100,6 +104,38 @@ sphinxドキュメント内でのリンク: :ref:`theme`
   :ref:`theme` 
 
 
+注釈
+=============
+番号指定
+---------
+
+sphinx [1]_ を使うにはpython [2]_ をインストールしてください
+
+.. [1] 脚注１
+.. [2] 脚注２
+
+::
+
+   sphinx [1]_ を使うにはpython [2]_ をインストールしてください
+
+   .. [1] 脚注１
+   .. [2] 脚注２
+
+名前指定
+-----------
+sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールしてください
+
+.. [#sphinx] sphinxについて下記kます
+.. [#python] pythonについて書きます 
+
+:: 
+      
+   sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールしてください
+
+   .. [#sphinx] sphinxについて下記kます
+   .. [#python] pythonについて書きます 
+
+
 画像挿入
 =======================
 figureディレク底部を使う。画像のパスは↓のように相対パスor/img/*のようにルートディレクトリからのパターン
@@ -149,15 +185,136 @@ conf.pyに以下を記述しておくと図番号が表示される
 jupyter連携
 ================
 
+todo etc
+==============
 
- 
+todo
+-----------
+
+ .. todo:: ここにtodoを書く
+
+.. todo:: 
+
+   | 改行してかくこともできる
+   | ここで改行
+
+**conf.py** に次を設定し、
+::
+
+   todo_include_todos=True
+   extensions = ['sphinx.ext.todo' ]
+
+
+
+rstファイルでtodoを次のように書く
+::
+
+    .. todo:: ここにtodoを書く
+
+   .. todo:: 
+
+      | 改行してかくこともできる
+      | ここで改行
+
+
+warning
+------------
+書き方はtodoと同じく。conf.pyに指定はいらない。`参考 <https://sphinx-themes.org/sample-sites/cloud-sptheme/kitchen-sink/admonitions/>`__
+
+
+.. warning:: ここに注意
+
+
+::
+
+   .. warning:: ここに注意
+
+
+.. warning::
+   | 複数行も書けるかの？
+   | どういうことだ？
+   ::
+
+      from aws_cdk import (
+      # Duration,
+      Stack,
+      aws_s3,
+      RemovalPolicy,
+      )
+      class LoadS3Stack(Stack):
+
+         def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+            super().__init__(scope, construct_id, **kwargs)
+            bucket = aws_s3.Bucket(
+                  self,
+                  "test_for_trigger_lambdad",
+                  removal_policy=RemovalPolicy.DESTROY,  # Stack削除と同時にバケットを削除する
+            )
+
+
+
+::
+
+   .. warning::
+   | 複数行も書けるかの？
+   | どういうことだ？
+
+.. error:: ここに注意
+
+
+::
+  
+  .. error:: ここに注意
+
+表の挿入
+=================
+
+.. csv-table:: exampleテーブル
+   :file: csv/example.csv
+
+csvファイルをからテーブルを作成
+::
+
+   .. csv-table:: exampleテーブル
+      :file: csv/example.csv   
+
+直接書きたい場合は
+::
+      
+   .. csv-table:: exampleテーブル
+      :header-orws: 1
+
+      id,name
+      1,Taro
+      2,Trump
+      3,Biden
+
+
+conf.pyに↓を書いておく表に番号が自動で入る。
+::
+
+   numref=True
+
+
+
 clickのドキュメント化
 ====================
-| clickで作ったモジュールは通常の方法だとドキュメント科できない。
+| clickで作ったモジュールは :ref:`docstring` だとdocumentの生成ができない。
 | sphinx-clickをインストールしたうえで次を実行する必要がある
 
-1. conf.pyの編集
-2. rstファイルの作成し、次のように入力。（通常のmoduleのように自動では生成されないので注意
+1. `sphinx-lik <https://sphinx-click.readthedocs.io/en/latest/usage/>`__ のinstall
+
+::
+
+   pip isntall sphinx-click
+
+2. conf.py編集
+::
+
+   extensions = ['sphinx_click']
+
+
+3. rstファイルの作成し、次のように入力。（通常のmoduleのように自動では生成されないので注意
    
 ::  
 
@@ -167,20 +324,53 @@ clickのドキュメント化
    :prog: sphinx_click_test
    :show-nested:
 
+django-clickの場合などネストしている場合はパスを **.** でつないで各必要がある
+
+::  
+
+   # 一行目でモジュール名関数名を入力
+   #progは表用のラベルなので自由に設定。
+   .. click:: management.commands.hello_world:greet
+   :prog: sphinx_click_test
+   :show-nested:
+
+.. error:: 読み込みでエラーがでたときはsys.path使ってどこまでパスが通っているかを確認する
+
+.. _docstring:
 
 docstringの生成
 ====================
-| docstringからhtmlドキュメントを作ることができる。
-| **shinx-apidoc** で.pyファイルからrstを生成し、あとはいつもと同様にhtml出力すればよい。
+**shinx-apidoc** でdocstringからドキュメントを作ることができる。
 
-:: 
+
+1. conf.pyの編集
+
+.. code-block:: python
+
+   import os
+   import sys
+   sys.path.insert(0, os.path.abspath('../src'))
+   #必要に応じてparentdirも追加しておく
+   #sys.path.insert(0, os.path.abspath('../../'))
+
+
+   extensions = [
+    # docstringからドキュメント生成
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon"
+
+2. コマンド
+
+.. code-block:: shell
 
    #rst生成
    #-o {出力先} {対象dir}
    sphinx-apidoc -f -o ./docs/src  src
    
-   #html生成
+   #html生成 
    ./auto.sh
+   #もしくは
+   make html
 
 
 comment out
@@ -228,3 +418,5 @@ github noteとの連携
        rm -rf *
 
    you will erase the entire contents of your file system.
+
+
