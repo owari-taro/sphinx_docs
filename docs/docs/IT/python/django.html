@@ -42,7 +42,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pytest-tips" href="pytest.html" />
-    <link rel="prev" title="IT docs" href="index.html" /> 
+    <link rel="prev" title="python" href="index.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -60,12 +60,12 @@
           <a href="pytest.html" title="pytest-tips"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="index.html" title="IT docs"
+          <a href="index.html" title="python"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">IT docs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">django tips</a></li> 
       </ul>
     </div>
@@ -79,9 +79,51 @@
             
   <section id="django-tips">
 <h1>django tips<a class="headerlink" href="#django-tips" title="Permalink to this heading">¶</a></h1>
-<p>djangoのメモ</p>
+<p>djangoのメモ。</p>
 <section id="model">
 <h2>model関連<a class="headerlink" href="#model" title="Permalink to this heading">¶</a></h2>
+<section id="id1">
+<h3>テーブル制約を入れたい<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="id2">
+<h3>日付制約<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>テーブル名を指定したい<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p><strong>Meta</strong> クラスを作ってdb_tableで指定する</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;従業員&#39;</span>             <span class="c1"># テーブル名：&#39;従業員</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>複合ユニーク制約<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p>Metaクラス内にconstraintsを指定する。複数指定も可能。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Lesson</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;レッスンモデル(生徒が同日に同じ先生のレッスンを受講できるのは1回まで。)&quot;&quot;&quot;</span>
+
+<span class="n">teacher</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s2">&quot;先生&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">student</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s2">&quot;生徒&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s2">&quot;レッスン実施日&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">models</span><span class="o">.</span><span class="n">UniqueConstraint</span><span class="p">(</span>
+            <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;teacher&quot;</span><span class="p">,</span> <span class="s2">&quot;student&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;lesson_unique&quot;</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</section>
 <section id="choice">
 <h3>choiceで指定した文字列以外を禁止したい<a class="headerlink" href="#choice" title="Permalink to this heading">¶</a></h3>
 <p>下のコードのようにMetaクラス内に <strong>CheckConstraint</strong> 制約を入れる</p>
@@ -122,6 +164,72 @@
 </pre></div>
 </div>
 </section>
+<section id="migration">
+<h3>migrationを戻したい<a class="headerlink" href="#migration" title="Permalink to this heading">¶</a></h3>
+<p>間違えてmigrateしてしまった時などには,</p>
+<ol class="arabic simple">
+<li><p>showmigrationsで戻したい個所を確認して</p></li>
+<li><p>migrate {migrate_name}</p></li>
+<li><p>間違えて生成したマイグレーションファイルを削除</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python manage.py showmigrations
+admin
+[X] 0001_initial
+[X] 0002_logentry_remove_auto_add
+[X] 0003_logentry_add_action_flag_choices
+auth
+[X] 0001_initial
+[X] 0002_alter_permission_name_max_length
+[X] 0003_alter_user_email_max_length
+
+:~/git_repos/database/sample_dj$ python manage.py migrate sample 0015_rename_prc_amt_prc
+</pre></div>
+</div>
+</section>
+<section id="raw-sql">
+<h3>raw-sqlで使用したい<a class="headerlink" href="#raw-sql" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="id5">
+<h2>運用<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<section id="id6">
+<h3>安全なmigrationしたい<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<p>意図せぬmigrateを避けるために、migrate実行前に次の二点を確認する。</p>
+<ol class="arabic simple">
+<li><p>実行されていないmigration</p></li>
+<li><p>1のmigrationの具体的な中身</p></li>
+</ol>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<div class="line-block">
+<div class="line">makemigrationsしていないのにmigrateしてしまうということがある。</div>
+<div class="line">この現象はdjango-authtoolkitのverを切り替えたときに発生した。</div>
+<div class="line">古いverではsecret_idを平文でdbに保存していたのがhash化されて保存されるように仕様が変わったのだが</div>
+<div class="line">この変更はmakemigrationsしていなくてもmigrateコマンドに含まれるため、意図せずmigrationが実行されてしまうのだ。</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>  <span class="n">mamage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigratins</span> <span class="p">{</span><span class="n">app</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>関連ライブラリ<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<section id="django-auth-toolkit">
+<h3>django-auth-toolkit<a class="headerlink" href="#django-auth-toolkit" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://django-oauth-toolkit.readthedocs.io/en/latest/">公式</a></p></li>
+<li><p><strong>[2.2.0] 2022-10-18</strong> からclient_secretはhashedされて保存されるようになったので注意。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>以前のversionから使っている場合はmigrateすればdbに保存されているsecretをhash化してくれる</p></li>
+<li><p>2.2.0以降から使う場合は特に対応の必要はない</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The application client secret is now hashed upon save. You must copy it before it is saved. Using the hashed value will fail.</p>
+</section>
 </section>
 </section>
 
@@ -136,7 +244,21 @@
     <ul>
 <li><a class="reference internal" href="#">django tips</a><ul>
 <li><a class="reference internal" href="#model">model関連</a><ul>
+<li><a class="reference internal" href="#id1">テーブル制約を入れたい</a></li>
+<li><a class="reference internal" href="#id2">日付制約</a></li>
+<li><a class="reference internal" href="#id3">テーブル名を指定したい</a></li>
+<li><a class="reference internal" href="#id4">複合ユニーク制約</a></li>
 <li><a class="reference internal" href="#choice">choiceで指定した文字列以外を禁止したい</a></li>
+<li><a class="reference internal" href="#migration">migrationを戻したい</a></li>
+<li><a class="reference internal" href="#raw-sql">raw-sqlで使用したい</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">運用</a><ul>
+<li><a class="reference internal" href="#id6">安全なmigrationしたい</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">関連ライブラリ</a><ul>
+<li><a class="reference internal" href="#django-auth-toolkit">django-auth-toolkit</a></li>
 </ul>
 </li>
 </ul>
@@ -147,7 +269,7 @@
   <div class="sphinxprev">
     <h4>Previous page</h4>
     <p class="topless"><a href="index.html"
-                          title="Previous page">&larr; IT docs</a></p>
+                          title="Previous page">&larr; python</a></p>
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
@@ -207,12 +329,12 @@
           <a href="pytest.html" title="pytest-tips"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="index.html" title="IT docs"
+          <a href="index.html" title="python"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >IT docs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >python</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">django tips</a></li> 
       </ul>
     </div>

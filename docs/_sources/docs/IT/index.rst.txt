@@ -1,5 +1,5 @@
 =================================
-IT docs
+IT
 =================================
 
 
@@ -8,7 +8,7 @@ IT docs
    :maxdepth: 1
    :caption: Contents:
     
-   aws_network/index
+   aws/index
    airflow
    python/index
    database/index

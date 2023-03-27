@@ -41,7 +41,7 @@
 
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="src" href="../../src/modules.html" />
+    <link rel="next" title="aws" href="aws_network/index.html" />
     <link rel="prev" title="aws service" href="index.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
@@ -57,14 +57,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../../src/modules.html" title="src"
+          <a href="aws_network/index.html" title="aws"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="index.html" title="aws service"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">aws service</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">aws service</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">aws lambda</a></li> 
       </ul>
     </div>
@@ -98,7 +99,20 @@
 <dt id="term-1">最大実行時間<a class="headerlink" href="#term-1" title="Permalink to this term">¶</a></dt><dd><p><strong>15分</strong></p>
 </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>コンソールでlambda作成してsamをダウンロードしてもトリガーがなぜか反映されていない。本だとコンソール上から作成したものがsamにはんえいされるはずなのだが</p>
+</div>
 </section>
+</section>
+<section id="id3">
+<h3>第5章<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#build</span>
+<span class="n">sam</span> <span class="n">build</span> <span class="o">--</span><span class="n">user</span><span class="o">-</span><span class="n">container</span>
+<span class="c1">#local test</span>
+<span class="n">sam</span> <span class="n">local</span> <span class="n">invoke</span> <span class="o">-</span><span class="n">e</span> <span class="n">event</span><span class="o">/</span><span class="n">s3</span><span class="o">-</span><span class="n">event</span><span class="o">.</span><span class="n">json</span> <span class="n">HellloWorldFunction</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -118,6 +132,7 @@
 <li><a class="reference internal" href="#lambda">lambda制限</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id3">第5章</a></li>
 </ul>
 </li>
 </ul>
@@ -132,8 +147,8 @@
   </div>
   <div class="sphinxnext">
     <h4>Next page</h4>
-    <p class="topless"><a href="../../src/modules.html"
-                          title="Next page">&rarr; src</a></p>
+    <p class="topless"><a href="aws_network/index.html"
+                          title="Next page">&rarr; aws</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -185,14 +200,15 @@
           <a href="../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../../src/modules.html" title="src"
+          <a href="aws_network/index.html" title="aws"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="index.html" title="aws service"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >aws service</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >aws service</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">aws lambda</a></li> 
       </ul>
     </div>

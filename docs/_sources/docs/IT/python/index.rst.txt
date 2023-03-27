@@ -1,5 +1,5 @@
 =================================
-IT docs
+python
 =================================
 
 
@@ -10,4 +10,5 @@ IT docs
     
    django
    pytest
-   poetry
+   utils
+   aws

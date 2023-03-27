@@ -142,7 +142,9 @@ Continue reading the main story
 | “If your goal was to start training on Saturday,” she said, “maybe on Tuesday, 
 | instead of going to bed at midnight, you go to bed at 11:45. Then on Wednesday, at 11:30.”
 
-There are also things you can do during the day to **shift your circadian rhythm**. In one study, Dr. Youngstedt and his team instructed 101 adults to do an hour of moderate exercise at eight different times for three days. As expected, those who hit the treadmills in the morning shifted their circadian cycles forward, meaning their bodies were ready to sleep and wake up earlier.
+| There are also things you can do during the day to **shift your circadian rhythm**. 
+| **In one study** , Dr. Youngstedt and his team instructed 101 adults to do an hour of 
+| moderate exercise at eight different times for three days. As expected, those who hit the treadmills in the morning shifted their circadian cycles forward, meaning their bodies were ready to sleep and wake up earlier.
 
 | But they weren’t alone. The participants who exercised at 1 and 4 p.m. saw similar shifts, suggesting that even exercising in the afternoon might make waking up earlier the next day just a little easier. If you can fit it in your schedule, 
 | consider working out in the early afternoon for a few days before **making the full jump** to a morning sweat session.

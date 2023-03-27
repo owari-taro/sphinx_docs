@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>apt &#8212; sphinx_docs  documentation</title>
+    <title>パッケージ管理 &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/drawio.css" />
@@ -56,7 +56,7 @@
              >modules</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-        <li class="nav-item nav-item-this"><a href="">apt</a></li> 
+        <li class="nav-item nav-item-this"><a href="">パッケージ管理</a></li> 
       </ul>
     </div>
     </div>
@@ -67,14 +67,35 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="apt">
-<h1>apt<a class="headerlink" href="#apt" title="Permalink to this heading">¶</a></h1>
+  <section id="id1">
+<h1>パッケージ管理<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="apt">
+<h2>apt<a class="headerlink" href="#apt" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>apt update:ローカルにキャッシュしたるパッケージ情報の更新で、実際にインストールとかはして４ない</p></li>
 <li><p>apt upgrade:実際に更新作業を実行する</p></li>
 <li><p>欠点として一部の例外を除いてディストリビューションで決まったバージョンしか使えない。
 次のディストリビューションを待つ必要がある。</p></li>
 </ul>
+</section>
+</section>
+<section id="id2">
+<h1>ユーザー・グループ管理<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h1>
+<section id="id3">
+<h2>確認コマンド<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ユーザー一覧</span>
+ <span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>
+
+<span class="c1">#自分のユーザー</span>
+<span class="n">who</span>
+<span class="c1">#group一覧</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">group</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>作成<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+</section>
 </section>
 
 
@@ -83,7 +104,21 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../../../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">パッケージ管理</a><ul>
+<li><a class="reference internal" href="#apt">apt</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">ユーザー・グループ管理</a><ul>
+<li><a class="reference internal" href="#id3">確認コマンド</a></li>
+<li><a class="reference internal" href="#id4">作成</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -135,7 +170,7 @@
              >modules</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-        <li class="nav-item nav-item-this"><a href="">apt</a></li> 
+        <li class="nav-item nav-item-this"><a href="">パッケージ管理</a></li> 
       </ul>
     </div>
     </div>

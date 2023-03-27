@@ -64,7 +64,7 @@
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">database</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">達人に学ぶsql徹底指南書</a></li> 
       </ul>
@@ -82,12 +82,26 @@
 <section id="id1">
 <h2>練習問題<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <section id="id2">
-<h3>4章<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<h3>3章自己結合<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>inner　joinを自己結合で書き換え。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># select t1.name,t1.price from sample_product t1 where exists(select * from sample_product t2 where t1.name&lt;&gt;t2.name and t1.price=t2.price);</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>4章<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p>p73のnot existsによる書き換え。条件を否定形に変換するときの不等号の条件に注意</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># select * from sample_classa t1</span>
+    <span class="n">where</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">sample_classb</span> <span class="n">t2</span> <span class="n">where</span> <span class="n">t2</span><span class="o">.</span><span class="n">city</span><span class="o">=</span><span class="s1">&#39;tokyo&#39;</span><span class="ow">and</span> <span class="n">t1</span><span class="o">.</span><span class="n">age</span><span class="o">&gt;=</span><span class="n">t2</span><span class="o">.</span><span class="n">age</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>dbごとでのnullに関する挙動の違いを確かめる。
-ここではpostgresqlを使用
-4-1
-------
-* order by ではNullは最後。descをつけると逆転してnullが一番上に来る、</p>
+ここではpostgresqlを使用</p>
+<section id="id4">
+<h4>4-1<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>order by ではNullは最後。descをつけると逆転してnullが一番上に来る、</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#sort</span>
  <span class="n">postgres</span><span class="o">=</span><span class="c1"># select * from sample_person</span>
  <span class="n">order</span> <span class="n">by</span> <span class="n">address</span><span class="p">;</span>
@@ -112,8 +126,9 @@
  <span class="p">(</span><span class="mi">5</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="id3">
-<h4>4-2<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="id5">
+<h4>4-2<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>彼文字列との連結は通常通り</p></li>
 <li><p>nullと文字列を連結するとnullになる</p></li>
@@ -133,6 +148,84 @@
 </div>
 </section>
 </section>
+<section id="having">
+<h3>6章 having句の力<a class="headerlink" href="#having" title="Permalink to this heading">¶</a></h3>
+<section id="id6">
+<h4>6-1<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<p>1.
+* 教科書の回答</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1">#  select seq,SUMs^Ceq) over (order by seq range between 1 following and 1 following) as nex_seq from sample_se</span>
+<span class="n">qtbl</span><span class="p">;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># select case when count(*)&lt;&gt;max(seq) then &#39;歯抜けあり&#39; else &#39;歯抜けあり&#39;end as gap from sample_seqtbl;</span>
+    <span class="n">gap</span>
+<span class="o">------------</span>
+<span class="n">歯抜けあり</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>having使わずにウィンドウ関数で実行した場合の回答</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># select * from sample_seqtbl;</span>
+<span class="nb">id</span> <span class="o">|</span> <span class="n">seq</span> <span class="o">|</span> <span class="n">name</span>
+<span class="o">----+-----+------</span>
+<span class="mi">1</span> <span class="o">|</span>   <span class="mi">1</span> <span class="o">|</span> <span class="n">test</span>
+<span class="mi">2</span> <span class="o">|</span>   <span class="mi">2</span> <span class="o">|</span> <span class="n">test</span>
+<span class="mi">3</span> <span class="o">|</span>   <span class="mi">4</span> <span class="o">|</span> <span class="n">test</span>
+<span class="mi">4</span> <span class="o">|</span>   <span class="mi">5</span> <span class="o">|</span> <span class="n">test</span>
+<span class="mi">5</span> <span class="o">|</span>   <span class="mi">6</span> <span class="o">|</span> <span class="n">test</span>
+<span class="mi">6</span> <span class="o">|</span>   <span class="mi">7</span> <span class="o">|</span> <span class="n">test</span>
+<span class="p">(</span><span class="mi">6</span> <span class="n">rows</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># select seq ,case when nex_seq=seq+1 then &#39;歯抜けなし&#39; else &#39;歯抜けあり&#39; end</span>
+<span class="k">as</span> <span class="n">message</span> <span class="kn">from</span> <span class="p">(</span> <span class="n">select</span> <span class="n">seq</span><span class="p">,</span><span class="n">SUM</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span> <span class="n">over</span> <span class="p">(</span><span class="n">order</span> <span class="n">by</span> <span class="n">seq</span> <span class="nb">range</span> <span class="n">between</span> <span class="mi">1</span> <span class="n">following</span> <span class="ow">and</span> <span class="mi">1</span> <span class="n">following</span><span class="p">)</span> <span class="k">as</span> <span class="n">nex_seq</span> <span class="kn">from</span> <span class="nn">sample_seqtbl</span><span class="p">)</span><span class="n">A</span><span class="p">;</span>
+<span class="n">seq</span> <span class="o">|</span>  <span class="n">message</span>
+<span class="o">-----+------------</span>
+<span class="mi">1</span> <span class="o">|</span> <span class="n">歯抜けなし</span>
+<span class="mi">2</span> <span class="o">|</span> <span class="n">歯抜けあり</span>
+<span class="mi">4</span> <span class="o">|</span> <span class="n">歯抜けなし</span>
+<span class="mi">5</span> <span class="o">|</span> <span class="n">歯抜けなし</span>
+<span class="mi">6</span> <span class="o">|</span> <span class="n">歯抜けなし</span>
+<span class="mi">7</span> <span class="o">|</span> <span class="n">歯抜けあり</span>
+<span class="p">(</span><span class="mi">6</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4>6-2<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
+<p>各departmentのmaxが締め切りより早いといことをhaving内で指定</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># select * from sample_student;</span>
+<span class="nb">id</span> <span class="o">|</span> <span class="n">department</span> <span class="o">|</span>         <span class="n">submitted_at</span>
+<span class="o">----+------------+-------------------------------</span>
+<span class="mi">9</span> <span class="o">|</span> <span class="n">a</span>          <span class="o">|</span>
+<span class="mi">10</span> <span class="o">|</span> <span class="n">a</span>          <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">03</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span>
+<span class="mi">11</span> <span class="o">|</span> <span class="n">b</span>          <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">02</span> <span class="mi">07</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="mf">08.980201</span><span class="o">+</span><span class="mi">00</span>
+<span class="mi">12</span> <span class="o">|</span> <span class="n">b</span>          <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">02</span> <span class="mi">07</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="mf">08.981886</span><span class="o">+</span><span class="mi">00</span>
+<span class="mi">13</span> <span class="o">|</span> <span class="n">c</span>          <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">03</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">+</span><span class="mi">00</span>
+<span class="mi">14</span> <span class="o">|</span> <span class="n">c</span>          <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">02</span> <span class="mi">07</span><span class="p">:</span><span class="mi">39</span><span class="p">:</span><span class="mf">08.985113</span><span class="o">+</span><span class="mi">00</span>
+<span class="p">(</span><span class="mi">6</span> <span class="n">rows</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># select department from sample_student group by department</span>
+<span class="n">having</span> <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="o">=</span><span class="n">count</span><span class="p">(</span><span class="n">submitted_at</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">max</span><span class="p">(</span><span class="n">submitted_at</span><span class="p">)</span><span class="o">&lt;</span><span class="n">now</span><span class="p">();</span>
+<span class="n">department</span>
+<span class="o">------------</span>
+<span class="n">b</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=</span><span class="c1">#</span>
+
+
+<span class="mi">6</span><span class="o">-</span><span class="mi">3</span>
+<span class="o">--------</span>
+
+<span class="p">::</span>
+
+    <span class="n">select</span> <span class="n">S</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="nb">sum</span><span class="p">(</span><span class="n">case</span> <span class="n">when</span> <span class="n">S</span><span class="o">.</span><span class="n">item</span> <span class="ow">in</span> <span class="p">(</span><span class="n">select</span> <span class="n">name</span> <span class="kn">from</span> <span class="nn">sample_item</span><span class="p">)</span> <span class="n">then</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span> <span class="n">end</span><span class="p">)</span> <span class="k">as</span> <span class="n">item</span><span class="p">,</span>
+      <span class="n">count</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="kn">from</span> <span class="nn">sample_shop</span> <span class="n">S</span> <span class="n">inner</span> <span class="n">join</span> <span class="n">sample_item</span> <span class="n">I</span> <span class="n">on</span> <span class="n">S</span><span class="o">.</span><span class="n">item</span><span class="o">=</span><span class="n">I</span><span class="o">.</span><span class="n">name</span> <span class="n">group</span> <span class="n">by</span> <span class="n">S</span><span class="o">.</span><span class="n">name</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -147,8 +240,15 @@
     <ul>
 <li><a class="reference internal" href="#">達人に学ぶsql徹底指南書</a><ul>
 <li><a class="reference internal" href="#id1">練習問題</a><ul>
-<li><a class="reference internal" href="#id2">4章</a><ul>
-<li><a class="reference internal" href="#id3">4-2</a></li>
+<li><a class="reference internal" href="#id2">3章自己結合</a></li>
+<li><a class="reference internal" href="#id3">4章</a><ul>
+<li><a class="reference internal" href="#id4">4-1</a></li>
+<li><a class="reference internal" href="#id5">4-2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#having">6章 having句の力</a><ul>
+<li><a class="reference internal" href="#id6">6-1</a></li>
+<li><a class="reference internal" href="#id7">6-2</a></li>
 </ul>
 </li>
 </ul>
@@ -225,7 +325,7 @@
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >IT docs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >IT</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="index.html" >database</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">達人に学ぶsql徹底指南書</a></li> 
       </ul>
