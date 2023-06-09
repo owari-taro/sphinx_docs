@@ -1,0 +1,590 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>sphinx-tips &#8212; sphinx_docs  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/custom.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to sphinx documentatio!" href="../index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to sphinx documentatio!"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">sphinx-tips</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="sphinx-tips">
+<h1>sphinx-tips<a class="headerlink" href="#sphinx-tips" title="Permalink to this heading">¶</a></h1>
+<section id="sphinx">
+<h2>sphinxとは？<a class="headerlink" href="#sphinx" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-8">python製ドキュメントツール。基本的な使い方は以下のshpinx本とか公式docを参照。</p>
+</section>
+<section id="id1">
+<h2>よく使う機能の一覧<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-15">使用頻度高いが忘れそうな機能一覧を記載した。</p>
+<section id="id2">
+<h3>自動ビルド<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-20">毎回コマンドを打つのは面倒なので以下をインストールして実行すれば
+rstが保存されるたびにbuildしてくれる</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">isntall</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span>
+<span class="c1">#出力dirを指定</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="o">.</span> <span class="o">../</span><span class="n">docs</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="theme">
+<span id="id3"></span><h3>sphinx背景テーマの変更<a class="headerlink" href="#theme" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-34"><a class="reference external" href="https://sphinx-themes.org/">sphinx-themes</a> に記載</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cloud</span><span class="o">-</span><span class="n">sptheme</span>
+<span class="c1">#conf.pyに書き込み↓</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;cloud&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>サンプル<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-46">html-themeの各ページにお手本を参考にすると早い <a class="reference external" href="https://sphinx-themes.org/sample-sites/cloud-sptheme/">cloud</a> の場合</p>
+</section>
+<section id="id5">
+<h3>リンク<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<section id="id6">
+<h4>外部リンク<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-53">(1)文中に直接埋め込むパターン: <a class="reference external" href="https://sphinx-users.jp/">sphinx0-user.jp</a> の紹介リンク</p>
+<p class="linemarker linemarker-56">(2)一旦定義しておいて使い回すパターン: <a class="reference external" href="https://amazon.co.jp">amazonjp</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1)
+`sphinx0-user.jp &lt;https://sphinx-users.jp/&gt;`__ の紹介リンク
+
+.. _amazonjp: https://amazon.co.jp
+(2)一旦定義しておいて使い回すパターン: `amazonjp`_
+</pre></div>
+</div>
+<section id="id7">
+<h5>リンク先を新タブで開く<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h5>
+<p class="linemarker linemarker-70">デフォルトではクリックしても新タブで開かれない。新タブで開くには以下の設定が必要
+(<a class="reference external" href="https://stackoverflow.com/questions/11716781/open-a-link-in-a-new-window-in-restructuredtext">stackoverflow</a> )</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#conf.py</span>
+<span class="n">html_js_files</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;js/custom.js&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-80">_static下にjsフォルダを作成し、custom.jsに以下をコピペ保存</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#_static/js/custom.js
+$(document).ready(function () {
+ $(&#39;a.external&#39;).attr(&#39;target&#39;, &#39;_blank&#39;);
+ });
+</pre></div>
+</div>
+</section>
+</section>
+<section id="internal-link">
+<span id="id8"></span><h4>内部リンク<a class="headerlink" href="#internal-link" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-94">sphinxドキュメント内でのリンク: <a class="reference internal" href="#theme"><span class="std std-ref">sphinx背景テーマの変更</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#一行開ける（）
+.. _theme:
+
+sphinx背景テーマの変更
+=========================
+
+:ref:`theme`
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h3>注釈<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<section id="id10">
+<h4>番号指定<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-112">sphinx <a class="footnote-reference brackets" href="#id13" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> を使うにはpython <a class="footnote-reference brackets" href="#id14" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> をインストールしてください</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id13" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">1</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-114">脚注１</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-115">脚注２</p>
+</aside>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="n">_</span> <span class="n">を使うにはpython</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="n">_</span> <span class="n">をインストールしてください</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">脚注１</span>
+<span class="o">..</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">脚注２</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h4>番号自動指定<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-127">注 <a class="footnote-reference brackets" href="#id18" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> の番号を自動にすることもできる <a class="footnote-reference brackets" href="#id19" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id18" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">3</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-129">注のテスト</p>
+</aside>
+<aside class="footnote brackets" id="id19" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">4</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-130">またテスト</p>
+</aside>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">注</span> <span class="p">[</span><span class="c1">#]_ の番号を自動にすることもできる [#]_</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="c1">#] 注のテスト</span>
+<span class="o">..</span> <span class="p">[</span><span class="c1">#] またテスト</span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h4>名前指定<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-143">sphinx <a class="footnote-reference brackets" href="#id23" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> を使うにはpython <a class="footnote-reference brackets" href="#python" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> をインストールしてください</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id23" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">5</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-145">sphinxについて下記kます</p>
+</aside>
+<aside class="footnote brackets" id="python" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">6</a><span class="fn-bracket">]</span></span>
+<p class="linemarker linemarker-146">pythonについて書きます</p>
+</aside>
+</aside>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span> <span class="p">[</span><span class="c1">#sphinx]_ を使うにはpython [#python]_ をインストールしてください</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="c1">#sphinx] sphinxについて下記kます</span>
+<span class="o">..</span> <span class="p">[</span><span class="c1">#python] pythonについて書きます</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id24">
+<h3>画像挿入<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-159">figureディレク底部を使う。画像のパスは↓のように相対パスor/img/<a href="#id25"><span class="problematic" id="id26">*</span></a>のようにルートディレクトリからのパターン</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">img</span><span class="o">/</span><span class="n">kiddykong</span><span class="o">.</span><span class="n">jpg</span>
+
+   <span class="n">お猿さん</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id31">
+<img alt="../_images/kiddykong.jpg" src="../_images/kiddykong.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">お猿さん</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p class="linemarker linemarker-177">conf.pyに以下を記述しておくと図番号が表示される</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numref</span><span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-183"><a class="reference internal" href="#internal-link"><span class="std std-ref">内部リンク</span></a> を組み合わせれば画像にもリンクができる。
+<a class="reference internal" href="#kong"><span class="std std-numref">Fig. 2</span></a> みたいに</p>
+<figure class="align-default" id="id32">
+<span id="kong"></span><img alt="../_images/kiddykong.jpg" src="../_images/kiddykong.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">（もう一回）お猿さん</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:numref:`kong` みたいに
+
+.. _kong:
+
+.. figure:: img/kiddykong.jpg
+</pre></div>
+</div>
+</section>
+<section id="jupyter">
+<h3>jupyter連携<a class="headerlink" href="#jupyter" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="todo-etc">
+<h3>todo etc<a class="headerlink" href="#todo-etc" title="Permalink to this heading">¶</a></h3>
+<section id="todo">
+<h4>todo<a class="headerlink" href="#todo" title="Permalink to this heading">¶</a></h4>
+<blockquote>
+<div><div class="admonition-todo admonition" id="id27">
+<p class="admonition-title">Todo</p>
+<p class="linemarker linemarker-212">ここにtodoを書く</p>
+</div>
+</div></blockquote>
+<div class="admonition-todo admonition" id="id28">
+<p class="admonition-title">Todo</p>
+<div class="line-block">
+<div class="line">改行してかくこともできる</div>
+<div class="line">ここで改行</div>
+</div>
+</div>
+<p class="linemarker linemarker-219"><strong>conf.py</strong> に次を設定し、</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">todo_include_todos</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.todo&#39;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-227">rstファイルでtodoを次のように書く</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">..</span> <span class="n">todo</span><span class="p">::</span> <span class="n">ここにtodoを書く</span>
+
+<span class="o">..</span> <span class="n">todo</span><span class="p">::</span>
+
+   <span class="o">|</span> <span class="n">改行してかくこともできる</span>
+   <span class="o">|</span> <span class="n">ここで改行</span>
+</pre></div>
+</div>
+</section>
+<section id="warning">
+<h4>warning<a class="headerlink" href="#warning" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-240">書き方はtodoと同じく。conf.pyに指定はいらない。<a class="reference external" href="https://sphinx-themes.org/sample-sites/cloud-sptheme/kitchen-sink/admonitions/">参考</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="linemarker linemarker-243">ここに注意</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">warning</span><span class="p">::</span> <span class="n">ここに注意</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="line-block">
+<div class="line">複数行も書けるかの？</div>
+<div class="line">どういうことだ？</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="c1"># Duration,</span>
+<span class="n">Stack</span><span class="p">,</span>
+<span class="n">aws_s3</span><span class="p">,</span>
+<span class="n">RemovalPolicy</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">LoadS3Stack</span><span class="p">(</span><span class="n">Stack</span><span class="p">):</span>
+
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+      <span class="n">bucket</span> <span class="o">=</span> <span class="n">aws_s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="s2">&quot;test_for_trigger_lambdad&quot;</span><span class="p">,</span>
+            <span class="n">removal_policy</span><span class="o">=</span><span class="n">RemovalPolicy</span><span class="o">.</span><span class="n">DESTROY</span><span class="p">,</span>  <span class="c1"># Stack削除と同時にバケットを削除する</span>
+      <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. warning::
+| 複数行も書けるかの？
+| どういうことだ？
+</pre></div>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p class="linemarker linemarker-280">ここに注意</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">error</span><span class="p">::</span> <span class="n">ここに注意</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id29">
+<h3>表の挿入<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<table class="docutils align-default" id="id33">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">exampleテーブル</span><a class="headerlink" href="#id33" title="Permalink to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p class="linemarker linemarker-1">id</p></td>
+<td><p class="linemarker linemarker-1">name</p></td>
+<td><p class="linemarker linemarker-1">desc</p></td>
+</tr>
+<tr class="row-even"><td><p class="linemarker linemarker-1">1</p></td>
+<td><p class="linemarker linemarker-1">Taro</p></td>
+<td><p class="linemarker linemarker-1">新規加入</p></td>
+</tr>
+<tr class="row-odd"><td><p class="linemarker linemarker-1">2</p></td>
+<td><p class="linemarker linemarker-1">Trump</p></td>
+<td><p class="linemarker linemarker-1">元大統領</p></td>
+</tr>
+<tr class="row-even"><td><p class="linemarker linemarker-1">3</p></td>
+<td><p class="linemarker linemarker-1">Biden</p></td>
+<td><p class="linemarker linemarker-1">今のところ大統領</p></td>
+</tr>
+</tbody>
+</table>
+<p class="linemarker linemarker-293">csvファイルをからテーブルを作成</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">csv</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">exampleテーブル</span>
+   <span class="p">:</span><span class="n">file</span><span class="p">:</span> <span class="n">csv</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-299">直接書きたい場合は</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">csv</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">exampleテーブル</span>
+   <span class="p">:</span><span class="n">header</span><span class="o">-</span><span class="n">orws</span><span class="p">:</span> <span class="mi">1</span>
+
+   <span class="nb">id</span><span class="p">,</span><span class="n">name</span>
+   <span class="mi">1</span><span class="p">,</span><span class="n">Taro</span>
+   <span class="mi">2</span><span class="p">,</span><span class="n">Trump</span>
+   <span class="mi">3</span><span class="p">,</span><span class="n">Biden</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-311">conf.pyに↓を書いておく表に番号が自動で入る。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numref</span><span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="click">
+<h3>clickのドキュメント化<a class="headerlink" href="#click" title="Permalink to this heading">¶</a></h3>
+<div class="line-block">
+<div class="line">clickで作ったモジュールは <a class="reference internal" href="#docstring"><span class="std std-ref">docstringの生成</span></a> だとdocumentの生成ができない。</div>
+<div class="line">sphinx-clickをインストールしたうえで次を実行する必要がある</div>
+</div>
+<ol class="arabic simple">
+<li><p class="linemarker linemarker-323"><a class="reference external" href="https://sphinx-click.readthedocs.io/en/latest/usage/">sphinx-lik</a> のinstall</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">isntall</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">click</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-329">2. conf.py編集</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx_click&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p class="linemarker linemarker-335">rstファイルの作成し、次のように入力。（通常のmoduleのように自動では生成されないので注意</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一行目でモジュール名関数名を入力</span>
+<span class="c1">#progは表用のラベルなので自由に設定。</span>
+<span class="o">..</span> <span class="n">click</span><span class="p">::</span> <span class="n">hello_world</span><span class="p">:</span><span class="n">greet</span>
+<span class="p">:</span><span class="n">prog</span><span class="p">:</span> <span class="n">sphinx_click_test</span>
+<span class="p">:</span><span class="n">show</span><span class="o">-</span><span class="n">nested</span><span class="p">:</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-345">django-clickの場合などネストしている場合はパスを <strong>.</strong> でつないで各必要がある</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一行目でモジュール名関数名を入力</span>
+<span class="c1">#progは表用のラベルなので自由に設定。</span>
+<span class="o">..</span> <span class="n">click</span><span class="p">::</span> <span class="n">management</span><span class="o">.</span><span class="n">commands</span><span class="o">.</span><span class="n">hello_world</span><span class="p">:</span><span class="n">greet</span>
+<span class="p">:</span><span class="n">prog</span><span class="p">:</span> <span class="n">sphinx_click_test</span>
+<span class="p">:</span><span class="n">show</span><span class="o">-</span><span class="n">nested</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p class="linemarker linemarker-355">読み込みでエラーがでたときはsys.path使ってどこまでパスが通っているかを確認する</p>
+</div>
+</section>
+<section id="docstring">
+<span id="id30"></span><h3>docstringの生成<a class="headerlink" href="#docstring" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-361"><strong>shinx-apidoc</strong> でdocstringからドキュメントを作ることができる。</p>
+<ol class="arabic simple">
+<li><p class="linemarker linemarker-364">conf.pyの編集</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../src&#39;</span><span class="p">))</span>
+<span class="c1">#必要に応じてparentdirも追加しておく</span>
+<span class="c1">#sys.path.insert(0, os.path.abspath(&#39;../../&#39;))</span>
+
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="c1"># docstringからドキュメント生成</span>
+ <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;sphinx.ext.napoleon&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p class="linemarker linemarker-380">コマンド</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#rst生成</span>
+<span class="c1">#-o {出力先} {対象dir}</span>
+sphinx-apidoc<span class="w"> </span>-f<span class="w"> </span>-o<span class="w"> </span>./docs/src<span class="w">  </span>src
+
+<span class="c1">#html生成</span>
+./auto.sh
+<span class="c1">#もしくは</span>
+make<span class="w"> </span>html
+</pre></div>
+</div>
+</section>
+<section id="comment-out">
+<h3>comment out<a class="headerlink" href="#comment-out" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-396">comentoutは <strong>..</strong> にスペースをつけて書けばよい</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>  <span class="n">adfasdfasd</span><span class="p">;</span><span class="n">aksdjflaskjflkasjdasd</span>
+   <span class="n">fdfl</span><span class="p">;</span><span class="n">l</span><span class="p">;</span><span class="n">lkjadflkasdflkjasdl</span>
+</pre></div>
+</div>
+</section>
+<section id="github-note">
+<h3>github noteとの連携<a class="headerlink" href="#github-note" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p class="linemarker linemarker-412">hoge</p></li>
+</ul>
+<blockquote class="epigraph">
+<div><p class="linemarker linemarker-424">No matter where you go, there you are.</p>
+<p class="attribution">—Buckaroo Banzai</p>
+</div></blockquote>
+<div class="compound">
+<p class="linemarker linemarker-432">The 'rm' command is very dangerous.  If you are logged
+in as root and enter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p class="linemarker linemarker-438">you will erase the entire contents of your file system.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">sphinx-tips</a><ul>
+<li><a class="reference internal" href="#sphinx">sphinxとは？</a></li>
+<li><a class="reference internal" href="#id1">よく使う機能の一覧</a><ul>
+<li><a class="reference internal" href="#id2">自動ビルド</a></li>
+<li><a class="reference internal" href="#theme">sphinx背景テーマの変更</a></li>
+<li><a class="reference internal" href="#id4">サンプル</a></li>
+<li><a class="reference internal" href="#id5">リンク</a><ul>
+<li><a class="reference internal" href="#id6">外部リンク</a><ul>
+<li><a class="reference internal" href="#id7">リンク先を新タブで開く</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#internal-link">内部リンク</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">注釈</a><ul>
+<li><a class="reference internal" href="#id10">番号指定</a></li>
+<li><a class="reference internal" href="#id15">番号自動指定</a></li>
+<li><a class="reference internal" href="#id20">名前指定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id24">画像挿入</a></li>
+<li><a class="reference internal" href="#jupyter">jupyter連携</a></li>
+<li><a class="reference internal" href="#todo-etc">todo etc</a><ul>
+<li><a class="reference internal" href="#todo">todo</a></li>
+<li><a class="reference internal" href="#warning">warning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id29">表の挿入</a></li>
+<li><a class="reference internal" href="#click">clickのドキュメント化</a></li>
+<li><a class="reference internal" href="#docstring">docstringの生成</a></li>
+<li><a class="reference internal" href="#comment-out">comment out</a></li>
+<li><a class="reference internal" href="#github-note">github noteとの連携</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="../index.html"
+                          title="Previous page">&larr; Welcome to sphinx documentatio!</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/docs/sphinx_tips.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to sphinx documentatio!"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">sphinx-tips</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, owari_taro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

@@ -23,6 +23,7 @@ copyright = "2022, owari_taro"
 author = "owari_taro"
 
 
+todo_include_todos=True
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -30,15 +31,17 @@ author = "owari_taro"
 # ones.
 extensions = [
     # docstringからドキュメント生成
+    'sphinx_markdown_checkbox',
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinxcontrib.oembed",
-    "sphinxcontrib.drawio",
     'sphinx_click',
+    #    'sphinxcontrib.issuetracker',
     ##github pagesに表示するのに必要！「
     'sphinx.ext.mathjax', 
     'sphinx.ext.todo', 
     'sphinx.ext.githubpages'
+,'docxbuilder'
 ]
 
 
@@ -56,7 +59,6 @@ language = "jp"
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -109,7 +111,7 @@ class NamedNoteDirective(BaseAdmonition):
 
         return [node]
 
-
+'''
 class ColumnDirective(NamedNoteDirective):
     css_class = 'column'
 class StrikeDirective(NamedNoteDirective):
@@ -117,6 +119,7 @@ class StrikeDirective(NamedNoteDirective):
 
 
 def setup(app):
-    app.add_stylesheet('custom.css')
+    #app.add_stylesheet('custom.css')
     app.add_directive('column', ColumnDirective)
     app.add_directive("strike",StrikeDirective)
+'''

@@ -26,3 +26,10 @@ memo
 ------------
 
 * IAMロールsession時間を指定して本場尿と開発用で分ける
+
+-------------------
+dynamodb
+-------------------
+* awsbacup使えば35日以上の保存とかも自動でできる.古い本だとできないみたいに書いてあったり・・・・
+
+ https://dev.classmethod.jp/articles/aws-backup-dynamodb/

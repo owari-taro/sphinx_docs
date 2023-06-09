@@ -14,10 +14,12 @@ mount
 ----------------------
 使い捨て
 =================
+
 ::
 
     docker run --rm  -it {image_name} /bin/bash
 
+    docker run --rm it {image_name} -v data:/data/
 
 ----------------------
 image作成

@@ -1,0 +1,197 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>awsネットワーク入門 第二版 &#8212; sphinx_docs  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/custom.js"></script>
+
+    
+    
+     
+        <script src="../../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">awsネットワーク入門 第二版</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="aws">
+<h1>awsネットワーク入門 第二版<a class="headerlink" href="#aws" title="Permalink to this heading">¶</a></h1>
+<section id="id1">
+<h2>第１章<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<section id="id2">
+<h3>awsサービス単位<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="id3">
+<h2>第4章 インターネット接続<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p class="linemarker linemarker-17">サブネットにルートテーブル設定しないとvpcに紐づくメインルートテーブルが適用される</p></li>
+<li><p class="linemarker linemarker-18">VPC内のすべてのサブネットに共通化したいならメインルートテーブルを変更うすればよい</p></li>
+<li><p class="linemarker linemarker-19">ルートテーブルを作成した直後はVPC内にしか通信が通信できなくなっている</p></li>
+<li><p class="linemarker linemarker-21">ec2にはprivateIPが割り振られている</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[ec2-user@ip-10-0-0-154 ~]$ ifconfig
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.0.154  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 fe80::4e2:6dff:fe02:4485  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 06:e2:6d:02:44:85  txqueuelen 1000  (Ethernet)
+        RX packets 64579  bytes 92756095 (88.4 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 19957  bytes 1149987 (1.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</pre></div>
+</div>
+<section id="elasticip">
+<h3>elasticIP<a class="headerlink" href="#elasticip" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p class="linemarker linemarker-49">publicIPを固定したいときに使う</p></li>
+<li><p class="linemarker linemarker-50">デフォルトではregionで最大5個。申請すれば増やせる</p></li>
+<li></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../../../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">awsネットワーク入門 第二版</a><ul>
+<li><a class="reference internal" href="#id1">第１章</a><ul>
+<li><a class="reference internal" href="#id2">awsサービス単位</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">第4章 インターネット接続</a><ul>
+<li><a class="reference internal" href="#elasticip">elasticIP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/IT/aws/aws_network_nyumon.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">awsネットワーク入門 第二版</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, owari_taro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

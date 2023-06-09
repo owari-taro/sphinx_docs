@@ -1,24 +1,18 @@
 
 
-
 <!DOCTYPE html>
 
 <html lang="jp">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>qgis &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/drawio.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
     
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/custom.js"></script>
@@ -71,7 +65,29 @@
 <h1>qgis<a class="headerlink" href="#qgis" title="Permalink to this heading">¶</a></h1>
 <section id="id1">
 <h2>マップ操作<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
-<hr class="docutils" />
+</section>
+<section id="id2">
+<h2>トラブルシューティング<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<section id="id3">
+<h3>属性テーブルが重すぎて開けない！<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<section id="id4">
+<h4>事象<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<p>blobでgeotifが16,000近く含まれているテーブルを『属性テーブルを開く』いたときに発生。最終的にはkilledされた</p>
+</section>
+<section id="id5">
+<h4>解決策<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
+<p>とりあえずは属性テーブルを開く前にフィルターでしぼる。ちょっと手間だがこれくらいしか解決策が見つからなかった。</p>
+</section>
+<section id="id6">
+<h4>手順<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<ol class="arabic simple">
+<li><p>レイヤで右クリックしてフィルタ</p></li>
+<li><p>条件有力して件数を減らす</p></li>
+<li><p>属性テーブルを開く</p></li>
+</ol>
+<p><a class="reference external" href="https://gis.stackexchange.com/questions/333705/qgis-slow-on-show-attribute-table-of-a-large-shapefile-and-dies-on-showing-selec">https://gis.stackexchange.com/questions/333705/qgis-slow-on-show-attribute-table-of-a-large-shapefile-and-dies-on-showing-selec</a></p>
+</section>
+</section>
 </section>
 </section>
 
@@ -86,6 +102,15 @@
     <ul>
 <li><a class="reference internal" href="#">qgis</a><ul>
 <li><a class="reference internal" href="#id1">マップ操作</a></li>
+<li><a class="reference internal" href="#id2">トラブルシューティング</a><ul>
+<li><a class="reference internal" href="#id3">属性テーブルが重すぎて開けない！</a><ul>
+<li><a class="reference internal" href="#id4">事象</a></li>
+<li><a class="reference internal" href="#id5">解決策</a></li>
+<li><a class="reference internal" href="#id6">手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -149,7 +174,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, owari_taro.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

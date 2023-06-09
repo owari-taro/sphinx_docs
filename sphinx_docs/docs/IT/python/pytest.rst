@@ -6,7 +6,8 @@ pytest-tips
 install
 --------------
 
-.. code-block:: python
+.. code-block:: shell
+
    pip install pytest
    #django使ってるならこっち
    pip install pytest-django
@@ -19,7 +20,7 @@ install
 pytest.ini
 ==========
 
-.. code-block::shell
+.. code-block:: shell
 
     [pytest]
     python_files=test*.py

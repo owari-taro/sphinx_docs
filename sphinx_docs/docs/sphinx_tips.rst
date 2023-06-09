@@ -121,6 +121,23 @@ sphinx [1]_ を使うにはpython [2]_ をインストールしてください
    .. [1] 脚注１
    .. [2] 脚注２
 
+
+番号自動指定
+------------
+注 [#]_ の番号を自動にすることもできる [#]_
+
+.. [#] 注のテスト
+.. [#] またテスト
+
+::
+      
+   注 [#]_ の番号を自動にすることもできる [#]_
+
+   .. [#] 注のテスト
+   .. [#] またテスト
+
+
+
 名前指定
 -----------
 sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールしてください
@@ -134,6 +151,7 @@ sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールして�
 
    .. [#sphinx] sphinxについて下記kます
    .. [#python] pythonについて書きます 
+
 
 
 画像挿入
@@ -419,4 +437,15 @@ github noteとの連携
 
    you will erase the entire contents of your file system.
 
+checkbox
+==========================
+markdownみたいなチェックボックスが作れる
 
+.. todo:: This is a checkbox example.
+
+   - [ ] Unchecked item
+   - [x] Checked items
+
+::
+
+       'sphinx_markdown_checkbox',

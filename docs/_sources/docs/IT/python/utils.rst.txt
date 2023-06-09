@@ -1,7 +1,7 @@
 ==========================
 utils
 ==========================
-便利関数とか
+便利関数とかもろもろのめも
 
 -----------------
 library管理
@@ -83,6 +83,25 @@ loggingの設定
 
 
 
+---------------
+dataclass
+---------------
+フィールド間の制約などが特にないならクラスを避けてdataclassを使ったほうがきれいに書ける
+
+::
+
+    from dataclasses import dataclass
+    @dataclass
+    class Product:
+        name:str
+        price:int
+
+dict変換
+============
+asdictで変換すれば一発
+::
+    
+    from dataclasses import dataclass, field, asdict
 
 
 ------------------------

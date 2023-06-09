@@ -1,0 +1,8 @@
+div.column {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+strike {
+    text-decoration: line-through;
+  }

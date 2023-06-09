@@ -1,0 +1,272 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>utils &#8212; sphinx_docs  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/custom.js"></script>
+
+    
+    
+     
+        <script src="../../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">utils</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="utils">
+<h1>utils<a class="headerlink" href="#utils" title="Permalink to this heading">¶</a></h1>
+<p class="linemarker linemarker-4">便利関数とかもろもろのめも</p>
+<section id="library">
+<h2>library管理<a class="headerlink" href="#library" title="Permalink to this heading">¶</a></h2>
+<section id="pipenv">
+<h3>pipenv<a class="headerlink" href="#pipenv" title="Permalink to this heading">¶</a></h3>
+<section id="install">
+<h4>install<a class="headerlink" href="#install" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-14">installすればPipfileを生成して、記録してくれる。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>isntall<span class="w"> </span>pipenv
+<span class="c1">#.envを読み込みたくない場合↓</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PIPENV_DONT_LOAD_ENV</span><span class="o">=</span><span class="m">1</span>
+pipenv<span class="w"> </span>install<span class="w"> </span>django<span class="w"> </span>requests
+<span class="c1">#dev用のライブラリ</span>
+pipenv<span class="w"> </span>isntall<span class="w"> </span>-d<span class="w"> </span>pytest<span class="w"> </span>pylint
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="linemarker linemarker-28">ver指定してない限りは Pipfileにverは記載されない</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.14</span>
+</pre></div>
+</div>
+</section>
+<section id="lock">
+<h4>lockファイル生成<a class="headerlink" href="#lock" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-38">installしたverまで残したいときは</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="c1">#lockファイルの生成.</span>
+pipenv<span class="w"> </span>requirements<span class="w"> </span>&gt;<span class="w"> </span>requirements.lock
+pipenv<span class="w"> </span>requirements<span class="w"> </span>-dev<span class="w"> </span>&gt;requirements_dev.lock
+<span class="c1">#ライブラリの依存関係の表示</span>
+pipenv<span class="w"> </span>graph
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>環境の再現<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<p class="linemarker linemarker-50">すでに作成済みのPipfileやrequirements.lockなどと同じ環境を再現したい場合は</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipenv<span class="w"> </span>install
+pipenv<span class="w"> </span>isntall<span class="w"> </span>--dev
+<span class="c1">#verまで合わせたいとき</span>
+pipenv<span class="w"> </span>sync
+pipenv<span class="w"> </span>sync<span class="w"> </span>--d
+</pre></div>
+</div>
+</section>
+</section>
+<section id="poetry">
+<h3>poetry<a class="headerlink" href="#poetry" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-63">pipenvより高速に実行できる.</p>
+</section>
+</section>
+<section id="log">
+<h2>log<a class="headerlink" href="#log" title="Permalink to this heading">¶</a></h2>
+<section id="logging">
+<h3>loggingの設定<a class="headerlink" href="#logging" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># filename=&quot;test.log&quot;を　追加</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
+<span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> - </span><span class="si">%(levelname)s</span><span class="s2">:</span><span class="si">%(name)s</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="n">filename</span><span class="o">=</span><span class="s2">&quot;test.log&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dataclass">
+<h2>dataclass<a class="headerlink" href="#dataclass" title="Permalink to this heading">¶</a></h2>
+<p class="linemarker linemarker-89">フィールド間の制約などが特にないならクラスを避けてdataclassを使ったほうがきれいに書ける</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span><span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span><span class="nb">int</span>
+</pre></div>
+</div>
+<section id="dict">
+<h3>dict変換<a class="headerlink" href="#dict" title="Permalink to this heading">¶</a></h3>
+<p class="linemarker linemarker-101">asdictで変換すれば一発</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">asdict</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>正規表現<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="id3">
+<h2>日付関数<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="csv">
+<h2>csv<a class="headerlink" href="#csv" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="id4">
+<h2>その他<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<section id="id5">
+<h3>リトライ<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="../../../index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">utils</a><ul>
+<li><a class="reference internal" href="#library">library管理</a><ul>
+<li><a class="reference internal" href="#pipenv">pipenv</a><ul>
+<li><a class="reference internal" href="#install">install</a></li>
+<li><a class="reference internal" href="#lock">lockファイル生成</a></li>
+<li><a class="reference internal" href="#id1">環境の再現</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poetry">poetry</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#log">log</a><ul>
+<li><a class="reference internal" href="#logging">loggingの設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dataclass">dataclass</a><ul>
+<li><a class="reference internal" href="#dict">dict変換</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">正規表現</a></li>
+<li><a class="reference internal" href="#id3">日付関数</a></li>
+<li><a class="reference internal" href="#csv">csv</a></li>
+<li><a class="reference internal" href="#id4">その他</a><ul>
+<li><a class="reference internal" href="#id5">リトライ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/docs/IT/python/utils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> &nbsp; &nbsp;</li>
+    <li><a href="../../../index.html">sphinx_docs  documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">utils</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, owari_taro.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

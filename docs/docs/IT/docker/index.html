@@ -1,24 +1,18 @@
 
 
-
 <!DOCTYPE html>
 
 <html lang="jp">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>docker basic &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cloud.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/drawio.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
     
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/custom.js"></script>
@@ -76,6 +70,8 @@
 <section id="id1">
 <h2>使い捨て<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span>  <span class="o">-</span><span class="n">it</span> <span class="p">{</span><span class="n">image_name</span><span class="p">}</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+
+<span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="n">it</span> <span class="p">{</span><span class="n">image_name</span><span class="p">}</span> <span class="o">-</span><span class="n">v</span> <span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="n">data</span><span class="o">/</span>
 </pre></div>
 </div>
 <section id="image">
@@ -193,7 +189,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, owari_taro.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

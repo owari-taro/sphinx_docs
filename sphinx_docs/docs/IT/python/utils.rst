@@ -1,7 +1,7 @@
 ==========================
 utils
 ==========================
-便利関数とか
+便利関数とかもろもろのめも
 
 -----------------
 library管理
@@ -63,6 +63,48 @@ poetry
 pipenvより高速に実行できる.
 
 
+
+-----------------------
+log
+-----------------------
+loggingの設定
+==================
+
+.. code-block:: 
+
+    import logging
+    import sys
+
+    # filename="test.log"を　追加
+    logging.basicConfig(level=logging.INFO,
+    stream=sys.stdout,
+    format="%(asctime)s - %(levelname)s:%(name)s - %(message)s",
+    filename="test.log")
+
+
+
+
+---------------
+dataclass
+---------------
+フィールド間の制約などが特にないならクラスを避けてdataclassを使ったほうがきれいに書ける
+
+::
+
+    from dataclasses import dataclass
+    @dataclass
+    class Product:
+        name:str
+        price:int
+
+dict変換
+============
+asdictで変換すれば一発
+::
+    
+    from dataclasses import dataclass, field, asdict
+
+
 ------------------------
 正規表現
 ------------------------
@@ -73,6 +115,15 @@ pipenvより高速に実行できる.
 日付関数
 ------------------------
 
+-------------
+csv作成
+-------------
+csvDict
+===================
+::
+    import csv
+    writer = csv.DictWriter(ファイル名, fieldnames=field名)
+    writer.writeheader()
 
 
 
@@ -80,3 +131,12 @@ pipenvより高速に実行できる.
 --------------------------
 csv
 --------------------------
+
+
+
+
+------------------------
+その他
+------------------------
+リトライ
+========
