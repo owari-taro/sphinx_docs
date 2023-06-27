@@ -13,6 +13,5 @@ django-database
 https://stackoverflow.com/questions/44341153/force-charfields-choices
 clean()に書けばできる
 
-clean()に書けばできる
 =======================
     
