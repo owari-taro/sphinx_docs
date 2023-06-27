@@ -63,6 +63,7 @@ poetry
 pipenvより高速に実行できる.
 
 
+
 -----------------------
 log
 -----------------------
@@ -114,6 +115,15 @@ asdictで変換すれば一発
 日付関数
 ------------------------
 
+-------------
+csv作成
+-------------
+csvDict
+===================
+::
+    import csv
+    writer = csv.DictWriter(ファイル名, fieldnames=field名)
+    writer.writeheader()
 
 
 
