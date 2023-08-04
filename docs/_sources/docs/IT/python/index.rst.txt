@@ -9,7 +9,6 @@ python
    :caption: Contents:
     
    django
-   pytest
    utils
    aws
    pytest/index

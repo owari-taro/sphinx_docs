@@ -9,6 +9,6 @@ pytest
    :caption: Contents:
     
    intro
-   django
+   dj
  
    
