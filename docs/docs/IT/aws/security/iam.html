@@ -63,18 +63,25 @@
             
   <section id="iam">
 <h1>IAM<a class="headerlink" href="#iam" title="Permalink to this heading">¶</a></h1>
+<section id="role-policy-iam">
+<h2>role/policy/IAM<a class="headerlink" href="#role-policy-iam" title="Permalink to this heading">¶</a></h2>
 <section id="role">
-<h2>role<a class="headerlink" href="#role" title="Permalink to this heading">¶</a></h2>
-<dl class="simple">
-<dt>::</dt><dd><p>aws iam create-role --role-name SampleRole --assume-role-policy-document <a class="reference external" href="file://policy.json">file://policy.json</a></p>
-</dd>
-</dl>
+<h3>role<a class="headerlink" href="#role" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>image/2023-06-27-16-26-49.png</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aws</span> <span class="n">iam</span> <span class="n">create</span><span class="o">-</span><span class="n">role</span> <span class="o">--</span><span class="n">role</span><span class="o">-</span><span class="n">name</span> <span class="n">SampleRole</span> <span class="o">--</span><span class="n">assume</span><span class="o">-</span><span class="n">role</span><span class="o">-</span><span class="n">policy</span><span class="o">-</span><span class="n">document</span> <span class="n">file</span><span class="p">:</span><span class="o">//</span><span class="n">policy</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
 </section>
+<section id="id1">
+<h3>権限管理<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="id2">
+<h2>権限の管理方法<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <section id="tag">
-<h2>tagによる権限制御<a class="headerlink" href="#tag" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>リソースにタグをつけて、identity-policyにtagの条件をつける</p></li>
-</ul>
+<h3>tagによる権限制御<a class="headerlink" href="#tag" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>::</dt><dd><p>aws ec2 create-tags --resources i-0526648a5974cf1c2 --tags Key=Environment,Value=Prod</p>
 </dd>
@@ -83,6 +90,11 @@
 <li><p>iam userにもtagをつけてリソースのタグと一致するときのみ操作を許す。</p></li>
 </ul>
 <p>(例:project:ABCに参加してる人のみに,ABCで使ってるリソースを操作させたい場合など)</p>
+</section>
+<section id="master-manager">
+<h3>master/manager方式<a class="headerlink" href="#master-manager" title="Permalink to this heading">¶</a></h3>
+<p>権限を作成・変更・削除するロールと各リソースにアタッチできるロールを分ける方法</p>
+</section>
 </section>
 </section>
 
@@ -96,8 +108,16 @@
     <h3><a href="../../../../index.html">Page contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">IAM</a><ul>
+<li><a class="reference internal" href="#role-policy-iam">role/policy/IAM</a><ul>
 <li><a class="reference internal" href="#role">role</a></li>
+<li><a class="reference internal" href="#id1">権限管理</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">権限の管理方法</a><ul>
 <li><a class="reference internal" href="#tag">tagによる権限制御</a></li>
+<li><a class="reference internal" href="#master-manager">master/manager方式</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

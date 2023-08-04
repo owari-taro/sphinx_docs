@@ -1,15 +1,14 @@
 =================================
-python
+pytest
 =================================
 
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
     
+   intro
    django
-   pytest
-   utils
-   aws
-   pytest/index
+ 
+   

@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>VPC &#8212; sphinx_docs  documentation</title>
+    <title>CloudFormation(cfn) &#8212; sphinx_docs  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/cloud.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
@@ -34,9 +34,7 @@
     
 
     <link rel="index" title="Index" href="../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="apache-airflow" href="../../airflow.html" />
-    <link rel="prev" title="aws" href="index.html" /> 
+    <link rel="search" title="Search" href="../../../../search.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -50,18 +48,9 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../../airflow.html" title="apache-airflow"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="index.html" title="aws"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../index.html" >IT</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >aws service</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">aws</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">VPC</a></li> 
+        <li class="nav-item nav-item-this"><a href="">CloudFormation(cfn)</a></li> 
       </ul>
     </div>
     </div>
@@ -72,57 +61,37 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="vpc">
-<h1>VPC<a class="headerlink" href="#vpc" title="Permalink to this heading">¶</a></h1>
+  <section id="cloudformation-cfn">
+<h1>CloudFormation(cfn)<a class="headerlink" href="#cloudformation-cfn" title="Permalink to this heading">¶</a></h1>
+<section id="hello-world">
+<h2>hello world<a class="headerlink" href="#hello-world" title="Permalink to this heading">¶</a></h2>
 <section id="id1">
-<h2>基本<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
-<section id="cidr">
-<h3>CIDR<a class="headerlink" href="#cidr" title="Permalink to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>CIDRでプライベートIPの範囲を指定</p></li>
-<li><p>RFC1918の範囲を使うことを推奨</p></li>
-<li><p>セカンダリも設定可能</p>
-<ul>
-<li><p>追加できるのは4つまで</p></li>
-<li><p>重複ダメ</p></li>
-</ul>
-</li>
-</ul>
-<p><a class="reference external" href="https://tracl.cloud/archives/engineerblog/what-is-cidr">https://tracl.cloud/archives/engineerblog/what-is-cidr</a>
-<a class="reference external" href="https://wa3.i-3-i.info/word12072.html">https://wa3.i-3-i.info/word12072.html</a></p>
+<h3>1.環境別でバケット作成<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>test環境とprd環境のbucketが作れるtemplate.
+prod環境には削除保護を付与している。</p>
+<p>(1)テンプレートの確認</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">aws</span> <span class="n">cloudformation</span> <span class="n">validate</span><span class="o">-</span><span class="n">template</span>  <span class="n">template</span><span class="o">-</span><span class="n">body</span> <span class="n">file</span><span class="p">:</span><span class="o">//</span><span class="n">bucket_with_env</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>(2)テンプレートでスタック作成</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ aws cloudformation update-stack --stack-name my-new-bucket --template-body file://bucket_with_env.yml
+</pre></div>
+</div>
+<p>(3)環境変数を入れ替えてupdate実効。</p>
+<div class="line-block">
+<div class="line"><strong>元のバケットは消えてしまう！。</strong>  削除ガードしてないので間違えてきえることがある！！</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ aws cloudformation update-stack --stack-name my-new-bucket --template-body file://bucket_with_env.yml --parameters ParameterKey=EnvironmentType,ParameterValue=prod
+</pre></div>
+</div>
 </section>
-<section id="nat">
-<h3>NATゲートウェイ<a class="headerlink" href="#nat" title="Permalink to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p>ゲートウェイ作成(パブリックサブネット、IP指定)</p></li>
-<li><p>プライベートサブネットのルートテーブルを新たに作成して、作ったゲートウェイをターゲットとして追加</p></li>
-</ol>
 </section>
-<section id="id2">
-<h3>VPCエンドポイント<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
-<p>VPCサービスと非VPCサービスを接続するときの方法のひとつ。NATやinternetゲートウェイを使わずに接続できる。
-2タイプある</p>
+<section id="reference">
+<h2>reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>ゲートウェイ型</p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html">aws docs</a></p></li>
+<li><p><a class="reference external" href="https://github.com/PacktPublishing/Mastering-AWS-CloudFormation">packt publishing</a></p></li>
 </ul>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>ゲートウェイ作成(サブネット単位)</p></li>
-<li><p>権限設定(どのバケットに接続できるかなど)</p></li>
-</ol>
-</div></blockquote>
-<p>完了するとルートテーブルも書き換えてくれる（大沢p272）</p>
-<ul class="simple">
-<li><p>インターフェース型</p>
-<ol class="arabic simple">
-<li><p>インターフェースを選択</p></li>
-<li><p>vpc,subnet,security-groupを設定</p></li>
-<li><p>ポリシーの設定（s3の許可範囲とか）</p></li>
-<li><p>リクエストする際はインタフェースのエンドポイントを指定する必要あ</p></li>
-</ol>
-</li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -135,32 +104,21 @@
         <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
     <h3><a href="../../../../index.html">Page contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">VPC</a><ul>
-<li><a class="reference internal" href="#id1">基本</a><ul>
-<li><a class="reference internal" href="#cidr">CIDR</a></li>
-<li><a class="reference internal" href="#nat">NATゲートウェイ</a></li>
-<li><a class="reference internal" href="#id2">VPCエンドポイント</a></li>
+<li><a class="reference internal" href="#">CloudFormation(cfn)</a><ul>
+<li><a class="reference internal" href="#hello-world">hello world</a><ul>
+<li><a class="reference internal" href="#id1">1.環境別でバケット作成</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#reference">reference</a></li>
 </ul>
 </li>
 </ul>
 
   </div>
-  <div class="sphinxprev">
-    <h4>Previous page</h4>
-    <p class="topless"><a href="index.html"
-                          title="Previous page">&larr; aws</a></p>
-  </div>
-  <div class="sphinxnext">
-    <h4>Next page</h4>
-    <p class="topless"><a href="../../airflow.html"
-                          title="Next page">&rarr; apache-airflow</a></p>
-  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../../_sources/docs/IT/aws/aws_network/vpc.rst.txt"
+      <li><a href="../../../../_sources/docs/IT/aws/devops/cfn.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -206,18 +164,9 @@
         <li class="right" >
           <a href="../../../../py-modindex.html" title="Python Module Index"
              >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../../airflow.html" title="apache-airflow"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="index.html" title="aws"
-             >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../../../index.html">sphinx_docs  documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../index.html" >IT</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >aws service</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="index.html" >aws</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">VPC</a></li> 
+        <li class="nav-item nav-item-this"><a href="">CloudFormation(cfn)</a></li> 
       </ul>
     </div>
     </div>

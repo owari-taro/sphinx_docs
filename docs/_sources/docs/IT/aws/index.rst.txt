@@ -9,3 +9,4 @@ aws service
     
    aws_lambda/virus_check
    aws_network/index
+   devops/cloud

@@ -98,6 +98,32 @@
 </pre></div>
 </div>
 </section>
+<section id="concurrency">
+<h3>concurrency<a class="headerlink" href="#concurrency" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference external" href="https://docs.aws.amazon.com/pdfs/lambda/latest/dg/lambda-dg.pdf#configuration-concurrency">AWS公式DOC</a></p>
+<section id="reserved-concurrency">
+<h4>reserved concurrency<a class="headerlink" href="#reserved-concurrency" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>ひとつのruntimeの秒感で処理できるのは10がmax</p></li>
+<li><p>追加のコストはかからない</p></li>
+<li><p>defaultで1regionで1000が最大のconcurrency</p></li>
+</ul>
+</section>
+<section id="provisioned-cocurrency">
+<h4>provisioned cocurrency<a class="headerlink" href="#provisioned-cocurrency" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>defaultで必要なinitのフェーズを飛ばせて高速化（ただし費用がかかる）</p></li>
+<li><p>関数に割り当てられたprovisioned concurrencyを超えて起動する場合はcold startの環境が使われる。</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="line-block">
+<div class="line">設定してから使えるようになるまで数分かかる(docのexampleでは5000allocateするのに5分かかかると記載)</div>
+<div class="line">また設定が完了するまでの間はリクエストを受け付けない</div>
+</div>
+</div>
+</section>
+</section>
 <section id="lambdas3">
 <h3>lambdaでs3のウィルスチェック<a class="headerlink" href="#lambdas3" title="Permalink to this heading">¶</a></h3>
 </section>
@@ -146,6 +172,11 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id3">第5章</a></li>
+<li><a class="reference internal" href="#concurrency">concurrency</a><ul>
+<li><a class="reference internal" href="#reserved-concurrency">reserved concurrency</a></li>
+<li><a class="reference internal" href="#provisioned-cocurrency">provisioned cocurrency</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#lambdas3">lambdaでs3のウィルスチェック</a></li>
 </ul>
 </li>
