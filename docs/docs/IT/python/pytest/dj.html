@@ -76,7 +76,8 @@
 <h1>django-pytest<a class="headerlink" href="#django-pytest" title="Permalink to this heading">¶</a></h1>
 <section id="conftest">
 <h2>conftest<a class="headerlink" href="#conftest" title="Permalink to this heading">¶</a></h2>
-<p>factoryboyでテスト用のモデルを生成するコード</p>
+<p>conftestに、テストの前処理コードなどを書く。conftest.pyの名前を書いておけばimportしなくても同階層のpytestのファイルからimportして使える
+factoryboyでテスト用のモデルを生成するコード</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">factory</span>
 <span class="kn">from</span> <span class="nn">factory</span> <span class="kn">import</span> <span class="n">fuzzy</span>
 <span class="kn">import</span> <span class="nn">string</span>

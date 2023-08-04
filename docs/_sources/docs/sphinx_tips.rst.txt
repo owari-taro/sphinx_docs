@@ -443,3 +443,19 @@ markdownみたいなチェックボックスが作れる
 ::
 
        'sphinx_markdown_checkbox',
+
+
+
+ソースコードファイルを読み込む
+==============================
+ソースコードファイルを直接読見込んで表示できる。 **languge** はoptional.
+
+::
+    
+   .. literalinclude:: ./sphinx_dummy.py
+      :language: python
+
+
+
+.. literalinclude:: ./sphinx_dummy.py
+   :language: python

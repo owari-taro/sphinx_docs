@@ -6,6 +6,7 @@ django-pytest
 -----------------
 conftest
 -----------------
+conftestに、テストの前処理コードなどを書く。conftest.pyの名前を書いておけばimportしなくても同階層のpytestのファイルからimportして使える
 factoryboyでテスト用のモデルを生成するコード
 
 .. literalinclude:: ./src/conftest.py
