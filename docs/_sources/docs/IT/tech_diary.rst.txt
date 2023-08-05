@@ -23,3 +23,8 @@
 ===================
 * pydanticをさわる、fastapi[all]でいれるとveresion2じゃなかった
 
+
+2023/8/5
+=======================
+wslでvscodeが起動できなくなる。/etc/wsl.confをenable=Falseにして
+wslを再起動すると解決した

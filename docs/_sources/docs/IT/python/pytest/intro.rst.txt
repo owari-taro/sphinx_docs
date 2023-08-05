@@ -108,7 +108,7 @@ aws
 ::
   
     pytest --fixtures -v
-scope
+
 ================
 * defaultはfunction
 * 時間のかかるもので複数回実行する必要がないものはmoduleやsessionにすることで実行回数を減らせる。
@@ -123,3 +123,5 @@ scope
 * dbに複数objを登録するときなどは、fixtureをcallする側で値を設定するような方式にしたほうが
   テストを読んだときにわかりやすい
   
+
+

@@ -1,85 +1,316 @@
 
-
 <!DOCTYPE html>
 
-<html lang="jp">
+
+<html lang="jp" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>sphinx-tips &#8212; sphinx_docs  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
-    
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sphinx_tips';</script>
     <script src="../_static/js/custom.js"></script>
-
-    
-    
-     
-        <script src="../_static/jquery.cookie.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.base.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.js"></script>
-    
-
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="IT" href="IT/index.html" />
-    <link rel="prev" title="Welcome to sphinx documentatio!" href="../index.html" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head><body>
-    <div class="relbar-top">
-        
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="IT/index.html" title="IT"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../index.html" title="Welcome to sphinx documentatio!"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
+    <link rel="prev" title="Welcome to sphinx documentatio!" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="jp"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-        <li class="nav-item nav-item-this"><a href="">sphinx-tips</a></li> 
-      </ul>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">sphinx_docs  documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        sphinx-tips
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="IT/index.html">
+                        IT
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
     </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
     </div>
   
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        sphinx-tips
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="IT/index.html">
+                        IT
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">sphinx-tips</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="sphinx-tips">
-<h1>sphinx-tips<a class="headerlink" href="#sphinx-tips" title="Permalink to this heading">¶</a></h1>
+<h1>sphinx-tips<a class="headerlink" href="#sphinx-tips" title="Permalink to this heading">#</a></h1>
 <section id="sphinx">
-<h2>sphinxとは？<a class="headerlink" href="#sphinx" title="Permalink to this heading">¶</a></h2>
+<h2>sphinxとは？<a class="headerlink" href="#sphinx" title="Permalink to this heading">#</a></h2>
 <p>python製ドキュメントツール。基本的な使い方は以下のshpinx本とか公式docを参照。</p>
 </section>
 <section id="id1">
-<h2>よく使う機能の一覧<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<h2>よく使う機能の一覧<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>使用頻度高いが忘れそうな機能一覧を記載した。</p>
 <section id="id2">
-<h3>自動ビルド<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<h3>自動ビルド<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>毎回コマンドを打つのは面倒なので以下をインストールして実行すれば
 rstが保存されるたびにbuildしてくれる</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">isntall</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span>
@@ -89,7 +320,7 @@ rstが保存されるたびにbuildしてくれる</p>
 </div>
 </section>
 <section id="theme">
-<span id="id3"></span><h3>sphinx背景テーマの変更<a class="headerlink" href="#theme" title="Permalink to this heading">¶</a></h3>
+<span id="id3"></span><h3>sphinx背景テーマの変更<a class="headerlink" href="#theme" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://sphinx-themes.org/">sphinx-themes</a> に記載</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cloud</span><span class="o">-</span><span class="n">sptheme</span>
 <span class="c1">#conf.pyに書き込み↓</span>
@@ -98,13 +329,13 @@ rstが保存されるたびにbuildしてくれる</p>
 </div>
 </section>
 <section id="id4">
-<h3>サンプル<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<h3>サンプル<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>html-themeの各ページにお手本を参考にすると早い <a class="reference external" href="https://sphinx-themes.org/sample-sites/cloud-sptheme/">cloud</a> の場合</p>
 </section>
 <section id="id5">
-<h3>リンク<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<h3>リンク<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <section id="id6">
-<h4>外部リンク<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<h4>外部リンク<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p>(1)文中に直接埋め込むパターン: <a class="reference external" href="https://sphinx-users.jp/">sphinx0-user.jp</a> の紹介リンク</p>
 <p>(2)一旦定義しておいて使い回すパターン: <a class="reference external" href="https://amazon.co.jp">amazonjp</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1)
@@ -115,7 +346,7 @@ rstが保存されるたびにbuildしてくれる</p>
 </pre></div>
 </div>
 <section id="id7">
-<h5>リンク先を新タブで開く<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h5>
+<h5>リンク先を新タブで開く<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h5>
 <p>デフォルトではクリックしても新タブで開かれない。新タブで開くには以下の設定が必要
 (<a class="reference external" href="https://stackoverflow.com/questions/11716781/open-a-link-in-a-new-window-in-restructuredtext">stackoverflow</a> )</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#conf.py</span>
@@ -134,7 +365,7 @@ $(document).ready(function () {
 </section>
 </section>
 <section id="internal-link">
-<span id="id8"></span><h4>内部リンク<a class="headerlink" href="#internal-link" title="Permalink to this heading">¶</a></h4>
+<span id="id8"></span><h4>内部リンク<a class="headerlink" href="#internal-link" title="Permalink to this heading">#</a></h4>
 <p>sphinxドキュメント内でのリンク: <a class="reference internal" href="#theme"><span class="std std-ref">sphinx背景テーマの変更</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#一行開ける（）
 .. _theme:
@@ -148,9 +379,9 @@ sphinx背景テーマの変更
 </section>
 </section>
 <section id="id9">
-<h3>注釈<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<h3>注釈<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <section id="id10">
-<h4>番号指定<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
+<h4>番号指定<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <p>sphinx <a class="footnote-reference brackets" href="#id13" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> を使うにはpython <a class="footnote-reference brackets" href="#id14" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> をインストールしてください</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id13" role="doc-footnote">
@@ -170,7 +401,7 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="id15">
-<h4>番号自動指定<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h4>
+<h4>番号自動指定<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <p>注 <a class="footnote-reference brackets" href="#id18" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> の番号を自動にすることもできる <a class="footnote-reference brackets" href="#id19" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id18" role="doc-footnote">
@@ -190,7 +421,7 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="id20">
-<h4>名前指定<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h4>
+<h4>名前指定<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
 <p>sphinx <a class="footnote-reference brackets" href="#id23" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> を使うにはpython <a class="footnote-reference brackets" href="#python" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> をインストールしてください</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id23" role="doc-footnote">
@@ -211,7 +442,7 @@ sphinx背景テーマの変更
 </section>
 </section>
 <section id="id24">
-<h3>画像挿入<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+<h3>画像挿入<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
 <p>figureディレク底部を使う。画像のパスは↓のように相対パスor/img/<a href="#id25"><span class="problematic" id="id26">*</span></a>のようにルートディレクトリからのパターン</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">img</span><span class="o">/</span><span class="n">kiddykong</span><span class="o">.</span><span class="n">jpg</span>
 
@@ -221,7 +452,7 @@ sphinx背景テーマの変更
 <figure class="align-default" id="id33">
 <img alt="../_images/kiddykong.jpg" src="../_images/kiddykong.jpg" />
 <figcaption>
-<p><span class="caption-text">お猿さん</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">お猿さん</span><a class="headerlink" href="#id33" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>conf.pyに以下を記述しておくと図番号が表示される</p>
@@ -233,7 +464,7 @@ sphinx背景テーマの変更
 <figure class="align-default" id="id34">
 <span id="kong"></span><img alt="../_images/kiddykong.jpg" src="../_images/kiddykong.jpg" />
 <figcaption>
-<p><span class="caption-text">（もう一回）お猿さん</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">（もう一回）お猿さん</span><a class="headerlink" href="#id34" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:numref:`kong` みたいに
@@ -245,12 +476,12 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="jupyter">
-<h3>jupyter連携<a class="headerlink" href="#jupyter" title="Permalink to this heading">¶</a></h3>
+<h3>jupyter連携<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="todo-etc">
-<h3>todo etc<a class="headerlink" href="#todo-etc" title="Permalink to this heading">¶</a></h3>
+<h3>todo etc<a class="headerlink" href="#todo-etc" title="Permalink to this heading">#</a></h3>
 <section id="todo">
-<h4>todo<a class="headerlink" href="#todo" title="Permalink to this heading">¶</a></h4>
+<h4>todo<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><div class="admonition-todo admonition" id="id27">
 <p class="admonition-title">Todo</p>
@@ -280,7 +511,7 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="warning">
-<h4>warning<a class="headerlink" href="#warning" title="Permalink to this heading">¶</a></h4>
+<h4>warning<a class="headerlink" href="#warning" title="Permalink to this heading">#</a></h4>
 <p>書き方はtodoと同じく。conf.pyに指定はいらない。<a class="reference external" href="https://sphinx-themes.org/sample-sites/cloud-sptheme/kitchen-sink/admonitions/">参考</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -328,9 +559,9 @@ sphinx背景テーマの変更
 </section>
 </section>
 <section id="id29">
-<h3>表の挿入<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
-<table class="docutils align-default" id="id35">
-<caption><span class="caption-text">exampleテーブル</span><a class="headerlink" href="#id35" title="Permalink to this table">¶</a></caption>
+<h3>表の挿入<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<table class="table" id="id35">
+<caption><span class="caption-text">exampleテーブル</span><a class="headerlink" href="#id35" title="Permalink to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p>id</p></td>
 <td><p>name</p></td>
@@ -371,7 +602,7 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="click">
-<h3>clickのドキュメント化<a class="headerlink" href="#click" title="Permalink to this heading">¶</a></h3>
+<h3>clickのドキュメント化<a class="headerlink" href="#click" title="Permalink to this heading">#</a></h3>
 <div class="line-block">
 <div class="line">clickで作ったモジュールは <a class="reference internal" href="#docstring"><span class="std std-ref">docstringの生成</span></a> だとdocumentの生成ができない。</div>
 <div class="line">sphinx-clickをインストールしたうえで次を実行する必要がある</div>
@@ -410,7 +641,7 @@ sphinx背景テーマの変更
 </div>
 </section>
 <section id="docstring">
-<span id="id30"></span><h3>docstringの生成<a class="headerlink" href="#docstring" title="Permalink to this heading">¶</a></h3>
+<span id="id30"></span><h3>docstringの生成<a class="headerlink" href="#docstring" title="Permalink to this heading">#</a></h3>
 <p><strong>shinx-apidoc</strong> でdocstringからドキュメントを作ることができる。</p>
 <ol class="arabic simple">
 <li><p>conf.pyの編集</p></li>
@@ -443,7 +674,7 @@ make<span class="w"> </span>html
 </div>
 </section>
 <section id="comment-out">
-<h3>comment out<a class="headerlink" href="#comment-out" title="Permalink to this heading">¶</a></h3>
+<h3>comment out<a class="headerlink" href="#comment-out" title="Permalink to this heading">#</a></h3>
 <p>comentoutは <strong>..</strong> にスペースをつけて書けばよい</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>  <span class="n">adfasdfasd</span><span class="p">;</span><span class="n">aksdjflaskjflkasjdasd</span>
    <span class="n">fdfl</span><span class="p">;</span><span class="n">l</span><span class="p">;</span><span class="n">lkjadflkasdflkjasdl</span>
@@ -451,7 +682,7 @@ make<span class="w"> </span>html
 </div>
 </section>
 <section id="github-note">
-<h3>github noteとの連携<a class="headerlink" href="#github-note" title="Permalink to this heading">¶</a></h3>
+<h3>github noteとの連携<a class="headerlink" href="#github-note" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>hoge</p></li>
 </ul>
@@ -470,7 +701,7 @@ in as root and enter</p>
 </div>
 </section>
 <section id="checkbox">
-<h3>checkbox<a class="headerlink" href="#checkbox" title="Permalink to this heading">¶</a></h3>
+<h3>checkbox<a class="headerlink" href="#checkbox" title="Permalink to this heading">#</a></h3>
 <p>markdownみたいなチェックボックスが作れる</p>
 <div class="admonition-todo admonition" id="id31">
 <p class="admonition-title">Todo</p>
@@ -485,7 +716,7 @@ in as root and enter</p>
 </div>
 </section>
 <section id="id32">
-<h3>ソースコードファイルを読み込む<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<h3>ソースコードファイルを読み込む<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h3>
 <p>ソースコードファイルを直接読見込んで表示できる。 <strong>languge</strong> はoptional.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">literalinclude</span><span class="p">::</span> <span class="o">./</span><span class="n">sphinx_dummy</span><span class="o">.</span><span class="n">py</span>
    <span class="p">:</span><span class="n">language</span><span class="p">:</span> <span class="n">python</span>
@@ -503,131 +734,148 @@ in as root and enter</p>
 </section>
 
 
-            <div class="clearer"></div>
-          </div>
-        </div>
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to sphinx documentatio!</p>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
-    <h3><a href="../index.html">Page contents</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">sphinx-tips</a><ul>
-<li><a class="reference internal" href="#sphinx">sphinxとは？</a></li>
-<li><a class="reference internal" href="#id1">よく使う機能の一覧</a><ul>
-<li><a class="reference internal" href="#id2">自動ビルド</a></li>
-<li><a class="reference internal" href="#theme">sphinx背景テーマの変更</a></li>
-<li><a class="reference internal" href="#id4">サンプル</a></li>
-<li><a class="reference internal" href="#id5">リンク</a><ul>
-<li><a class="reference internal" href="#id6">外部リンク</a><ul>
-<li><a class="reference internal" href="#id7">リンク先を新タブで開く</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#internal-link">内部リンク</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id9">注釈</a><ul>
-<li><a class="reference internal" href="#id10">番号指定</a></li>
-<li><a class="reference internal" href="#id15">番号自動指定</a></li>
-<li><a class="reference internal" href="#id20">名前指定</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id24">画像挿入</a></li>
-<li><a class="reference internal" href="#jupyter">jupyter連携</a></li>
-<li><a class="reference internal" href="#todo-etc">todo etc</a><ul>
-<li><a class="reference internal" href="#todo">todo</a></li>
-<li><a class="reference internal" href="#warning">warning</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id29">表の挿入</a></li>
-<li><a class="reference internal" href="#click">clickのドキュメント化</a></li>
-<li><a class="reference internal" href="#docstring">docstringの生成</a></li>
-<li><a class="reference internal" href="#comment-out">comment out</a></li>
-<li><a class="reference internal" href="#github-note">github noteとの連携</a></li>
-<li><a class="reference internal" href="#checkbox">checkbox</a></li>
-<li><a class="reference internal" href="#id32">ソースコードファイルを読み込む</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-  <div class="sphinxprev">
-    <h4>Previous page</h4>
-    <p class="topless"><a href="../index.html"
-                          title="Previous page">&larr; Welcome to sphinx documentatio!</a></p>
-  </div>
-  <div class="sphinxnext">
-    <h4>Next page</h4>
-    <p class="topless"><a href="IT/index.html"
-                          title="Next page">&rarr; IT</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/docs/sphinx_tips.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+    </a>
+    <a class="right-next"
+       href="IT/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">IT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-    
-    
-        <div class="sidebar-toggle-group no-js">
+
+                </footer>
+              
+            </div>
             
-            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
-                 «
-                <span class="show-for-small">hide menu</span>
-                
-            </button>
-            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
-                
-                <span class="show-for-small">menu</span>
-                <span class="hide-for-small">sidebar</span>
-                 »
-            </button>
-        </div>
-    
-      <div class="clearer"></div>
-    </div>
-    <div class="relbar-bottom">
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">sphinxとは？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">よく使う機能の一覧</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">自動ビルド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme">sphinx背景テーマの変更</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">サンプル</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">リンク</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">外部リンク</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リンク先を新タブで開く</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-link">内部リンク</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">注釈</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">番号指定</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">番号自動指定</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">名前指定</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">画像挿入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">jupyter連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#todo-etc">todo etc</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">todo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#warning">warning</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">表の挿入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#click">clickのドキュメント化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docstring">docstringの生成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comment-out">comment out</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-note">github noteとの連携</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkbox">checkbox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">ソースコードファイルを読み込む</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="../_sources/docs/sphinx_tips.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
         
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="IT/index.html" title="IT"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../index.html" title="Welcome to sphinx documentatio!"
-             >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">sphinx_docs  documentation</a> &#187;</li>
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-        <li class="nav-item nav-item-this"><a href="">sphinx-tips</a></li> 
-      </ul>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2022, owari_taro.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    <br/>
+  </p>
+</div>
+      
     </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
     </div>
+  
+</div>
 
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, owari_taro.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
-    </div>
-    <!-- cloud_sptheme 1.4 -->
+  </footer>
   </body>
 </html>
