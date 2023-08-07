@@ -1,13 +1,33 @@
 =======================
 django-pytest
 =======================
+--------------
+conftest
+--------------
+
 
 
 -----------------
-conftest
+factoryboy
 -----------------
 conftestに、テストの前処理コードなどを書く。conftest.pyの名前を書いておけばimportしなくても同階層のpytestのファイルからimportして使える
 factoryboyでテスト用のモデルを生成するコード
 
 .. literalinclude:: ./src/conftest.py
    :language: python
+
+
+
+customデータ型の生成
+====================
+defaultで提供されていない方式でデータを生成したいばあい
+
+pointdata
+------------
+geometry型は提供されてないので自分で作る必要がある
+参考:`stack overflow <https://www.youtube.com/watch?v=5K69VdIYiNg>`__
+
+
+::
+
+
