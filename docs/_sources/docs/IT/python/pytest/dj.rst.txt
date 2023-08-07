@@ -25,9 +25,9 @@ defaultで提供されていない方式でデータを生成したいばあい
 pointdata
 ------------
 geometry型は提供されてないので自分で作る必要がある
-参考:`stack overflow <https://www.youtube.com/watch?v=5K69VdIYiNg>`__
+
+ `stack overflow <https://www.youtube.com/watch?v=5K69VdIYiNg>`__
 
 
-::
 
 

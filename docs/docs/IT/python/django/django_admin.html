@@ -300,6 +300,42 @@ document.write(`
                   
   <section id="django-admin">
 <h1>django-admin<a class="headerlink" href="#django-admin" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>表示データの制限<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="group">
+<h3>Groupによる制限<a class="headerlink" href="#group" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="id2">
+<h3>ユーザーの属性での制限<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="id3">
+<h2>表記のカスタマイズ<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>タイトルの変更<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>AdminSiteを継承することでadminページのタイトルヘッダーなどを書き換えることができる</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin</span> <span class="kn">import</span> <span class="n">AdminSite</span>
+<span class="k">class</span> <span class="nc">CustomAdminSite</span><span class="p">(</span><span class="n">AdminSite</span><span class="p">):</span>
+    <span class="n">title_header</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+    <span class="n">site_header</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+    <span class="n">index_title</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>AdminSiteを継承して作った場合はdefaultのGroupを別途追加しないと
+表示されなくなる <a class="reference external" href="https://stackoverflow.com/questions/68225313/django-group-model-not-showing-up-in-django-admin">参考</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Group</span>
+
+<span class="o">.....</span>
+
+<span class="n">admin_site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Group</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
 <section id="model">
 <h2>modelの表示<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h2>
 <section id="list">
@@ -341,6 +377,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">表示データの制限</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Groupによる制限</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ユーザーの属性での制限</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">表記のカスタマイズ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">タイトルの変更</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">modelの表示</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">list表示のカスタマイズ</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csv">csvダウンロード</a></li>

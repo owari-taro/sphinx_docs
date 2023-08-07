@@ -3,6 +3,49 @@ django-admin
 ===========================
 
 
+------------------
+表示データの制限
+------------------
+
+
+Groupによる制限
+=====================
+
+ユーザーの属性での制限
+=====================
+
+
+----------------------
+表記のカスタマイズ
+----------------------
+
+タイトルの変更
+===============
+
+AdminSiteを継承することでadminページのタイトルヘッダーなどを書き換えることができる
+
+::
+
+    from django.contrib.admin import AdminSite
+    class CustomAdminSite(AdminSite):
+        title_header="test"
+        site_header="test"
+        index_title="test"
+
+
+.. warning:: 
+    AdminSiteを継承して作った場合はdefaultのGroupを別途追加しないと
+    表示されなくなる `参考 <https://stackoverflow.com/questions/68225313/django-group-model-not-showing-up-in-django-admin>`__
+    ::
+
+        from django.contrib import admin
+        from django.contrib.auth.models import User, Group
+        
+        .....
+
+        admin_site.register(Group)
+
+
 -------------------
 modelの表示
 -------------------
