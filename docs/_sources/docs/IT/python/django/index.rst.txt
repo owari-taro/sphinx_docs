@@ -1,5 +1,5 @@
 =================================
-python
+django
 =================================
 
 
@@ -8,7 +8,6 @@ python
    :maxdepth: 1
    :caption: Contents:
     
-   django/index
-   utils
-   aws
-   pytest/index
+   django_admin
+   models
+   
