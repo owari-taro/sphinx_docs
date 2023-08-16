@@ -1,0 +1,43 @@
+======================
+技術日記
+======================
+技術関連のことについて羅列する
+
+2023/7/31
+===========================
+* `aws workshop <https://catalog.us-east-1.prod.workshops.aws/workshops/2e48b9fc-f721-4417-b811-962b7f31b61c/en-US>`__ のcloudtrail目次だけ見る。良さそうなので時間見つけてやる
+* テーブルの部分dumpでてこずる。日付のフォーマットがちがうとなってたが、どこが違うのかわからんかったのえ
+  insert文をdjモデルと使って書く。（あまり効率的なやり方ではなさそうだが）
+
+::
+    f"insert into {table} ...{record.id},"
+
+
+  geometryがはいると4,5GBになることも普通なので効率的なやりかた考えたほうがいい
+
+* instanceに入れないレスポンス返さなくなったらalarm使ってインスタンスの再起動をするようにしたほうがいい
+* aws backupが意外と中国本土のregionで提供されてない機能が多い
+
+
+2023/8/3
+===================
+* pydanticをさわる、fastapi[all]でいれるとveresion2じゃなかった
+
+
+2023/8/5
+=======================
+wslでvscodeが起動できなくなる。/etc/wsl.confをenable=Falseにして
+wslを再起動すると解決した
+
+https://github.com/microsoft/WSL/issues/8952
+
+
+
+2023/8/16
+==================
+
+* target groupのtargetがすべてunhealthyだと普通にリクエストするらしい
+  
+  aws docの原文を最初読んだときは意味がわからなかったが、
+
+  `class method blog <https://dev.classmethod.jp/articles/tsnote-alb-targetgroup-unhealthy-002/>`__

@@ -1,0 +1,1 @@
+/home/tarob/git_repos/testing_with_pytest/dj_sample/bookstore/tests/conftest.py

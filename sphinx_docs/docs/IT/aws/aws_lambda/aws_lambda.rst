@@ -36,7 +36,31 @@ lambda制限
     #local test
     sam local invoke -e event/s3-event.json HellloWorldFunction
 
+concurrency
+===============
 
+`AWS公式DOC <https://docs.aws.amazon.com/pdfs/lambda/latest/dg/lambda-dg.pdf#configuration-concurrency>`__
+
+reserved concurrency
+-------------------------
+* ひとつのruntimeの秒感で処理できるのは10がmax
+* 追加のコストはかからない
+* defaultで1regionで1000が最大のconcurrency
+
+provisioned cocurrency
+----------------------------
+* defaultで必要なinitのフェーズを飛ばせて高速化（ただし費用がかかる）
+* 関数に割り当てられたprovisioned concurrencyを超えて起動する場合はcold startの環境が使われる。
+.. warning::
+     | 設定してから使えるようになるまで数分かかる(docのexampleでは5000allocateするのに5分かかかると記載)
+     | また設定が完了するまでの間はリクエストを受け付けない
+  
+
+同期呼び出し？非同期呼び出し？
+==================================
+トリガーでことなる `公式 <https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html#listing-of-services-and-links-to-more-information>`__
+
+`耐久静のある設計 <https://aws.amazon.com/jp/blogs/news/designing-durable-serverless-apps-with-dlqs-for-amazon-sns-amazon-sqs-aws-lambda/>`__
 
 
 lambdaでs3のウィルスチェック
@@ -68,3 +92,10 @@ s3
   
   >>> event["Records"][0]["s3"]["object"]["key"]
   'img001.pdf'
+
+image.png
+image/2023-08-09-05-50-32.png
+
+
+
+

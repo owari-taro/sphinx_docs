@@ -316,7 +316,8 @@ conf.pyに↓を書いておく表に番号が自動で入る。
 
 
 clickのドキュメント化
-====================
+======================
+
 | clickで作ったモジュールは :ref:`docstring` だとdocumentの生成ができない。
 | sphinx-clickをインストールしたうえで次を実行する必要がある
 
@@ -412,13 +413,6 @@ github noteとの連携
 * hoge
 
 
-
-
-
-
-
-
-
 .. epigraph::
 
    No matter where you go, there you are.
@@ -449,3 +443,19 @@ markdownみたいなチェックボックスが作れる
 ::
 
        'sphinx_markdown_checkbox',
+
+
+
+ソースコードファイルを読み込む
+==============================
+ソースコードファイルを直接読見込んで表示できる。 **languge** はoptional.
+
+::
+    
+   .. literalinclude:: ./sphinx_dummy.py
+      :language: python
+
+
+
+.. literalinclude:: ./sphinx_dummy.py
+   :language: python

@@ -1,13 +1,13 @@
 =================================
-python
+django
 =================================
+
 
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
     
-   django/index
-   utils
-   aws
-   pytest/index
+   django_admin
+   models
+   
