@@ -270,7 +270,6 @@ document.write(`
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">django</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="django_admin.html">django-admin</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">django-database</a></li>
-
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">utils</a></li>
@@ -364,10 +363,6 @@ document.write(`
 clean()に書けばできる</p>
 </section>
 </section>
-</section>
-<section id="django-tips">
-<h1>django tips<a class="headerlink" href="#django-tips" title="Permalink to this heading">#</a></h1>
-<p>djangoのメモ。</p>
 <section id="model">
 <h2>model関連<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h2>
 <section id="id3">
@@ -497,9 +492,17 @@ auth
 </pre></div>
 </div>
 </section>
-</section>
 <section id="id8">
-<h2>関連ライブラリ<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h3>存在しないなら404<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
+<span class="c1">#Userのところに対象のモデル</span>
+<span class="n">get_object_or_404</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h2>関連ライブラリ<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <section id="django-auth-toolkit">
 <h3>django-auth-toolkit<a class="headerlink" href="#django-auth-toolkit" title="Permalink to this heading">#</a></h3>
 <ul>
@@ -565,14 +568,10 @@ auth
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">django-database</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">制約</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">文字列の種類の制限</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#django-tips">django tips</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">model関連</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">テーブル制約を入れたい</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">日付制約</a></li>
@@ -582,16 +581,14 @@ auth
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migration">migrationを戻したい</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-sql">raw-sqlで使用したい</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">安全なmigrationしたい</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">存在しないなら404</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">関連ライブラリ</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">関連ライブラリ</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#django-auth-toolkit">django-auth-toolkit</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
   <div class="sidebar-secondary-item">

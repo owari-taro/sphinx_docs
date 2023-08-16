@@ -267,17 +267,22 @@ document.write(`
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../airflow.html">apache-airflow</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../django.html">django tips</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../django/index.html">django</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../django/django_admin.html">django-admin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../django/models.html">django-database</a></li>
+
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../aws.html">aws</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">pytest</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">pytest</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">pytest-tips</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">django-pytest</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../database/index.html">database</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../database/index.html">database</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../database/tatsujin_sql.html">達人に学ぶsql徹底指南書</a></li>
 </ul>
 </li>
@@ -350,11 +355,19 @@ document.write(`
 <h1>django-pytest<a class="headerlink" href="#django-pytest" title="Permalink to this heading">#</a></h1>
 <section id="conftest">
 <h2>conftest<a class="headerlink" href="#conftest" title="Permalink to this heading">#</a></h2>
+<p>conftestに、テストの前処理コードなどを書く。conftest.pyの名前を書いておけばimportしなくても同階層のpytestのファイルからimportして使える</p>
 </section>
 <section id="factoryboy">
 <h2>factoryboy<a class="headerlink" href="#factoryboy" title="Permalink to this heading">#</a></h2>
-<p>conftestに、テストの前処理コードなどを書く。conftest.pyの名前を書いておけばimportしなくても同階層のpytestのファイルからimportして使える
-factoryboyでテスト用のモデルを生成するコード</p>
+<section id="install">
+<h3>install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pytest</span><span class="o">-</span><span class="n">factoryboy</span>
+</pre></div>
+</div>
+</section>
+<section id="hello-world">
+<h3>hello world<a class="headerlink" href="#hello-world" title="Permalink to this heading">#</a></h3>
+<p>factoryboyでテスト用のモデルを生成するコード</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">factory</span>
 <span class="kn">from</span> <span class="nn">factory</span> <span class="kn">import</span> <span class="n">fuzzy</span>
 <span class="kn">import</span> <span class="nn">string</span>
@@ -383,6 +396,52 @@ factoryboyでテスト用のモデルを生成するコード</p>
     <span class="n">version</span> <span class="o">=</span> <span class="n">fuzzy</span><span class="o">.</span><span class="n">FuzzyChoice</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span><span class="c1">#https://stackoverflow.com/questions/36641568/factory-boy-random-choice-for-a-field-with-field-option-choices</span>
 </pre></div>
 </div>
+</section>
+<section id="password">
+<h3>passwordの生成<a class="headerlink" href="#password" title="Permalink to this heading">#</a></h3>
+<p>次のように <strong>postgenerationmethodcall</strong> でpasswordを生成する。
+第二引数にdefaultを指定する。
+UserFactory(username=&quot;HogeTaro&quot;,password=&quot;Hoge&quot;)のように直接指定もできる
+<a class="reference external" href="https://stackoverflow.com/questions/10183664/user-authentication-in-tests-with-django-factory-boy">stack-overflow</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">factory</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="c1">#or</span>
+<span class="c1">#from somewhere import CustomUser as User</span>
+
+<span class="k">class</span> <span class="nc">UserFactory</span><span class="p">(</span><span class="n">factory</span><span class="o">.</span><span class="n">DjangoModelFactory</span><span class="p">):</span>
+   <span class="n">FACTORY_FOR</span> <span class="o">=</span> <span class="n">User</span>
+
+   <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;UserFactory&#39;</span>
+   <span class="n">email</span> <span class="o">=</span> <span class="s1">&#39;test@example.com&#39;</span>
+   <span class="n">password</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">PostGenerationMethodCall</span><span class="p">(</span><span class="s1">&#39;set_password&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="api">
+<h3>apiテスト<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h3>
+<section id="http-request">
+<h4>HTTP request<a class="headerlink" href="#http-request" title="Permalink to this heading">#</a></h4>
+<p>django restならAPIClient使う</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">django_db</span>
+<span class="k">def</span> <span class="nf">test_create_f1driver_payload</span><span class="p">():</span>
+   <span class="n">client</span> <span class="o">=</span> <span class="n">APIClient</span><span class="p">()</span>
+   <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/api/create-f1driver/&#39;</span>
+   <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Lewis Hamilton&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;team&#39;</span><span class="p">:</span> <span class="s1">&#39;Mercedes&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;England&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;38&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;podiums&#39;</span><span class="p">:</span> <span class="mi">412</span><span class="p">,</span>
+      <span class="s1">&#39;championships&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+   <span class="p">}</span>
+   <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+   <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span>
+   <span class="k">assert</span> <span class="n">F1Driver</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://blog.devgenius.io/testing-django-rest-framework-with-pytest-fb1b7bd8257b">https://blog.devgenius.io/testing-django-rest-framework-with-pytest-fb1b7bd8257b</a></p>
+</section>
+</section>
 <section id="custom">
 <h3>customデータ型の生成<a class="headerlink" href="#custom" title="Permalink to this heading">#</a></h3>
 <p>defaultで提供されていない方式でデータを生成したいばあい</p>
@@ -446,6 +505,13 @@ factoryboyでテスト用のモデルを生成するコード</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conftest">conftest</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factoryboy">factoryboy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install">install</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">hello world</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#password">passwordの生成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api">apiテスト</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#http-request">HTTP request</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom">customデータ型の生成</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pointdata">pointdata</a></li>
 </ul>

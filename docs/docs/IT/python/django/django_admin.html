@@ -353,19 +353,65 @@ document.write(`
                   
   <section id="django-admin">
 <h1>django-admin<a class="headerlink" href="#django-admin" title="Permalink to this heading">#</a></h1>
+<section id="customuser">
+<h2>CustomUser<a class="headerlink" href="#customuser" title="Permalink to this heading">#</a></h2>
 <section id="id1">
-<h2>表示データの制限<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<section id="group">
-<h3>Groupによる制限<a class="headerlink" href="#group" title="Permalink to this heading">#</a></h3>
+<h3>ユーザー登録時の項目を変えたい<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="id2">
-<h3>ユーザーの属性での制限<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>ユーザー編集時の項目を変えたい<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>fieldsetsを書き換える</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomUserAdmin</span><span class="p">(</span><span class="n">UserAdmin</span><span class="p">):</span>
+    <span class="n">filedssets</span><span class="o">=</span><span class="p">(</span>
+        <span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">request</span><span class="p">):</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">qs</span>
+        <span class="n">group_id</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">origin_group</span><span class="o">.</span><span class="n">group_id</span>
+        <span class="k">return</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">origin_group__group_id</span><span class="o">=</span><span class="n">group_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">UserAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">add_form_template</span> <span class="o">=</span> <span class="s2">&quot;admin/auth/user/add_form.html&quot;</span>
+    <span class="n">change_user_password_template</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">fieldsets</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">,)}),</span>
+        <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Personal info&quot;</span><span class="p">),</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;first_name&quot;</span><span class="p">,</span> <span class="s2">&quot;last_name&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">)}),</span>
+        <span class="p">(</span>
+            <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Permissions&quot;</span><span class="p">),</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">(</span>
+                    <span class="s2">&quot;is_active&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;roles&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;is_staff&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;is_superuser&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;groups&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;user_permissions&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">},</span>
+        <span class="p">),</span>
+        <span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Important dates&quot;</span><span class="p">),</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;last_login&quot;</span><span class="p">,</span> <span class="s2">&quot;date_joined&quot;</span><span class="p">)}),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="id3">
-<h2>表記のカスタマイズ<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>表示データの制限<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="group">
+<h3>Groupによる制限<a class="headerlink" href="#group" title="Permalink to this heading">#</a></h3>
+</section>
 <section id="id4">
-<h3>タイトルの変更<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>ユーザーの属性での制限<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="id5">
+<h2>表記のカスタマイズ<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>サイトタイトルの変更<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>AdminSiteを継承することでadminページのタイトルヘッダーなどを書き換えることができる</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin</span> <span class="kn">import</span> <span class="n">AdminSite</span>
 <span class="k">class</span> <span class="nc">CustomAdminSite</span><span class="p">(</span><span class="n">AdminSite</span><span class="p">):</span>
@@ -377,13 +423,31 @@ document.write(`
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>AdminSiteを継承して作った場合はdefaultのGroupを別途追加しないと
-表示されなくなる <a class="reference external" href="https://stackoverflow.com/questions/68225313/django-group-model-not-showing-up-in-django-admin">参考</a></p>
+表示されなくなる <a class="reference external" href="https://stackoverflow.com/questions/68225313/django-group-model-not-showing-up-in-django-admin">参考</a>
+またデフォルトのようにpermissionsのフィルターが消えてしまうのでadmin.pyで登録する必要がある</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Group</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.admin</span> <span class="kn">import</span> <span class="n">UserAdmin</span><span class="p">,</span><span class="n">GroupAdmin</span>
 
 <span class="o">.....</span>
 
-<span class="n">admin_site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Group</span><span class="p">)</span>
+<span class="n">admin_site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Group</span><span class="p">,</span><span class="n">GroupAdmin</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>内部実装はこんな感じ</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Group</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">GroupAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,)</span>
+    <span class="n">filter_horizontal</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;permissions&quot;</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">formfield_for_manytomany</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db_field</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">db_field</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;permissions&quot;</span><span class="p">:</span>
+            <span class="n">qs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;queryset&quot;</span><span class="p">,</span> <span class="n">db_field</span><span class="o">.</span><span class="n">remote_field</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="p">)</span>
+            <span class="c1"># Avoid a major performance hit resolving permission names which</span>
+            <span class="c1"># triggers a content_type load:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;queryset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">qs</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s2">&quot;content_type&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">formfield_for_manytomany</span><span class="p">(</span><span class="n">db_field</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -448,13 +512,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">表示データの制限</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Groupによる制限</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ユーザーの属性での制限</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customuser">CustomUser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ユーザー登録時の項目を変えたい</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">ユーザー編集時の項目を変えたい</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">表記のカスタマイズ</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">タイトルの変更</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">表示データの制限</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Groupによる制限</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">ユーザーの属性での制限</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">表記のカスタマイズ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">サイトタイトルの変更</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">modelの表示</a><ul class="nav section-nav flex-column">

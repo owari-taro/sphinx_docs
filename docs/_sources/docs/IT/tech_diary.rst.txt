@@ -30,3 +30,14 @@ wslでvscodeが起動できなくなる。/etc/wsl.confをenable=Falseにして
 wslを再起動すると解決した
 
 https://github.com/microsoft/WSL/issues/8952
+
+
+
+2023/8/16
+==================
+
+* target groupのtargetがすべてunhealthyだと普通にリクエストするらしい
+  
+  aws docの原文を最初読んだときは意味がわからなかったが、
+
+  `class method blog <https://dev.classmethod.jp/articles/tsnote-alb-targetgroup-unhealthy-002/>`__
