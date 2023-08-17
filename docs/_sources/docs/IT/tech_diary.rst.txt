@@ -1,7 +1,7 @@
 ======================
 技術日記
 ======================
-技術関連のことについて羅列する
+技術関連ITなどのことについてのメモとか日記のようなもの
 
 2023/7/31
 ===========================
@@ -41,3 +41,46 @@ https://github.com/microsoft/WSL/issues/8952
   aws docの原文を最初読んだときは意味がわからなかったが、
 
   `class method blog <https://dev.classmethod.jp/articles/tsnote-alb-targetgroup-unhealthy-002/>`__
+
+
+2023/8/17
+=================
+
+`django-ninja <https://django-ninja.rest-framework.com/>`__
+-------------------------------------------------------------
+* django pydanticで検索してたらたまたま見つける
+* fastapiのようなinterfaceを備えたdjangoAPIを作れるツール。fastapi使いたいけどdjango-modelになれた人にとってはかなり使いやすそう
+* 日本語でのページは少なく、まだ日本では広まってない？
+* localで試そうとしたがなぜか表示がうまくいかず・・・・・
+* restframeworkよりは気軽に書けそう
+  
+
+::
+
+    from django.contrib import admin
+    from django.urls import path
+    from ninja import NinjaAPI
+
+    api = NinjaAPI()
+
+    @api.get("/add")
+    def add(request, a: int, b: int):
+        return {"result": a + b}
+
+
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("api/", api.urls),
+    ]
+
+
+documentツール
+-----------------
+* fastapiやninjaのdocumentが同じ形式だったので調べたらはmkdocsで作られている
+* 独自markdownでかけるのは、マイナなrst使うsphinxより強味かもしれない
+* `sphinx theme<https://sphinx-themes.org/>`__ を見ていると同じようなのがだいたいそろってるのでoutputとしてそんなに変わらないかも
+
+python multiprocess
+--------------------
+* chunk sizeについて `stack over flow <https://stackoverflow.com/questions/3822512/chunksize-parameter-in-multiprocessing-pool-map>`__
+* 
