@@ -419,7 +419,7 @@ wslを再起動すると解決した</p>
 <ul class="simple">
 <li><p>fastapiやninjaのdocumentが同じ形式だったので調べたらはmkdocsで作られている</p></li>
 <li><p>独自markdownでかけるのは、マイナなrst使うsphinxより強味かもしれない</p></li>
-<li><p><a href="#id10"><span class="problematic" id="id11">`sphinx theme&lt;https://sphinx-themes.org/&gt;`__</span></a> を見ていると同じようなのがだいたいそろってるのでoutputとしてそんなに変わらないかも</p></li>
+<li><p><a href="#id11"><span class="problematic" id="id12">`sphinx theme&lt;https://sphinx-themes.org/&gt;`__</span></a> を見ていると同じようなのがだいたいそろってるのでoutputとしてそんなに変わらないかも</p></li>
 </ul>
 </section>
 <section id="python-multiprocess">
@@ -442,22 +442,33 @@ wslを再起動すると解決した</p>
 </pre></div>
 </div>
 </section>
+<section id="id8">
+<h2>documentツール<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>とりあえずmkdocsも触ってみた感想</p>
 <section id="mkdocs">
-<h2>mkdocs<a class="headerlink" href="#mkdocs" title="Permalink to this heading">#</a></h2>
+<h3>mkdocsのいい点<a class="headerlink" href="#mkdocs" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>クラスメソッドなどはsphinxじゃなくて、mkdocsを社内で使ってるよう。markdownのほうがrstより使い慣れている人が多いからとかいう記載があった</p></li>
 <li><p>両方使ってみたが、themeの多さはsphinxのほうが強いところか、</p></li>
-<li><p>materialのtab表示は便利かなと思う <a class="footnote-reference brackets" href="#id9" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-<li><p>ただどちらにしろ移行するのはそれなり大変そうではある</p></li>
-<li><p>sphinxのthemeのnight-modeがあるのは地味に便利</p></li>
+<li><p>materialのtab表示は便利かなと思う <a class="footnote-reference brackets" href="#id10" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<li><p>ただsphinxで書いてしまった既存documentを移行するのはそれなり大変そうではある</p></li>
 </ul>
 <img alt="../../_images/mk_tab.png" src="../../_images/mk_tab.png" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id9" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">1</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">1</a><span class="fn-bracket">]</span></span>
 <p>shpinxも一応materialがthemeとして存在しているが、このタブ機能はないっぽい</p>
 </aside>
 </aside>
+</section>
+<section id="sphinx">
+<h3>sphinxのほうがいい点<a class="headerlink" href="#sphinx" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>themeの多さはsphinx</p></li>
+<li><p>ナイトモードがあるthemeがあるのもsphinx</p></li>
+<li><p>長く使われてるライブラリはsphinxが多い印象django/pytest/celery etc</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -511,7 +522,11 @@ wslを再起動すると解決した</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2023/8/18</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug">debug</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdocs">mkdocs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">documentツール</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdocs">mkdocsのいい点</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">sphinxのほうがいい点</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

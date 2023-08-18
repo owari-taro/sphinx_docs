@@ -98,14 +98,24 @@ https://maku77.github.io/p/xbucsaq/
     >>> print(inspect.getsource(os.path.abspath))
     
 
-mkdocs
+documentツール
 =================
+とりあえずmkdocsも触ってみた感想
+
+mkdocsのいい点
+-----------------------
 * クラスメソッドなどはsphinxじゃなくて、mkdocsを社内で使ってるよう。markdownのほうがrstより使い慣れている人が多いからとかいう記載があった
 * 両方使ってみたが、themeの多さはsphinxのほうが強いところか、
 * materialのtab表示は便利かなと思う [#]_
-* ただどちらにしろ移行するのはそれなり大変そうではある
-* sphinxのthemeのnight-modeがあるのは地味に便利
+* ただsphinxで書いてしまった既存documentを移行するのはそれなり大変そうではある
 
 .. image:: img/mk_tab.png
   
 .. [#] shpinxも一応materialがthemeとして存在しているが、このタブ機能はないっぽい
+
+
+sphinxのほうがいい点
+-------------------------------
+* themeの多さはsphinx
+* ナイトモードがあるthemeがあるのもsphinx
+* 長く使われてるライブラリはsphinxが多い印象django/pytest/celery etc
