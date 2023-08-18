@@ -301,29 +301,32 @@ document.write(`
   <section id="postgres">
 <h1>postgres<a class="headerlink" href="#postgres" title="Permalink to this heading">#</a></h1>
 <section id="view">
-<h2>viewの作成<a class="headerlink" href="#view" title="Permalink to this heading">#</a></h2>
+<h2>view<a class="headerlink" href="#view" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>viewの作成<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span> <span class="n">view</span> <span class="n">hogehogeview</span> <span class="k">as</span> <span class="p">{</span><span class="n">select</span> <span class="n">文</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="id1">
-<h2>view削除<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>view削除<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <dl class="simple">
 <dt>::</dt><dd><p>drop view {view_name}</p>
 </dd>
 </dl>
 </section>
-<section id="id2">
-<h2>viewの権限付与<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>viewの権限付与<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grant</span> <span class="n">select</span> <span class="n">on</span> <span class="p">{</span><span class="n">view_name</span><span class="p">}</span> <span class="n">to</span> <span class="p">{</span><span class="n">role</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h2>viewの定義確認<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>viewの定義確認<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">definition</span> <span class="n">FROM</span> <span class="n">pg_views</span> <span class="n">WHERE</span> <span class="n">viewname</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 
@@ -356,10 +359,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">viewの作成</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">view削除</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">viewの権限付与</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">viewの定義確認</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">view</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">viewの作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">view削除</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">viewの権限付与</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">viewの定義確認</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

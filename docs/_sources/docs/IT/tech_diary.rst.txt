@@ -83,4 +83,29 @@ documentツール
 python multiprocess
 --------------------
 * chunk sizeについて `stack over flow <https://stackoverflow.com/questions/3822512/chunksize-parameter-in-multiprocessing-pool-map>`__
-* 
+
+2023/8/18
+=================
+debug
+==========
+sourceコードをreplから見る方法
+https://maku77.github.io/p/xbucsaq/
+
+::
+
+    >>> import inspect
+    >>> import os
+    >>> print(inspect.getsource(os.path.abspath))
+    
+
+mkdocs
+=================
+* クラスメソッドなどはsphinxじゃなくて、mkdocsを社内で使ってるよう。markdownのほうがrstより使い慣れている人が多いからとかいう記載があった
+* 両方使ってみたが、themeの多さはsphinxのほうが強いところか、
+* materialのtab表示は便利かなと思う [#]_
+* ただどちらにしろ移行するのはそれなり大変そうではある
+* sphinxのthemeのnight-modeがあるのは地味に便利
+
+.. image:: img/mk_tab.png
+  
+.. [#] shpinxも一応materialがthemeとして存在しているが、このタブ機能はないっぽい
