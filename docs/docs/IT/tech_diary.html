@@ -419,7 +419,7 @@ wslを再起動すると解決した</p>
 <ul class="simple">
 <li><p>fastapiやninjaのdocumentが同じ形式だったので調べたらはmkdocsで作られている</p></li>
 <li><p>独自markdownでかけるのは、マイナなrst使うsphinxより強味かもしれない</p></li>
-<li><p><a href="#id11"><span class="problematic" id="id12">`sphinx theme&lt;https://sphinx-themes.org/&gt;`__</span></a> を見ていると同じようなのがだいたいそろってるのでoutputとしてそんなに変わらないかも</p></li>
+<li><p><a href="#id13"><span class="problematic" id="id14">`sphinx theme&lt;https://sphinx-themes.org/&gt;`__</span></a> を見ていると同じようなのがだいたいそろってるのでoutputとしてそんなに変わらないかも</p></li>
 </ul>
 </section>
 <section id="python-multiprocess">
@@ -434,7 +434,7 @@ wslを再起動すると解決した</p>
 </section>
 <section id="debug">
 <h2>debug<a class="headerlink" href="#debug" title="Permalink to this heading">#</a></h2>
-<p>sourceコードをreplから見る方法
+<p>sourceコードをreplから見る方法。デバッグしたいときにその場で見れる
 <a class="reference external" href="https://maku77.github.io/p/xbucsaq/">https://maku77.github.io/p/xbucsaq/</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">inspect</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
@@ -467,6 +467,38 @@ wslを再起動すると解決した</p>
 <li><p>themeの多さはsphinx</p></li>
 <li><p>ナイトモードがあるthemeがあるのもsphinx</p></li>
 <li><p>長く使われてるライブラリはsphinxが多い印象django/pytest/celery etc</p></li>
+</ul>
+</section>
+</section>
+<section id="restframework">
+<h2>restframework<a class="headerlink" href="#restframework" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>viewsetで書いてみたが確かに省略できるようにはなるのだが、たまにしかいじらない場合わかりにくい</p></li>
+<li><p>初心者に少しやりにくさがある</p></li>
+<li><p>django-ninjaとかfastapiのほうが直観的でわかりやすい</p></li>
+</ul>
+</section>
+<section id="django-admin">
+<h2>django-adminの二要素認証<a class="headerlink" href="#django-admin" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><cite>django-admin-two-factor-auth &lt;https://django-admin-two-factor-auth.readthedocs.io/en/latest/&gt;__</cite></p></li>
+<li><p>google-authenticatorを使っている、設定自体は簡単だがinstalled_appの書き順があるらしく、それを間違えていて手間取った。</p></li>
+<li><p>docで目立つように↓みたいに書いてくれたらよいのだが・・・・</p></li>
+<li><p>docを読む限り強制するとかはできないっぽい</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>順番注意</p>
+</div>
+</section>
+<section id="id11">
+<h2>2023/8/19<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<section id="id12">
+<h3>documentツール<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>docstringからの出力機能はmkdocsのほうが見やすい感じをsource-code自体もオンオフ表示できたりと
+使いやすい印象を受けた</p></li>
+<li><p>autonumberingがないのはmkdocsのマイナス</p></li>
 </ul>
 </section>
 </section>
@@ -525,6 +557,12 @@ wslを再起動すると解決した</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">documentツール</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdocs">mkdocsのいい点</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">sphinxのほうがいい点</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restframework">restframework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django-admin">django-adminの二要素認証</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">2023/8/19</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">documentツール</a></li>
 </ul>
 </li>
 </ul>

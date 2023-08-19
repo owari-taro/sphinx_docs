@@ -88,7 +88,7 @@ python multiprocess
 =================
 debug
 ==========
-sourceコードをreplから見る方法
+sourceコードをreplから見る方法。デバッグしたいときにその場で見れる
 https://maku77.github.io/p/xbucsaq/
 
 ::
@@ -119,3 +119,29 @@ sphinxのほうがいい点
 * themeの多さはsphinx
 * ナイトモードがあるthemeがあるのもsphinx
 * 長く使われてるライブラリはsphinxが多い印象django/pytest/celery etc
+
+
+restframework
+===============
+* viewsetで書いてみたが確かに省略できるようにはなるのだが、たまにしかいじらない場合わかりにくい
+* 初心者に少しやりにくさがある
+* django-ninjaとかfastapiのほうが直観的でわかりやすい
+
+django-adminの二要素認証
+==========================
+* `django-admin-two-factor-auth <https://django-admin-two-factor-auth.readthedocs.io/en/latest/>__`
+* google-authenticatorを使っている、設定自体は簡単だがinstalled_appの書き順があるらしく、それを間違えていて手間取った。
+* docで目立つように↓みたいに書いてくれたらよいのだが・・・・
+* docを読む限り強制するとかはできないっぽい
+
+.. warning:: 
+    
+    順番注意
+
+2023/8/19
+==========
+documentツール
+---------------
+* docstringからの出力機能はmkdocsのほうが見やすい感じをsource-code自体もオンオフ表示できたりと
+  使いやすい印象を受けた
+* autonumberingがないのはmkdocsのマイナス
