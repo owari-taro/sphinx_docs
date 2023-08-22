@@ -4,9 +4,9 @@ AWS Cloud Development Kit
 aws resourceをオブジェクト思考の枠組みでdeployできる仕組み.
 
 
-------------------
+----------------
 hello world
------------------
+----------------
 
 sudo apt installでいれるとnodeのveersionが古いため動かない。とかで新しversionにしておく.,→https://qiita.com/cointoss1973/items/c000c4f84ae4b0c166b5
 
@@ -31,7 +31,8 @@ sudo apt installでいれるとnodeのveersionが古いため動かない。と�
 
 ---------------------------
 hello world with lambda
-----------------------------
+---------------------------
+
 .. https://qiita.com/t-kigi/items/8f9415e857dade8d848d
 
 

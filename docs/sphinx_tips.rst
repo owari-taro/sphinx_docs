@@ -53,6 +53,7 @@ html-themeの各ページにお手本を参考にすると早い `cloud <https:/
 (1)文中に直接埋め込むパターン: `sphinx0-user.jp <https://sphinx-users.jp/>`__ の紹介リンク
 
 .. _amazonjp: https://amazon.co.jp
+
 (2)一旦定義しておいて使い回すパターン: `amazonjp`_
 
 ::
@@ -156,8 +157,8 @@ sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールして�
 
 画像挿入
 =======================
-figureディレク底部を使う。画像のパスは↓のように相対パスor/img/*のようにルートディレクトリからのパターン
 
+figure-directiveを使う。画像のパスは↓のように相対パス or /img/* のようにルートディレクトリからのパターン
 
 
 
@@ -251,6 +252,7 @@ warning
 .. warning::
    | 複数行も書けるかの？
    | どういうことだ？
+   
    ::
 
       from aws_cdk import (

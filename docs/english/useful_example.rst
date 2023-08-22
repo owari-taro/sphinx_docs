@@ -12,11 +12,13 @@ Heavy snow falls across Japn as some cities renew recore
 
 | Meanwhile, Engaru in Hokkaido **renewed its December snowfall record** 
 | by registering over 80 cm in a 24-hour period through Friday morning.
+
 * renew its record　記録更新
 * register 〇cm で記録
 
 | The prefectural capital Kanazawa **saw 20 cm of snow** by 8 a.m., with some bullet train services 
 | briefly disrupted at Kanazawa Station when snow blew against the platform doors.
+
 * saw ?? cm of snow で積雪記録
 
 | It forecasts 100 cm of snowfall in parts of the Hokuriku region in the 24 hours through 6 a.m. Saturday, 
@@ -76,7 +78,7 @@ Jan 2022
 
 
 Russian athletes could participate in Asian competitions, IOC indicates
-==============================================
+=============================================================================
 
 Berlin – Russian and Belarusian athletes could participate in Asian events, with the International Olympic Committee looking at options for their return to international competitions.
 
@@ -96,10 +98,10 @@ Berlin – Russian and Belarusian athletes could participate in Asian events, wi
 
 Since the Russian invasion of Ukraine in February, many sports bodies have moved events and 
 | **suspended** Russian teams or athletes while sponsors ended contracts in protest against the war.
-| The IOC **had recommended **that events in Russia be cancelled or relocated and that Russian and Belarusian athletes not take part or compete under a neutral flag.
+| The IOC **had recommended ** that events in Russia be cancelled or relocated and that Russian and Belarusian athletes not take part or compete under a neutral flag.
 
 Qualifiers for the Paris Olympics in some sports have started with many more taking place throughout the year.
-A total of 32 sports are **on the program for **the Olympics in 2024 with around 10,500 athletes set to qualify through hundreds of continental and international competitions.
+A total of 32 sports are **on the program for ** the Olympics in 2024 with around 10,500 athletes set to qualify through hundreds of continental and international competitions.
 
 
 
