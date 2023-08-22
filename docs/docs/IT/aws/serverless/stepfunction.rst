@@ -20,7 +20,8 @@ attributeの設定
 ====================
 直接設定用のjsonnに **MessageAttributes** に書き足す必要がある
 
-::
+.. code-block:: yaml
+    :emphasize-lines: 7-12
 
     {
     "Type": "Task",
@@ -33,7 +34,7 @@ attributeの設定
             "DataType": "String",
             "StringValue": "dev"
         }
-        }
+    }
     },
     "End": true
     }

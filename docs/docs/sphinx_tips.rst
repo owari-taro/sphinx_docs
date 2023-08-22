@@ -461,3 +461,62 @@ markdownみたいなチェックボックスが作れる
 
 .. literalinclude:: ./sphinx_dummy.py
    :language: python
+
+code表示
+=============
+
+特定の行だけ協調したい
+-------------------------
+下のようにcode-blockディレクティブをつかって emphasize-linesを使う。ファイル形式は特に指定しなくてもできる（yaml,pythonなど）
+
+::
+
+      
+   .. code-block:: yaml
+      :emphasize-lines: 7-12
+
+      {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+         "Message.$": "$",
+         "TopicArn": "arn:aws:sns:ap-northeast-1:**********:MyTopic",
+         "MessageAttributes": {
+         "env": {
+               "DataType": "String",
+               "StringValue": "dev"
+         }
+      }
+      },
+      "End": true
+      }
+
+
+.. code-block:: yaml
+    :emphasize-lines: 7-12
+
+    {
+    "Type": "Task",
+    "Resource": "arn:aws:states:::sns:publish",
+    "Parameters": {
+        "Message.$": "$",
+        "TopicArn": "arn:aws:sns:ap-northeast-1:**********:MyTopic",
+        "MessageAttributes": {
+        "env": {
+            "DataType": "String",
+            "StringValue": "dev"
+        }
+    }
+    },
+    "End": true
+    }
+
+
+------------------
+Error解決
+------------------
+
+buildエラー
+=========================
+venvを使ってるならconf.pyからexcludeしておく
+https://github.com/sphinx-doc/sphinx/issues/2066
