@@ -1,7 +1,0 @@
-zz module
-=========
-
-.. automodule:: zz
-   :members:
-   :undoc-members:
-   :show-inheritance:
