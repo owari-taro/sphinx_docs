@@ -31,11 +31,10 @@ def fetch_data(url:str):
     :return _type_: _description_
     """    
     print("hogehoge")
-    raise Exception
+ #   raise Exception
 
 
-fetch_data("test")
+#fetch_data("test")
 
-_
 
 

@@ -2,7 +2,7 @@
 this is a test module
 
 '''
-from sub_module.utils import fetch_data
+#from sub_module.utils import fetch_data
 
 
 def hoge(num: int):
@@ -68,11 +68,12 @@ class Person:
         self.name=name
         self.age=age
 
+
     def walk(self):
         """
         just printing out walking 
         """                
-        fetch_data("adlfkasjdlfk")
+#        fetch_data("adlfkasjdlfk")
 
-        print("walking")
-        print("walking")
+ #       print("walking")
+  #      print("walking")

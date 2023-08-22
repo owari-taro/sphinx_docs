@@ -1,0 +1,4 @@
+digraph "template" {
+TestBucket [color=black, label="TestBucket\n<AWS::S3::Bucket>", shape=ellipse, type=Resource];
+ProdBucket [color=black, label="ProdBucket\n<AWS::S3::Bucket>", shape=ellipse, type=Resource];
+}
