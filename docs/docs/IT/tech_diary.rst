@@ -145,3 +145,13 @@ documentツール
 * docstringからの出力機能はmkdocsのほうが見やすい感じをsource-code自体もオンオフ表示できたりと
   使いやすい印象を受けた
 * autonumberingがないのはmkdocsのマイナス
+
+
+2023/8/22
+=====================
+documentツール
+----------------------------
+* sphinxの公開をread-the-docsに移行した。mkdocsですでに実施していたので同じ要領ですぐできた
+* `ray <https://docs.ray.io/en/latest/>`__ のドキュメントがいい感じだったので調べたらsphinxせいだった
+* rayは `mystmd <https://mystmd.org/guide/dropdowns-cards-and-tabs>`__ 使ってmarkdownで書かれていた.
+* sphinxだと最新に対応してないライブラリとかthemeが意外とおおかった
