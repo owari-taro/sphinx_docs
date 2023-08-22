@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sphinx-docs"
+version = "0.1.0"
+description = ""
+authors = ["owari-taro <taro.biwajima@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sphinx_docs"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sphinx = "^7.2.2"
+sphinxcontrib-oembed = "^0.2.2"
+sphinx-click = "^5.0.1"
+pydata-sphinx-theme = "^0.13.3"
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx-autobuild = "^2021.3.14"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
