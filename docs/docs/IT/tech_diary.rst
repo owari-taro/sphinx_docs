@@ -158,8 +158,13 @@ documentツール
 
 2023/8/23
 =======================
+.. todo::  読んでおくと良さそうなdocument
 
-.. todo:: 
-
+  https://docs.python.org/3/library/multiprocessing.html
   https://docs.python.org/ja/3/library/queue.html
   https://docs.geoserver.org/latest/en/user/
+
+
+
+* queue.put(1,block=False) のblockの意味
+* mp.async_map()のasync_mapとか
