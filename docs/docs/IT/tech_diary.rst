@@ -87,7 +87,7 @@ python multiprocess
 2023/8/18
 =================
 debug
-==========
+--------------------------
 sourceコードをreplから見る方法。デバッグしたいときにその場で見れる
 https://maku77.github.io/p/xbucsaq/
 
@@ -99,11 +99,11 @@ https://maku77.github.io/p/xbucsaq/
     
 
 documentツール
-=================
+--------------------------
 とりあえずmkdocsも触ってみた感想
 
 mkdocsのいい点
------------------------
+__________________________
 * クラスメソッドなどはsphinxじゃなくて、mkdocsを社内で使ってるよう。markdownのほうがrstより使い慣れている人が多いからとかいう記載があった
 * 両方使ってみたが、themeの多さはsphinxのほうが強いところか、
 * materialのtab表示は便利かなと思う [#]_
@@ -115,20 +115,20 @@ mkdocsのいい点
 
 
 sphinxのほうがいい点
--------------------------------
+__________________________
 * themeの多さはsphinx
 * ナイトモードがあるthemeがあるのもsphinx
 * 長く使われてるライブラリはsphinxが多い印象django/pytest/celery etc
 
 
 restframework
-===============
+--------------------------
 * viewsetで書いてみたが確かに省略できるようにはなるのだが、たまにしかいじらない場合わかりにくい
 * 初心者に少しやりにくさがある
 * django-ninjaとかfastapiのほうが直観的でわかりやすい
 
 django-adminの二要素認証
-==========================
+--------------------------
 * `django-admin-two-factor-auth <https://django-admin-two-factor-auth.readthedocs.io/en/latest/>__`
 * google-authenticatorを使っている、設定自体は簡単だがinstalled_appの書き順があるらしく、それを間違えていて手間取った。
 * docで目立つように↓みたいに書いてくれたらよいのだが・・・・
