@@ -155,3 +155,11 @@ documentツール
 * `ray <https://docs.ray.io/en/latest/>`__ のドキュメントがいい感じだったので調べたらsphinxせいだった
 * rayは `mystmd <https://mystmd.org/guide/dropdowns-cards-and-tabs>`__ 使ってmarkdownで書かれていた.
 * sphinxだと最新に対応してないライブラリとかthemeが意外とおおかった
+
+2023/8/23
+=======================
+
+.. todo:: 
+
+  https://docs.python.org/ja/3/library/queue.html
+  https://docs.geoserver.org/latest/en/user/
