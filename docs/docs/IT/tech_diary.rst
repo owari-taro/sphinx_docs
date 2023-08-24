@@ -173,6 +173,12 @@ documentツール
 
 2023/8/24
 ===============================
-sphinxでsvgを表示する方法
+documentツール
+----------------------------
+* sphinxでsvgを表示する方法
+
 https://stackoverflow.com/questions/34777943/insert-clickable-svg-image-into-sphinx-documentation
 
+
+.. todo:: 
+  https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html

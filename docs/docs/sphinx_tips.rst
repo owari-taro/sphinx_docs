@@ -520,3 +520,48 @@ buildエラー
 =========================
 venvを使ってるならconf.pyからexcludeしておく
 https://github.com/sphinx-doc/sphinx/issues/2066
+
+
+
+--------------------------------------------------------------------------------------------------
+`sphinx-design <https://sphinx-design.readthedocs.io/en/pydata-theme/index.html>`__
+--------------------------------------------------------------------------------------------------
+::
+
+   pip  install sphinx-design
+
+
+tab
+=======================
+
+.. tab-set::
+
+    .. tab-item:: patternA
+
+        **このように** なります
+
+    .. tab-item:: Pattern2
+
+        違いがわかります？
+
+書き方↓。ちなみに `mkdocsの場合 <https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#c_1>`__
+
+::
+
+   .. tab-set::
+
+    .. tab-item:: Label1
+
+        Content 1
+
+    .. tab-item:: Label2
+
+        Content 2
+
+dropdown
+===========
+
+.. dropdown:: ドロップダウンだよ
+
+    | 中身はこんな風です
+    | **太字とか** も普通につかえるよ 
