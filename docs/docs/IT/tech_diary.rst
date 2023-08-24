@@ -160,9 +160,9 @@ documentツール
 =======================
 .. todo::  読んでおくと良さそうなdocument
 
-  https://docs.python.org/3/library/multiprocessing.html
-  https://docs.python.org/ja/3/library/queue.html
-  https://docs.geoserver.org/latest/en/user/
+  | https://docs.python.org/3/library/multiprocessing.html
+  | https://docs.python.org/ja/3/library/queue.html
+  | https://docs.geoserver.org/latest/en/user/
 
 
 
