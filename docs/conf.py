@@ -38,7 +38,8 @@ extensions = [
     ##github pagesに表示するのに必要！「
     'sphinx.ext.mathjax', 
     'sphinx.ext.todo', 
-    'sphinx_design'
+    'sphinx_design',
+    "sphinx_last_updated_by_git"
 ]
 
 
