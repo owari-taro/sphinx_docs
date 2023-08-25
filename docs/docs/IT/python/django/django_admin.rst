@@ -7,10 +7,16 @@ CustomUser
 -----------------
 
 
-ユーザー編集時の項目を変えたい
+ユーザー作成時・編集時の項目を変えたい
 ==============================
+作成時に指定する項目と編集時に指定する項目はそれぞれ別々のfieldで設定する必要がある
 
-fieldsetsを書き換える
+作成時
+------------------
+add_fieldsetsを書き換える
+編集時
+--------------
+fieldssets
 
 ::
     
@@ -28,7 +34,7 @@ fieldsetsを書き換える
 
 ::
 
-        
+            
     @admin.register(User)
     class UserAdmin(admin.ModelAdmin):
         add_form_template = "admin/auth/user/add_form.html"
@@ -41,7 +47,7 @@ fieldsetsを書き換える
                 {
                     "fields": (
                         "is_active",
-                        "roles",
+                        #"roles",
                         "is_staff",
                         "is_superuser",
                         "groups",
@@ -51,6 +57,23 @@ fieldsetsを書き換える
             ),
             (_("Important dates"), {"fields": ("last_login", "date_joined")}),
         )
+        add_fieldsets = (
+            (
+                None,
+                {
+                    "classes": ("wide",),
+                    "fields": ("username", "password1", "password2",),#"origin_group"
+                },
+            ),
+        )
+
+.. dropdown::  編集すべき場所の探し方
+
+    検索・ドキュメント見てもすぐわからない場合は、
+    継承している親クラスを探してみるとわかることがある。
+
+    今回の場合だとdefaultの作成画面で表示される,usernamne,password,password2とadd_fieldsetsの中身が一致してたので
+    見つけることができた
 
 ------------------
 表示データの制限
