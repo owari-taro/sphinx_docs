@@ -7,8 +7,6 @@ CustomUser
 -----------------
 
 
-
-
 ユーザー編集時の項目を変えたい
 ==============================
 
@@ -80,6 +78,35 @@ Groupによる制限
 サイトタイトルの変更
 ====================
 
+方法１：urls.pyのadminの属性を変える
+------------------------------------
+
+`How to change site title, site header and index title in Django Admin?(stackoverflow) 
+<https://stackoverflow.com/questions/4938491/how-to-change-site-title-site-header-and-index-title-in-django-admin>`__
+
+
+.. code-block:: python
+    :emphasize-lines: 4-6
+    
+    from django.contrib import admin
+    ....
+
+    admin.site.site_header="管理画面"
+    admin.site.site_title="Title"
+    admin.site.index_title="indexだよ"
+    # Setup the URLs and include login URLs for the browsable API.
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+        path("o/", include("oauth2_provider.urls", namespace="oauth2_provider")),
+    ]
+
+.. note:: 
+    
+    タイトル表記を変えたいだけならば方法１のほうが簡単
+
+
+方法2:AminSiteを継承
+-----------------------------
 AdminSiteを継承することでadminページのタイトルヘッダーなどを書き換えることができる
 
 ::

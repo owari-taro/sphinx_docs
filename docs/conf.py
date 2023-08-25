@@ -76,3 +76,7 @@ html_static_path = ["_static"]
 html_js_files = ["js/custom.js"]
 
 numfig = True
+
+html_theme_options = {
+  "footer_items": ["copyright", "sphinx-version", "last-updated"],
+}
