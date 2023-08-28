@@ -2,18 +2,25 @@
 django-admin
 ===========================
 
-
-
-
-
 -----------------
-Custom
+ModelAdmin
 -----------------
 
 
 ログインユーザーごとに一覧表示の範囲を制御したい
 =======================================================
 get_querysetを書き換える `公式 <https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.get_queryset>`__
+
+
+
+一覧ページでまとめて処理したい
+===============================================
+デフォルトではまとめて削除があるが同じように、まとめてstatusを変えるみたいなのが自作できる
+
+`dj-admin-action<https://www.google.com/search?client=firefox-b-d&q=django+admi+actrion>`__
+
+
+
 
 
 ユーザー作成時・編集時の項目を変えたい
