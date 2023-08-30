@@ -200,5 +200,8 @@ aws
 
   aws s3 cpのrecursiveの実装を確認してみる
 
-
-  
+fluent python
+-------------------
+* 前記のuploadの速度に関連して fluent pythonを読んでいたら `httpx <https://www.python-httpx.org/async/>`__ なるlibraryが記載されていた
+* requetsと違って、asyncにも対応しているらしく良さそうなので試してみる 
+* ちなみにドキュメントはmkdocsで書かれていた。
