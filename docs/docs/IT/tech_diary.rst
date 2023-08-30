@@ -182,3 +182,23 @@ https://stackoverflow.com/questions/34777943/insert-clickable-svg-image-into-sph
 
 .. todo:: 
   https://numpy.org/doc/stable/reference/generated/numpy.ndarray.view.html
+
+2023/8/30
+========================
+
+documentツール
+-----------------------
+* fluent-pythonのサイトをみたらたまたま見つける、goで書かれているらしいが、ちょっとマイナー（？）
+
+aws
+--------------------
+* s3で大量のファイルをアップロードするとき（合計40GB）を送るとき、aws-cli のcp recursiveでするのが一番早かった。
+* aioboto3で非同期にすれば早いかと思ったが、awscliのほうがファイス数が増えるにしたがって早くなっていった。
+* 
+
+.. todo:: 
+
+  aws s3 cpのrecursiveの実装を確認してみる
+
+
+  
