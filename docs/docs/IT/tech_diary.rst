@@ -196,12 +196,57 @@ aws
 * aioboto3で非同期にすれば早いかと思ったが、awscliのほうがファイス数が増えるにしたがって早くなっていった。
 * 
 
-.. todo:: 
+.. todo::  
 
-  aws s3 cpのrecursiveの実装を確認してみる
+  aws s3 cpのrecursiveの実装を確認してみる.
+  さっとgithubで検索してみたがすぐにはわからなかった・・・・
 
 fluent python
 -------------------
 * 前記のuploadの速度に関連して fluent pythonを読んでいたら `httpx <https://www.python-httpx.org/async/>`__ なるlibraryが記載されていた
 * requetsと違って、asyncにも対応しているらしく良さそうなので試してみる 
 * ちなみにドキュメントはmkdocsで書かれていた。
+
+その他
+----------------
+これを書いているときちょうどsphinxのvscode previewが一時的に↓のようなエラーがでて
+previewが使えなくなったが、.vscode/settings.jsonから **,** がぬけてjsonが壊れていたのが原因だった。
+* vscodeのextentionのとかやったが関係なかった・・・
+
+::
+
+  command restructuredtext.showpreviewtoside not found
+
+
+2023/8/31
+==================
+
+
+fluent python
+--------------
+
+tqdm
+______________
+* for文などののprogressbarに使えるtqdmが参考になった。見た目もきれいなのでよい
+* コマンドラインに-vで詳細をだすかなども参考になった。
+  pytestなどにも使われていることを思い出した。
+  コマンドラインツールで適度に表示を出す方法として使えそう
+
+
+POSTGIS
+---------------
+* 不正なポリゴンをなおすのにst_buffer(geom,0)で解決ができることがある。ちょうど8の字がたになっているときに、使えるらしい・・・
+  一応オフィシャルdocumentにも次のような記載がある
+* ただ詳細な理由はよくわからない
+* docuemt自体はかなり分厚くしっかり描いてあるので読む価値ありそう？
+
+::
+
+
+  e input object is much larger than a UTM zone or crosses
+  the dateline Buffer output is always a valid polygonal geometry. Buffer can handle invalid inputs, so buffering by distance 0
+  is sometimes used as a way of repairing invalid polygons. can also be used for this purpose. Buffering is sometimes used to
+  perform a within-distance search. For this use case it is more efficient to use . This function ignores the Z dimension. It always
+  gives a 2D result even when used on a 3D geometry.
+
+
