@@ -236,17 +236,19 @@ ______________
 POSTGIS
 ---------------
 * 不正なポリゴンをなおすのにst_buffer(geom,0)で解決ができることがある。ちょうど8の字がたになっているときに、使えるらしい・・・
-  一応オフィシャルdocumentにも次のような記載がある
-* ただ詳細な理由はよくわからない
-* docuemt自体はかなり分厚くしっかり描いてあるので読む価値ありそう？
+  一応オフィシャル `document <https://postgis.net/documentation/manual/>`__ [#]_ にも次のような記載がある
 
 ::
 
 
   e input object is much larger than a UTM zone or crosses
-  the dateline Buffer output is always a valid polygonal geometry. Buffer can handle invalid inputs, so buffering by distance 0
-  is sometimes used as a way of repairing invalid polygons. can also be used for this purpose. Buffering is sometimes used to
-  perform a within-distance search. For this use case it is more efficient to use . This function ignores the Z dimension. It always
-  gives a 2D result even when used on a 3D geometry.
+  the dateline Buffer output is always a valid polygonal geometry. 
+  Buffer can handle invalid inputs, so buffering by distance 0
+  is sometimes used as a way of repairing invalid polygons.
+   can also be used for this purpose. Buffering is sometimes used to
+  perform a within-distance search. For this use case it is more efficient to use .
+   This function ignores the Z dimension. It always gives a 2D result even when used on a 3D geometry.
 
 
+.. [#] 詳細理由はよくわかってない。ただドキュメント自体は900p近くあってかなりしっかりしてるので読む価値はありそう。例えばspatial indexなどは
+       geodjangoまかせで使ってるのでいいかも
