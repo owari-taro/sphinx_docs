@@ -232,6 +232,14 @@ ______________
   pytestなどにも使われていることを思い出した。
   コマンドラインツールで適度に表示を出す方法として使えそう
 
+.. code-block:: python
+  
+  from tqdm import tqdm
+  import time
+
+  for i in tqdm(range(100)):
+      time.sleep(1)
+  #100%|██████████| 100/100 [01:40<00:00,  1.00s/it]
 
 POSTGIS
 ---------------
@@ -252,3 +260,12 @@ POSTGIS
 
 .. [#] 詳細理由はよくわかってない。ただドキュメント自体は900p近くあってかなりしっかりしてるので読む価値はありそう。例えばspatial indexなどは
        geodjangoまかせで使ってるのでいいかも
+
+2023/9/1
+=========================
+
+QGIS
+------------------------------
+*  単純にintersectsとりたいだけならqgisのほうがよい。map上での確認もできるのでミスにも気づきやすい。 `参考 <https://gis.stackexchange.com/questions/18453/create-a-new-layer-from-overlap-between-two-layers>`__
+
+
