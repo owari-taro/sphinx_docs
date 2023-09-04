@@ -11,6 +11,44 @@ Executions
 --------------------
 tip
 --------------------
+s3連携
+==========================
+s3からのイベント通知による起動
+--------------------------------
+
+objectの作成・タグ作成/更新etcでstepfunctionを起動できる。なおタグの中身はinputにでてこないので注意
+
+`official docs <https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-cloudwatch-events-s3.html>`__
+
+::
+    #タグ作成時のinput例
+    {
+    "version": "0",
+    "id": "ceff8539-647a-386e-0251-cb098dfd0422",
+    "detail-type": "Object Tags Added",
+    "source": "aws.s3",
+    "account": "********************",
+    "time": "2023-09-05T02:32:07Z",
+    "region": "ap-northeast-1",
+    "resources": [
+        "arn:aws:s3:::{bucket_name}"
+    ],
+    "detail": {
+        "version": "0",
+        "bucket": {
+        "name": "{bucket_name}"
+        },
+        "object": {
+        "key": "download.svg",
+        "etag": "ef71823e383fd23ea6533c8155cd0129"
+        },
+        "request-id": "C9HBRQFZ0DTZYN4F",
+        "requester": "*****************************************",
+        "source-ip-address": "***********************"
+    }
+    }
+
+
 jsonpath
 =====================================
 
@@ -49,3 +87,5 @@ attributeの設定
     }
 
 `stack overflow <https://stackoverflow.com/questions/57619197/how-to-pass-jsonpath-to-messageattribute-while-publishing-sns-message-from-a-ste>`__
+
+
