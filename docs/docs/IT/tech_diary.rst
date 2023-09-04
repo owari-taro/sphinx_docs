@@ -269,3 +269,20 @@ QGIS
 *  単純にintersectsとりたいだけならqgisのほうがよい。map上での確認もできるのでミスにも気づきやすい。 `参考 <https://gis.stackexchange.com/questions/18453/create-a-new-layer-from-overlap-between-two-layers>`__
 
 
+
+2023/9/2
+====================
+fluent python
+-----------------
+* pythonの実装見たいときは `cpython <https://github.com/python/cpython>`__ を参照するといい
+* 
+
+2023/9/4
+===========================
+fluent python
+-------------------
+* dict/listなど直接継承すると一貫性のない動作をすることがある
+aws
+--------------------
+* s3のevent通知はtag変更とかでもできる `Supported event destinations <https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html#supported-notification-destinations>`__
+
