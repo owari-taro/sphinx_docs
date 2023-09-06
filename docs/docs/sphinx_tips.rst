@@ -157,7 +157,8 @@ sphinx [#sphinx]_ を使うにはpython [#python]_ をインストールして�
 
 画像挿入
 =======================
-
+png/jpg
+---------------
 figure-directiveを使う。画像のパスは↓のように相対パス or /img/* のようにルートディレクトリからのパターン
 
 
@@ -201,14 +202,68 @@ conf.pyに以下を記述しておくと図番号が表示される
 
   .. figure:: img/kiddykong.jpg
 
+
+
+svg
+----------------------
+htmlを直書きする方法 [#]_ とfigure-directive [#]_ でやる方法の二通りがみつかった。
+clickableなfigure+targetが個人的にはよく使う
+
+
+
+.. figure:: img/aws.svg
+
+      通常のfigureの場合
+
+
+
+.. figure:: img/aws.svg
+   :target: ../_images/aws.svg
+
+   figureにtargetをプラス
+
+::
+
+   .. figure:: img/aws.svg
+   :target: ../_images/aws.svg
+   
+
+.. raw:: html
+    :file: img/aws.svg
+
+raw-htmlの場合
+
+
+
+.. [#] ダミー
+.. [#] ダミー
+
+未定
+
+
+
+
 jupyter連携
 ================
 
-todo etc
+まだ書いてない
+
+adomonition
 ==============
+
 
 todo
 -----------
+
+
+**conf.py** に次を設定し、
+
+::
+
+   todo_include_todos=True
+   extensions = ['sphinx.ext.todo' ]
+
+
 
  .. todo:: ここにtodoを書く
 
@@ -216,12 +271,6 @@ todo
 
    | 改行してかくこともできる
    | ここで改行
-
-**conf.py** に次を設定し、
-::
-
-   todo_include_todos=True
-   extensions = ['sphinx.ext.todo' ]
 
 
 
@@ -234,6 +283,19 @@ rstファイルでtodoを次のように書く
 
       | 改行してかくこともできる
       | ここで改行
+
+
+topic
+------------------
+
+topicは **todo** みたいなタイトルを自分でかける
+
+
+
+.. topic::  **トピック**
+
+   | 同じように書けます
+   | 改行とか **太字** とかとか
 
 
 warning
