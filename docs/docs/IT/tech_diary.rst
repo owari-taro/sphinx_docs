@@ -344,9 +344,10 @@ created_byで指定されたユーザーを消したとき、messageを残して
 
 ::
 
+    #イメージ
     class Message(Model):
         created_by=models.ForeignKey(User...
-        message=models.CharField(.....
+        message=models.CharField(max_length=250,.....
 
 
 | チャットツールとかだと(teamsとか)削除されたユーザーもメッセージは残している。残さないと会話の意味とかが分からなくなるからだろう。
