@@ -16,11 +16,10 @@ s3連携
 s3からのイベント通知による起動
 --------------------------------
 
-objectの作成・タグ作成/更新etcでstepfunctionを起動できる。なおタグの中身はinputにでてこないので注意
-
-`official docs <https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-cloudwatch-events-s3.html>`__
+objectの作成・タグ作成/更新etc [#]_ でstepfunctionを起動できる。なおタグの中身はinputにでてこないので注意 [#]_
 
 ::
+
     #タグ作成時のinput例
     {
     "version": "0",
@@ -47,6 +46,12 @@ objectの作成・タグ作成/更新etcでstepfunctionを起動できる。な�
         "source-ip-address": "***********************"
     }
     }
+
+
+.. [#] `Supported event destinations <https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html#supported-notification-destinations>`__ に詳細あり
+
+.. [#] `official docs <https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-cloudwatch-events-s3.html>`__
+
 
 
 jsonpath

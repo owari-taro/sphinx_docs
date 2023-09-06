@@ -1,7 +1,11 @@
 ======================
-技術日記
+日記
 ======================
 技術関連ITなどのことについてのメモとか日記のようなもの
+
+-------------------------------
+2023/8
+-------------------------------
 
 2023/7/31
 ===========================
@@ -281,8 +285,50 @@ fluent python
 ===========================
 fluent python
 -------------------
-* dict/listなど直接継承すると一貫性のない動作をすることがある
+* dict/listなど直接継承すると一貫性のない動作をすることがある。例えば・・
+::
+
+   
 aws
 --------------------
 * s3のevent通知はtag変更とかでもできる `Supported event destinations <https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html#supported-notification-destinations>`__
 
+
+2023/9/5
+======================
+aws
+-------------------------
+* ルートテーブルとAClの違いは何かとふと思ったが、 `stackoverflow <https://stackoverflow.com/questions/60211533/what-is-the-diference-between-network-acl-and-route-tables-in-aws>`__ が参考になった
+* cloud9はprivate subnetでも使える。gatewayのせっていが必要 `参考 <https://www.bioerrorlog.work/entry/private-subnet-cloud9>`__]
+
+
+python
+----------------------------
+* offline環境でpythonのversionを上げようとして、最初pyenvを検討したが一番らくなのは公式のtgzをコンパイルインストールする形式っぽい `参考 <http://infra-se-no.blog.jp/archives/16962028.html>`__ [#]_ 
+
+
+::
+
+
+      #tar xvzf Python-3.8.0a1.tgz
+
+      #cd Python-3.8.0a1
+
+      #./configure --prefix=/usr/local/python
+
+      #make
+
+      #make install
+
+      #vi ~/.bash_profile 
+
+      export PATH=$PATH:〜〜〜〜〜〜の後ろに「:/usr/local/python/bin」を追記して保存する。
+
+      #ln -s /usr/local/python/bin/python3 /usr/local/bin/python
+
+      #python
+
+
+
+
+.. [#] オフライン下でのpyenvも詳細に書かれたblogがあったが手順が長すぎて断念した
