@@ -309,7 +309,7 @@ python
 
 ::
 
-
+      #https://www.python.org/ftp/python/
       #tar xvzf Python-3.8.0a1.tgz
 
       #cd Python-3.8.0a1
