@@ -332,3 +332,27 @@ python
 
 
 .. [#] オフライン下でのpyenvも詳細に書かれたblogがあったが手順が長すぎて断念した
+
+
+
+2023/9/5
+===============================
+
+消去したユーザーがオーナーのリソースの表示のさせかた
+--------------------------------------------------
+created_byで指定されたユーザーを消したとき、messageを残しておくべきかという問題。
+
+::
+
+    class Message(Model):
+        created_by=models.ForeignKey(User...
+        message=models.CharField(.....
+
+
+| チャットツールとかだと(teamsとか)削除されたユーザーもメッセージは残している。残さないと会話の意味とかが分からなくなるからだろう。
+| ただしこの場合削除されたユーザーが再度登録した場合(emailがユニークかつ必須の条件のとき)どのように扱えばいいのかがちょっと謎。
+| 削除フラグかつ同じemailがあるときは再登録できるようにコマンドを変えてあげればいいのだろうか？
+ 
+
+`参考 <https://ux.stackexchange.com/questions/10329/whats-the-best-way-to-handle-deleted-user-accounts-on-a-social-app>`__
+
