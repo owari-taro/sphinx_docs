@@ -13,4 +13,5 @@ IT
    python/index
    database/index
    tech_diary
+   vscode
    

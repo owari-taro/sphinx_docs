@@ -285,8 +285,32 @@ fluent python
 ===========================
 fluent python
 -------------------
-* dict/listなど直接継承すると一貫性のない動作をすることがある。例えば・・
-::
+* dict/listなど直接継承すると一貫性のない動作をすることがある。 `pypy <https://doc.pypy.org/en/latest/cpython_differences.html#subclasses-of-built-in-types>`__ 記載の例だと
+
+
+
+.. code-block:: python
+
+    class D(dict):
+    def __getitem__(self, key):
+        if key == 'print':
+            return print
+        return "%r from D" % (key,)
+
+  class A(object):
+      pass
+
+  a = A()
+  a.__dict__ = D()
+  a.foo = "a's own foo"
+  print(a.foo)
+  # CPython => a's own foo
+  # PyPy => 'foo' from D
+
+  print('==========')
+
+  glob = D(foo="base item")
+  loc = {}
 
    
 aws
@@ -361,9 +385,38 @@ created_byで指定されたユーザーを消したとき、messageを残して
 
 2023/9/7
 ===================================================
+code-commitのクロスアカウントでの使用
+--------------------------------------
+vpc endpointを使えばできる、ただグループポリシーとかの指定があると引っ掛かるかの静画あるぞ
 
 
 
+2023/9/10
+==========================
+
+コンテナセキュリティ
+-----------------------
+
+* コンテナ側もホストと同じOSを共有している.『共通のOSで別のディスとリビューしょんを動かしているようにふるまっているだけ・・・』[#]_
+ 
+
+::
+
+    docker run --rm -it fedora:38 /bin/bash
+
+    [root@53ccc165b45b /]# uname -a
+    Linux 53ccc165b45b 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 GNU/Linux
 
 
 
+.. [#] 　
+
+* alpineの場合はbashでなくash
+::
+
+    docker run -it --rm myimage:test  /bin/ash
+
+.. todo:: 
+
+  docker公式のsecurityの項目読んでおく
+  https://docs.docker.com/develop/security-best-practices/#check-your-image-for-vulnerabilities
