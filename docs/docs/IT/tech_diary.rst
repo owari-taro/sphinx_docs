@@ -504,8 +504,6 @@ unittestのpatchについて
 またpytest-mock使えばimportせず似たように使える。
 
 
-.. [#] djangoアプリで、setupとして(1)token取得(2)自分のユーザー情報取得してから、各エンドポイントをテストする必要があったが、
-毎回mockを書くのもめんどくさかったので探したらみつかった
 
 `stack-overflow <https://stackoverflow.com/questions/59045200/proper-way-to-return-mocked-object-using-pytest-fixture>`__ のコード例
 .. code-block:: python
@@ -520,3 +518,6 @@ unittestのpatchについて
 
   effective pythonのmockクラスとpatchの使い分けも参考になる。
 
+
+
+.. [#] djangoアプリで、setupとして(1)token取得(2)自分のユーザー情報取得してから、各エンドポイントをテストする必要があったが、毎回mockを書くのもめんどくさかったので探したらみつかった
