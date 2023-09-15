@@ -265,6 +265,12 @@ POSTGIS
 .. [#] 詳細理由はよくわかってない。ただドキュメント自体は900p近くあってかなりしっかりしてるので読む価値はありそう。例えばspatial indexなどは
        geodjangoまかせで使ってるのでいいかも
 
+
+----------------------------
+2023/9
+----------------------------
+
+
 2023/9/1
 =========================
 
@@ -397,7 +403,7 @@ vpc endpointを使えばできる、ただグループポリシーとかの指�
 コンテナセキュリティ
 -----------------------
 
-* コンテナ側もホストと同じOSを共有している.『共通のOSで別のディスとリビューしょんを動かしているようにふるまっているだけ・・・』[#]_
+* コンテナ側もホストと同じOSを共有している.『共通のOSで別のディスとリビューしょんを動かしているようにふるまっているだけ・・・』[#]_ 
  
 
 ::
@@ -420,3 +426,97 @@ vpc endpointを使えばできる、ただグループポリシーとかの指�
 
   docker公式のsecurityの項目読んでおく
   https://docs.docker.com/develop/security-best-practices/#check-your-image-for-vulnerabilities
+
+
+2023/9/11
+===========================
+aws
+------------------
+gateway endpoint設定してもs3に接続できない(access denied)
+_____________________________________________________________________
+* 最初はec2のロールが不足していたので、s3fullacessをロールにたしてみたが、変わらなかったので再起動したが変わらず。
+* デフォルトで適用されている一時クレデンシャルを無効化したらできた [#]_ 
+  
+.. [#]  https://www.yamamanx.com/cloud9-default-setting-access
+
+
+cloud9でlocalアップロードしたファイルがunzipできない
+_______________________________________________________
+
+* s3からブラウザ経由でダウンロードして、cloud9のlocalファイルのアップロードをおこなったファイルだとなぜかunzipできない
+* 結局,s3から直接cliでダウンロードしたら問題なくunzipできた。
+
+trend-micro cloud oneのエイリアス設定
+_________________________________________
+| 圧縮されたファイルに含まれるファイル数の上限設定時にエイリアスに反映する必要があるが、デフォルトで設定されているエイリアス名をversioningで更新する必要がある
+| ドキュメントにははっきり書いていなかったので、新しくエイリアスを作っていた
+
+
+
+
+  
+2023/9/12
+====================================
+
+aws
+--------------------------
+awscliが使えない
+_________________________________________
+
+pythonのpipように使ってるproxy環境変数を消したら使えるようになった。NO_PROXYで指定しているのだがなぜかよくわからない
+
+::
+
+    export -n http_proxy
+    export -n https_proxy
+    
+    export NO_PROXY=169.254.169.254
+
+
+cloud9のdiskが足りない
+__________________________
+https://blog.proglus.jp/4574/ の記載の通りinstanceをいったん停止してec2 consoleからdiskを増やしただけで、root voluemeが増加する。（ubunuで試した）
+
+
+
+
+2023/9/15
+=======================================
+django unittestが失敗
+---------------------------------
+**django.db.utils.ProgrammingError: permission denied to create extension "postgis"** で失敗する。
+unittest字に別のデータベースを作るときにpostgisをinstallする権限がないのが原因、
+とりあえずtemplate1にpostgisを追加するようにしたら動いた。
+
+https://stackoverflow.com/questions/35209013/testing-django-app-with-postgis-backend
+https://postgresweb.com/what-is-template1
+
+.. todo:: 
+  
+    django `公式docのテスト <https://docs.djangoproject.com/en/4.2/topics/testing/overview/>`__ を見ておく  
+
+
+unittestのpatchについて
+----------------------------
+いままで各テストでmockのdecoratorを使っていたが、
+全部のTestClassのすべてのテストケースで使うような場合だったら、pytestのfixtureにまとめてしまったほうが見やすい。[#]_
+
+またpytest-mock使えばimportせず似たように使える。
+
+
+.. [#] djangoアプリで、setupとして(1)token取得(2)自分のユーザー情報取得してから、各エンドポイントをテストする必要があったが、
+毎回mockを書くのもめんどくさかったので探したらみつかった
+
+`stack-overflow <https://stackoverflow.com/questions/59045200/proper-way-to-return-mocked-object-using-pytest-fixture>`__ のコード例
+.. code-block:: python
+
+  @pytest.fixture()
+  def mocked_worker():
+    with patch('test.test_module.os.getcwd', return_value="Testing"):
+        result = Worker()
+        yield result
+
+.. info::
+
+  effective pythonのmockクラスとpatchの使い分けも参考になる。
+
