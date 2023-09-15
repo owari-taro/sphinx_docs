@@ -508,11 +508,13 @@ unittestのpatchについて
 `stack-overflow <https://stackoverflow.com/questions/59045200/proper-way-to-return-mocked-object-using-pytest-fixture>`__ のコード例
 .. code-block:: python
 
-  @pytest.fixture()
-  def mocked_worker():
-    with patch('test.test_module.os.getcwd', return_value="Testing"):
-        result = Worker()
-        yield result
+    @pytest.fixture()
+    def mocked_worker():
+        with patch('test.test_module.os.getcwd', return_value="Testing"):
+          result = Worker()
+          yield result
+
+
 
 .. info::
 
