@@ -16,7 +16,7 @@ table of contents!
     
    docs/sphinx_tips
    docs/IT/index
-   docs/notebooks/decorator
+   .. notebooks/decorator
 
 
 .. docs/english/index
