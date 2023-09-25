@@ -70,6 +70,13 @@ yieldの後はテスト終了後の後処理を記述する
 
 **conftest.py** にfixtureを記述することでimportなしで使用できる。
 
+fixtureをテストクラスの全メソッドに適評したい
+-------------------------------------------
+pytest.mark.usefixturesを使う
+
+https://docs.pytest.org/en/7.1.x/how-to/fixtures.html
+
+
 aws
 ======================
 | awsを使ったモジュールをテストしたい場合はmotoが便利（ただしs3など一部のサービスに限られる）

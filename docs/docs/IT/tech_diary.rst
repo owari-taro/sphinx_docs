@@ -506,20 +506,33 @@ unittestのpatchについて
 
 
 `stack-overflow <https://stackoverflow.com/questions/59045200/proper-way-to-return-mocked-object-using-pytest-fixture>`__ のコード例
-.. code-block:: python
 
+.. code-block:: python
+  
     @pytest.fixture()
     def mocked_worker():
         with patch('test.test_module.os.getcwd', return_value="Testing"):
           result = Worker()
           yield result
 
+alarm
 
 
 .. info::
-
-  effective pythonのmockクラスとpatchの使い分けも参考になる。
+    
+    
+    effective pythonのmockクラスとpatchの使い分けも参考になる。
 
 
 
 .. [#] djangoアプリで、setupとして(1)token取得(2)自分のユーザー情報取得してから、各エンドポイントをテストする必要があったが、毎回mockを書くのもめんどくさかったので探したらみつかった
+
+
+2023/9/25
+=============================
+
+postgis
+----------------------
+* st_validdetailでinvalidなときの理由がわかる
+* lineとpolygonの共有長さがわかる https://gis.stackexchange.com/questions/27259/getting-the-length-of-line-inside-polygon
+  
