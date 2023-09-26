@@ -546,17 +546,19 @@ gis
 ====================
 QGISで選択したポリゴンのwktの取得
 ----------------------------------------
-* 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった) [#]_ 
+* 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった) https://gis.stackexchange.com/questions/272753/is-there-a-way-in-qgis-3-to-get-a-selected-feature-wkt
+  
+
 
 .. figure::  ./img/qgis_wkt_copy.png
 
 
 multipolygon→polygonの修正(shapely)
 ---------------------------------------------
-* list(multipolygon)でできると思ったがmultipolygon.geomsにする必要があった [#]_
+* list(multipolygon)でできると思ったがmultipolygon.geomsにする必要があった https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
 
 
-::
+.. code-block:: python 
 
   >>> a="MultiPolygon (((139.64669465088675793 38.48269143041795814, 139.71176749695203512 38.05540037864444258, 140.14953027957281506 38.06471602951130961, 140.33291739121125374 38.36682853913743685, 139.64669465088675793 38.48269143041795814)))"
   >>> multi=wkt.loads(a)
@@ -571,5 +573,3 @@ multipolygon→polygonの修正(shapely)
   <POLYGON ((139.647 38.483, 139.712 38.055, 140.15 38.065, 140.333 38.367, 13...>
   >>>
 
-.. [#] https://gis.stackexchange.com/questions/272753/is-there-a-way-in-qgis-3-to-get-a-selected-feature-wkt
-.. [#] https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
