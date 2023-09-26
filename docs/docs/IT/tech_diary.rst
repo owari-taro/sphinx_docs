@@ -546,7 +546,7 @@ gis
 ====================
 QGISで選択したポリゴンのwktの取得
 ----------------------------------------
-* 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった）
+* 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった) [#]_ 
 
 .. figure::  ./img/qgis_wkt.copy
 
@@ -555,7 +555,6 @@ multipolygon→polygonの修正(shapely)
 ---------------------------------------------
 * list(multipolygon)でできると思ったがmultipolygon.geomsにする必要があった [#]_
 
-.. [#] https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
 
 ::
 
@@ -571,3 +570,6 @@ multipolygon→polygonの修正(shapely)
   >>> polys[0]
   <POLYGON ((139.647 38.483, 139.712 38.055, 140.15 38.065, 140.333 38.367, 13...>
   >>>
+
+.. [#] https://gis.stackexchange.com/questions/272753/is-there-a-way-in-qgis-3-to-get-a-selected-feature-wkt
+.. [#] https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
