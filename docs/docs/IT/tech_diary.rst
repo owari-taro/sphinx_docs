@@ -536,3 +536,38 @@ postgis
 * st_validdetailでinvalidなときの理由がわかる
 * lineとpolygonの共有長さがわかる https://gis.stackexchange.com/questions/27259/getting-the-length-of-line-inside-polygon
   
+
+
+
+2023/9/28
+================================
+
+gis
+====================
+QGISで選択したポリゴンのwktの取得
+----------------------------------------
+* 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった）
+
+.. figure::  ./img/qgis_wkt.copy
+
+
+multipolygon→polygonの修正(shapely)
+---------------------------------------------
+* list(multipolygon)でできると思ったがmultipolygon.geomsにする必要があった [#]_
+
+.. [#] https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
+
+::
+
+  >>> a="MultiPolygon (((139.64669465088675793 38.48269143041795814, 139.71176749695203512 38.05540037864444258, 140.14953027957281506 38.06471602951130961, 140.33291739121125374 38.36682853913743685, 139.64669465088675793 38.48269143041795814)))"
+  >>> multi=wkt.loads(a)
+  >>> multi.is_valid
+  KeyboardInterrupt
+  >>> polys=list(multi)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  TypeError: 'MultiPolygon' object is not iterable
+  >>> polys=list(multi.geoms)
+  >>> polys[0]
+  <POLYGON ((139.647 38.483, 139.712 38.055, 140.15 38.065, 140.333 38.367, 13...>
+  >>>
