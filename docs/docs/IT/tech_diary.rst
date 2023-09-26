@@ -548,7 +548,7 @@ QGISで選択したポリゴンのwktの取得
 ----------------------------------------
 * 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった) [#]_ 
 
-.. figure::  ./img/qgis_wkt.copy
+.. figure::  ./img/qgis_wkt_copy.png
 
 
 multipolygon→polygonの修正(shapely)
