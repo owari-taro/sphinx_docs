@@ -1,1 +1,49 @@
-{"architecture":"amd64","config":{"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/sh"],"OnBuild":null},"created":"2023-09-10T14:43:11.813387193Z","history":[{"created":"2023-08-07T19:20:20.71894984Z","created_by":"/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "},{"created":"2023-08-07T19:20:20.894140623Z","created_by":"/bin/sh -c #(nop)  CMD [\"/bin/sh\"]","empty_layer":true},{"created":"2023-09-10T14:43:10.45090954Z","created_by":"RUN /bin/sh -c apk update # buildkit","comment":"buildkit.dockerfile.v0"},{"created":"2023-09-10T14:43:11.78651449Z","created_by":"RUN /bin/sh -c apk add curl # buildkit","comment":"buildkit.dockerfile.v0"},{"created":"2023-09-10T14:43:11.813387193Z","created_by":"COPY file file # buildkit","comment":"buildkit.dockerfile.v0"}],"os":"linux","rootfs":{"type":"layers","diff_ids":["sha256:4693057ce2364720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230","sha256:e4a607955a3a8c8d6cf71d6d9e9543595ab2dc9dcbc25dc1f359836f05eeb3ba","sha256:99f96ad03511aafcee676a129a6ea878064a6da2d5e0b349ff3ef4744ca6e9f1","sha256:da0e8f16b92d2144782333ac429bbbe21e8e9a7bcadddaf7f3d27eaa75f07eb1"]}}
+{
+    "architecture": "amd64",
+    "config": {
+        "Env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Cmd": [
+            "/bin/sh"
+        ],
+        "OnBuild": null
+    },
+    "created": "2023-09-10T14:43:11.813387193Z",
+    "history": [
+        {
+            "created": "2023-08-07T19:20:20.71894984Z",
+            "created_by": "/bin/sh -c #(nop) ADD file:32ff5e7a78b890996ee4681cc0a26185d3e9acdb4eb1e2aaccb2411f922fed6b in / "
+        },
+        {
+            "created": "2023-08-07T19:20:20.894140623Z",
+            "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+            "empty_layer": true
+        },
+        {
+            "created": "2023-09-10T14:43:10.45090954Z",
+            "created_by": "RUN /bin/sh -c apk update # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+        },
+        {
+            "created": "2023-09-10T14:43:11.78651449Z",
+            "created_by": "RUN /bin/sh -c apk add curl # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+        },
+        {
+            "created": "2023-09-10T14:43:11.813387193Z",
+            "created_by": "COPY file file # buildkit",
+            "comment": "buildkit.dockerfile.v0"
+        }
+    ],
+    "os": "linux",
+    "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+            "sha256:4693057ce2364:720d39e57e85a5b8e0bd9ac3573716237736d6470ec5b7b7230",
+            "sha256:e4a607955a3a8c8d6cf71d6d9e9543595ab2dc9dcbc25dc1f359836f05eeb3ba",
+            "sha256:99f96ad03511aafcee676a129a6ea878064a6da2d5e0b349ff3ef4744ca6e9f1",
+            "sha256:da0e8f16b92d2144782333ac429bbbe21e8e9a7bcadddaf7f3d27eaa75f07eb1"
+        ]
+    }
+}

@@ -543,9 +543,10 @@ postgis
 ================================
 
 gis
-====================
+----------------------------------
+
 QGISで選択したポリゴンのwktの取得
-----------------------------------------
+_________________________________
 * 地物情報を表示→選択知物をクリップボードにコピー（ただなぜかポリゴンなのにmultipolygonででてしまった) https://gis.stackexchange.com/questions/272753/is-there-a-way-in-qgis-3-to-get-a-selected-feature-wkt
   
 
@@ -554,7 +555,7 @@ QGISで選択したポリゴンのwktの取得
 
 
 multipolygon→polygonの修正(shapely)
----------------------------------------------
+________________________________________
 * list(multipolygon)でできると思ったがmultipolygon.geomsにする必要があった https://stackoverflow.com/questions/38930192/how-to-extract-polygons-from-multipolygons-in-shapely
 
 
@@ -573,3 +574,24 @@ multipolygon→polygonの修正(shapely)
   <POLYGON ((139.647 38.483, 139.712 38.055, 140.15 38.065, 140.333 38.367, 13...>
   >>>
 
+
+2023/9/29
+====================================
+
+postgres
+-------------------------------------
+
+他のテーブルの値でテーブル更新
+_______________________________
+joinを使わずに↓のような形式で実効できる。SQLクックブックを見て知った。
+
+https://qiita.com/hiro5963/items/ff1740924f218b5667e9
+
+::
+
+  update A set key=value where B where A.id=B.id
+
+window関数のランクの結果をwhereする
+____________________________________
+
+*** 
