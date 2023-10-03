@@ -588,9 +588,18 @@ https://github.com/sphinx-doc/sphinx/issues/2066
 --------------------------------------------------------------------------------------------------
 `sphinx-design <https://sphinx-design.readthedocs.io/en/pydata-theme/index.html>`__
 --------------------------------------------------------------------------------------------------
+
+setup
+========================
 ::
 
    pip  install sphinx-design
+
+
+conf.pyに以下を追加
+::
+
+   extensions = ["sphinx_design"]
 
 
 tab
