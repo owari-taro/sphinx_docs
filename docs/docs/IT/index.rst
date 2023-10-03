@@ -14,4 +14,7 @@ IT
    database/index
    tech_diary
    vscode
-   
+
+
+
+
