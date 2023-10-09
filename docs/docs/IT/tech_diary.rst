@@ -594,4 +594,65 @@ https://qiita.com/hiro5963/items/ff1740924f218b5667e9
 window関数のランクの結果をwhereする
 ____________________________________
 
-*** 
+
+
+
+
+---------------
+2023/10
+---------------
+
+2023/10/4
+===================
+
+sentinel2画像
+-----------------
+* copernicusでofflineと表示されている画像はすぐに取得できない。数日かかるという記述おあったが、1時間位でダウンロードできるようになった
+* APIで画像を取得するときはuuidが必要だが、copernicusのuiには表示されてない
+  
+
+
+  
+ 
+
+ 2023/10/06
+=========================
+
+
+polygonの二次元変換(shapely)
+------------------------------
+3次元ポリゴンを2次元ポリゴンに変換したいとコード。
+force_2dというのもあるらしいのだがなぜか使えなかった。。。
+
+https://gist.github.com/rmania/8c88377a5c902dfbc134795a7af538d8
+
+
+.. code-block:: 
+
+    geom = shapely.wkb.loads(
+        shapely.wkb.dumps(geom, output_dimension=2))
+
+
+  
+
+2023/10/8
+==================================
+namespace
+---------------------
+* pidが含まれるpid namespace(pidns)の確認
+::
+  # echo $$
+
+  # ls -l /proc$$/ns/pid
+  lrwxrwxrwx 1 root root 0 Oct  8 23:33 /proc/1/ns/pid -> 'pid:[4026532125]'
+
+* root pid nsを除けば、異なるpid nsどうしでは見えない。
+
+
+2023/10/9
+==========================-
+linuxでのsystemcallの表示方法 (-Tで各処理にかかった時間もわかる)
+
+::
+  #-Tで処理時間も表示
+  $ strace -T -o hello.log echo hello
