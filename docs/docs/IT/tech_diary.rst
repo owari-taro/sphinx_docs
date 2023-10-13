@@ -656,3 +656,64 @@ linuxでのsystemcallの表示方法 (-Tで各処理にかかった時間もわ�
 ::
   #-Tで処理時間も表示
   $ strace -T -o hello.log echo hello
+
+
+
+2023/10/10
+===============================
+docker
+---------------------
+* kernelはホストと共有
+::
+
+  uname -a
+
+
+
+2023/10/11
+======================
+system programming
+--------------------
+apt installだけだとversionが古いのしか(1.18)いれられずvscodeでdebuggerが使えなかった
+
+::
+
+
+  sudo add-apt-repository ppa:longsleep/golang-backports
+  sudo apt install golang
+
+githubのemail設定
+-------------------------
+https://zenn.dev/kaluna_hart/articles/github-email-error
+
+2023/10/12
+========================
+
+python勉強会
+----------------------------------
+久しぶりに参加したが、パッケージの解決の話が興味深かった。pipenv/poetryの速度差なども依存解決のアルゴリズムが関係しているらしい
+関連史料もまとめられているので読んでみる
+
+https://gist.github.com/vaaaaanquish/1ad9639d77e3a5f0e9fb0e1f8134bc06#file-python-package-manager-md
+
+
+
+2023/10/13
+===================
+setuptools
+--------------------  
+pip isntall Package-A[PDF]みたいに追加機能のインストールみたいなことも↓の書き方で指定できる。
+またwindowsだけはこのライブラリがいるみたいなのもできるらしい（https://setuptools.pypa.io/en/latest/userguide/dependency_management.html）
+
+.. code-block:: 
+ 
+  [metadata]
+  name = Package-A
+
+  [options.extras_require]
+  PDF =
+      ReportLab>=1.2
+      RXP
+
+
+  
