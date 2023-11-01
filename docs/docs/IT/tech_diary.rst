@@ -716,4 +716,170 @@ pip isntall Package-A[PDF]みたいに追加機能のインストールみたい
       RXP
 
 
+
+
+2023/10/14
+=================================
+
+fluent python
+----------------
+* __init__はinitializerでconstructorは__new__
+* __dict__.update(`kwargs**`) でまとめてフィールド作成できる。（だが）予約語と衝突すると可能性もあるので注意) [#]_ 
+
+.. [#] 例えば変数にclassは使えない(self.class=classみたいなのはできない)
+
+
+
+
+2023/10/15
+======================
+
+fluent python
+----------------------
+* class変数はインスタンス変数で上書きされる
+* varsではインスタンス変数が表示
+* delでインスタン変数を消せる。（クラス変数は残る）
+* propertyは{class}.{property名}でうわがきできる
   
+.. code-block:: python
+
+
+    >>> class Dummy:
+    ...     data="class variable"
+    ...     @property
+    ...     def prop(self):
+    ...         return "prop in method"
+    ... 
+    >>> 
+    >>> dummy=Dummy()
+    >>> vars(dummy)
+    {}
+    >>> dummy.prop
+    'prop in method'
+    >>> dummy.prop="overrideen"
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    AttributeError: can't set attribute 'prop'
+    >>> dummy.data="overrideen"
+    >>> dummy.data
+    'overrideen'
+    >>> vars(dummy)
+    {'data': 'overrideen'}
+    >>> del dummy.data
+    >>> dummy.data
+    'class variable'
+      
+
+
+2023/10/17
+====================================
+
+django-gisで動的なfilteringのやり方
+-----------------------------------------------------
+get_feature_typesに処理を書く。self.request.GETでqueryparamを取得し
+filter条件に組み込めばよい
+
+  .. code-block:: 
+       
+    class PlacesWFSView(WFSView):
+        """An simple view that uses the WFSView against our test model."""
+
+        xml_namespace = "http://example.org/gisserver"
+
+        # The service metadata
+        service_description = ServiceDescription(
+            title="Places",
+            abstract="Unittesting",
+            keywords=["django-gisserver"],
+            provider_name="Django",
+            provider_site="https://www.example.com/",
+            contact_person="django-gisserver",
+        )
+
+        # Each Django model is listed here as a feature.
+        feature_types = [
+            FeatureType(
+                Place.objects.all(),
+                fields="__all__",
+                other_crs=[RD_NEW]
+            ),
+        ]
+
+        def get_feature_types(self) -> list[FeatureType]:
+            """Return all available feature types this server exposes"""
+            #print(self.request)
+            print(type(self.request))
+            print(self.request.GET.get("SERVICE"),self.request.GET.get("VERSION"))
+            #self.feature_types[0].queryset=Place.objects.filter(id=1)
+            return self.feature_types
+
+    
+
+
+
+
+=============================
+vimの設定($HOME/.vimrc)
+----------------------------------
+
+2023/10/26
+==================================
+
+django restでのgeonjsonのかえしかた
+-----------------------------------------
+shapley.to_geojsonをpydantic.basemodelのfieldで返していたが、
+client側にはただの文字列として返ってしまうのでjson.dumpsとかでdictにして返す
+
+djangoのsettings.pyを見直そう
+----------------------------------
+各モジュール内にべた書きを避けるためにsettings.pyにいろいろかきすぎていることがある。
+コードをきれいに書く方法論は多いが設定ファイルを同期例にするかは余り論じられてない気がする
+
+あと使われなくなった機能のsettingがのこっているのは消しておこう
+
+
+一般的な名称のget-queryが競合しないか注意
+---------------------------------------------------
+
+------------------
+2023/11/1
+-------------------
+
+dockerでtkiner
+========================
+
+::
+    #https://qiita.com/U-1F992/items/33497c629144a62674d4
+    > docker build --tag tkinter .
+    > docker run -it --env "DISPLAY=${DISPLAY:-:0.0}" --volume /mnt/wslg/.X11-unix/:/tmp/.X11-unix dummy
+
+
+
+::
+
+    FROM python:3.11.5
+    WORKDIR /app
+    #COPY requirements.txt requirements.txt
+    RUN pip3 install customtkinter packaging
+    COPY . .
+
+    CMD ["python" , "script.py"]
+
+
+
+::
+
+
+    import customtkinter
+
+    def button_callback():
+        print("button pressed")
+
+    app = customtkinter.CTk()
+    app.title("my app")
+    app.geometry("400x150")
+
+    button = customtkinter.CTkButton(app, text="my button", command=button_callback)
+    button.grid(row=0, column=0, padx=20, pady=20)
+
+    app.mainloop()
