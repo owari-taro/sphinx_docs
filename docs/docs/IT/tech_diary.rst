@@ -842,17 +842,22 @@ djangoのsettings.pyを見直そう
 ---------------------------------------------------
 
 ------------------
+2023/11
+------------------
 2023/11/1
--------------------
+=========================
+
 
 dockerでtkiner
 ========================
+
+wsl2でtkinterをdockerで動かしてみ。optionで環境変数とvolumeマウントしてやる必要がある
+
 
 ::
     #https://qiita.com/U-1F992/items/33497c629144a62674d4
     > docker build --tag tkinter .
     > docker run -it --env "DISPLAY=${DISPLAY:-:0.0}" --volume /mnt/wslg/.X11-unix/:/tmp/.X11-unix dummy
-
 
 
 ::
@@ -864,8 +869,6 @@ dockerでtkiner
     COPY . .
 
     CMD ["python" , "script.py"]
-
-
 
 ::
 
