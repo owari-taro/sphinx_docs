@@ -9,3 +9,4 @@ database
    :caption: Contents:
     
    tatsujin_sql
+   postgres/index
