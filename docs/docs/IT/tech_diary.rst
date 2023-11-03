@@ -844,12 +844,13 @@ djangoのsettings.pyを見直そう
 ------------------
 2023/11
 ------------------
+
 2023/11/1
 =========================
 
 
 dockerでtkiner
-========================
+-------------------
 
 wsl2でtkinterをdockerで動かしてみ。optionで環境変数とvolumeマウントしてやる必要がある
 
@@ -886,3 +887,12 @@ wsl2でtkinterをdockerで動かしてみ。optionで環境変数とvolumeマウ
     button.grid(row=0, column=0, padx=20, pady=20)
 
     app.mainloop()
+
+
+2023/11/3
+=========================
+
+
+postgres
+--------------------------
+一回読んでほかってたlearn postgresを読見始めた・・・・・
