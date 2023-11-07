@@ -895,4 +895,65 @@ wsl2でtkinterをdockerで動かしてみ。optionで環境変数とvolumeマウ
 
 postgres
 --------------------------
-一回読んでほかってたlearn postgresを読見始めた・・・・・
+一回読んでほかってたlearn postgresを読見始めた。
+role/group/firewallなど普段django経由だと意識しないところがかいてあるので読んでおこう
+
+
+便利コマンド
+------------------------
+今更だがtreeコマンドディレクトリの階層構造を表示できることを知った。
+
+
+::
+
+  $ tree -L 1
+  .
+  ├── ]
+  ├── docs
+  ├── Pipfile
+  ├── Pipfile.lock
+  ├── poetry.lock
+  ├── __pycache__
+  ├── pyproject.toml
+  ├── README.md
+  ├── readthedocs.yml
+  ├── requirements.txt
+  ├── venv
+  └── zz.py
+  
+
+2023/11/5
+=======================
+
+
+ubuntuイメージ+miniconda
+---------------------------
+
+
+::
+
+
+    FROM ubuntu:22.04
+    RUN apt update && apt -y upgrade && apt install -y wget
+    WORKDIR /app
+    RUN mkdir ./miniconda3
+    RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda3/miniconda.sh 
+* proxyを設定してるか？
+* --profileを指定しているか？
+* --regionでregionを指定しているか
+
+::
+
+    aws s3 cp s3:// {local_path} --recursive --profile profile --region ap-northeast-1
+
+
+2023/11/6
+============================
+miniconda用のimage
+---------------------
+とりあえずURLだけ
+
+* https://repo.anaconda.com/miniconda/ 
+* https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
+* https://stackoverflow.com/questions/42352841/how-to-update-an-existing-conda-environment-with-a-yml-file
+* https://qiita.com/kuboko-jp/items/6388c186e16028d3e699
