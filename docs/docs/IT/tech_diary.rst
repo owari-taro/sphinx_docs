@@ -937,7 +937,10 @@ ubuntuイメージ+miniconda
     RUN apt update && apt -y upgrade && apt install -y wget
     WORKDIR /app
     RUN mkdir ./miniconda3
-    RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda3/miniconda.sh 
+    RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda3/miniconda.sh
+
+    
+     
 * proxyを設定してるか？
 * --profileを指定しているか？
 * --regionでregionを指定しているか
@@ -966,3 +969,8 @@ image-scan
 --------------------
 
 
+2023/11/15
+==================================
+
+
+* https://stackoverflow.com/questions/75845639/how-to-pass-the-url-into-the-view-context-in-django
