@@ -974,3 +974,29 @@ image-scan
 
 
 * https://stackoverflow.com/questions/75845639/how-to-pass-the-url-into-the-view-context-in-django
+
+2023/11/17
+===============================
+
+Sentinel2のサムネイル作成
+-----------------------------------
+
+
+
+code-block:: 
+
+    from PIL import Image   
+    image=Image.open("T54SUF_20210512T012659_TCI_60m.jp2")
+    >>> image
+    <PIL.Jpeg2KImagePlugin.Jpeg2KImageFile image mode=RGB size=1830x1830 at 0x29BD7322090>
+    >>> image.convert("RGB")
+    <PIL.Image.Image image mode=RGB size=1830x1830 at 0x29BD55E5D10>
+    >>> image.save("hoge.jpg")
+    >>>
+
+
+.. warning:: 
+
+    `CopernicusOpenAcessHubのサイト更新 <https://scihub.copernicus.eu/>`__したのでファイル構成が変わっている可能性あり・・・・・
+
+    
