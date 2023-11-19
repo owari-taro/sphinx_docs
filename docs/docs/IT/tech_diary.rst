@@ -978,9 +978,9 @@ image-scan
 2023/11/17
 ===============================
 
-Sentinel2のサムネイル作成
+jp2からjpgのサムネイル作成
 -----------------------------------
-
+Sentinel2がjp2形式でそれをjppgに変更した際に使った。
 
 
 code-block:: 
@@ -999,4 +999,42 @@ code-block::
 
     `CopernicusOpenAcessHubのサイト更新 <https://scihub.copernicus.eu/>`__したのでファイル構成が変わっている可能性あり・・・・・
 
-    
+gdalのpyton imageでのbuild方法
+----------------------------------------------
+condaを使った倍のbuildが遅すぎたのでこちらで試したらすぐbuildできた。https://zenn.dev/straydog/articles/a5c005cc7cfe22
+
+leaflet
+----------
+
+polygonをクリックでfeatureの属性情報をformに入力させる
+__________________________________________________________
+
+
+
+djangoのcharfieldのmax_length
+----------------------------------
+
+| The maximum length (in characters) of the field. The max_length is enforced 
+| at the database level and in Django’s validation using MaxLengthValidator. 
+| It’s required for all database backends included with 
+| Django except PostgreSQL, which supports unlimited VARCHAR columns.
+
+
+
+2023/11/19
+========================
+django
+------------------------------
+* search_help_textで検索フォームにhelptextをかける（デフォルトだとどのフィールドで検索してるのかわからない）
+* 
+
+::
+
+    @admin.register(Post)
+    class PostAdmin(admin.ModelAdmin):
+        list_display=["title","slug","author","publish","status"]
+        list_filter=["status","publish","author"]#filterできる変数#このままだとstatusは表示名では検索できない。dbには二文字短縮形でいれているから
+        search_fields=["status","title","author__username"]#auhroで検索試合場合は？？？？
+        raw_id_fields=["author"]
+        prepopulated_fields={"slug":("title",)}
+        search_help_text = f'search in: {", ".join(search_fields)}'
