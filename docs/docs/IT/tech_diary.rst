@@ -1038,3 +1038,50 @@ django
         raw_id_fields=["author"]
         prepopulated_fields={"slug":("title",)}
         search_help_text = f'search in: {", ".join(search_fields)}'
+
+subprocessでdocker動かしたときのエラー
+--------------------------------------------
+subprocesで実行した場合でもreturn_codeみれば正常終了したかどうかは確認できる
+
+.. code::
+    #script.py
+    raise Exception()
+
+
+
+
+.. code:: 
+
+    >>> import subprocess
+    >>> task=subprocess.run("docker run --rm fail /bin/bash -m python script.py",shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    >>> task
+    CompletedProcess(args='docker run --rm fail /bin/bash -m python script.py', returncode=126, stdout=b'', stderr=b'/bin/bash: cannot set terminal process group (-1): Inappropriate ioctl for device\n/bin/bash: no job control in this shell\n/usr/local/bin/python: /usr/local/bin/python: cannot execute binary file\n')
+    >>> task.
+    task.args                task.check_returncode()  task.returncode          task.stderr              task.stdout              
+    >>> task.returncode
+    126
+    >>> task.stderr
+    b'/bin/bash: cannot set terminal process group (-1): Inappropriate ioctl for device\n/bin/bash: no job control in this shell\n/usr/local/bin/python: /usr/local/bin/python: cannot execute binary file\n'
+    >>> tas.stdout
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'tas' is not defined. Did you mean: 'task'?
+    >>> task.stderr
+    b'/bin/bash: cannot set terminal process group (-1): Inappropriate ioctl for device\n/bin/bash: no job control in this shell\n/usr/local/bin/python: /usr/local/bin/python: cannot execute binary file\n'
+    >>> task.stdout
+    b''
+
+
+-----------------------------------
+2023/12
+-----------------------------------
+2023/12/4
+=============
+sentnienl2
+--------------------------
+* T **53SLT** の太字部分がgridID 詳しくは `公式<https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/naming-convention#main-content>`__
+
+
+::
+
+  S2B_MSIL2A_20231204T015039_N0509_R017_T53SLT_20231204T034206.SAFE
