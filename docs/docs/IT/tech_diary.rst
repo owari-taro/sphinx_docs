@@ -1085,3 +1085,23 @@ sentnienl2
 ::
 
   S2B_MSIL2A_20231204T015039_N0509_R017_T53SLT_20231204T034206.SAFE
+
+2023/12/5
+======================
+
+celery
+--------------------------------
+
+queueの長さがmaxのときの設定
+______________________________
+defaultのままだとqueueが最大に達しても、エラーも投げずにただenqueされない。（行方不明状態）
+githubのissueとかみると公式documentとかにも記載がない・・・・・
+
+https://stackoverflow.com/questions/35996065/what-is-the-correct-way-to-confirm-a-publish-in-celery
+
+
+TTLの設定
+________________________________
+
+
+

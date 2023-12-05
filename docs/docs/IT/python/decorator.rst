@@ -11,7 +11,7 @@ decorator
 デコレータをデコレートしたい場合の実装方法。
 あまり使う機会はない。decoratorをそのまま使うとsphinxでdocstringが無効かされてしまうというときに使った。
 
-
+https://stackoverflow.com/questions/9174059/search-by-foreign-key-id-in-admina
 ::
     from retry import retry
     from functools import wraps
