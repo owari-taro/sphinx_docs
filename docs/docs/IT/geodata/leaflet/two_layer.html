@@ -1,0 +1,54 @@
+<!-- Include Leaflet library -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Include Leaflet.draw library -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+
+<div id="map" style="height: 400px;"></div>
+
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+
+  // Base map 1: OpenStreetMap
+  openstreetLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'OpenStreetMap'
+  })
+
+  // Base map 2: Another map source (e.g., Mapbox)
+  var gsiTileLayer = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', 
+  {attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"});
+    gsiTileLayer.addTo(map);
+  // Add a layer control to switch between base maps
+  var baseMaps = {
+    '地理院タイル': gsiTileLayer
+    'OpenStreetMap': openstreetLayer,
+    // Add more base maps as needed
+  };
+
+  L.control.layers(baseMaps).addTo(map);
+
+  // Add Leaflet.draw toolbar
+  var drawnItems = new L.FeatureGroup().addTo(map);
+  var drawControl = new L.Control.Draw({
+    draw: {
+      polygon: true,
+      polyline: true,
+      rectangle: true,
+      circle: true,
+      marker: true
+    },
+    edit: {
+      featureGroup: drawnItems,
+      remove: true
+    }
+  });
+
+  map.addControl(drawControl);
+
+  map.on('draw:created', function (e) {
+    var layer = e.layer;
+    drawnItems.addLayer(layer);
+  });
+</script>

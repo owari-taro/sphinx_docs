@@ -1,0 +1,80 @@
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet.draw CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet.draw JavaScript -->
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+<div id="map" style="height: 400px;"></div>
+
+<!-- Include dependencies (Leaflet and Leaflet.draw) as described in the previous answer -->
+
+<div id="map" style="height: 400px;"></div>
+<div id="map" style="height: 400px;"></div>
+
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  var defaultPolygons = [
+    L.polygon([[51.508, -0.11], [51.503, -0.06], [51.51, -0.047]]).addTo(map),
+    L.polygon([[51.498, -0.1], [51.49, -0.09], [51.493, -0.081]]).addTo(map),
+    // Add more default polygons as needed
+  ];
+
+  var drawnItems = new L.FeatureGroup();
+  map.addLayer(drawnItems);
+
+  var drawControl = new L.Control.Draw({
+    draw: {
+      polygon: true,
+      polyline: false,
+      rectangle: true,
+      circle: false,
+      marker: false
+    },
+    edit: {
+      featureGroup: drawnItems,
+      remove: true
+    }
+  });
+
+  map.addControl(drawControl);
+
+  map.on('draw:created', function (e) {
+    var layer = e.layer;
+    drawnItems.addLayer(layer);
+
+    // Check for intersections with default polygons
+    checkIntersections(layer);
+  });
+
+  map.on('draw:deleted', function (e) {
+    var layers = e.layers;
+    layers.eachLayer(function (layer) {
+      // Reset the color of default polygons when a drawn polygon is deleted
+      resetDefaultPolygonColors();
+    });
+  });
+
+  function checkIntersections(newLayer) {
+    defaultPolygons.forEach(function (defaultPolygon) {
+      if (newLayer.getBounds().intersects(defaultPolygon.getBounds())) {
+            console.log(defaultPolygon)
+        // Change the color of the default polygon that intersects with the new polygon
+        defaultPolygon.setStyle({ fillColor: 'red', fillOpacity: 0 });
+      }
+    });
+  }
+
+  function resetDefaultPolygonColors() {
+    defaultPolygons.forEach(function (defaultPolygon) {
+      // Reset the color of default polygons to the original state
+      defaultPolygon.setStyle({ fillColor: 'blue', fillOpacity: 0.1 });
+    });
+  }
+</script>

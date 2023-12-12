@@ -1,0 +1,85 @@
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet.draw CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet.draw JavaScript -->
+<script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+<div id="map" style="height: 400px;"></div>
+
+<!-- Include dependencies (Leaflet and Leaflet.draw) as described in the previous answer -->
+
+<div id="map" style="height: 400px;"></div>
+
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  var drawnItems = new L.FeatureGroup();
+  map.addLayer(drawnItems);
+
+  var drawControl = new L.Control.Draw({
+    draw: {
+      polygon: false,
+      polyline: false,
+      rectangle: true,
+      circle: false,
+      marker: false,
+      circlemarker:false
+    },
+    edit: {
+      featureGroup: drawnItems,
+      remove: true
+    }
+  });
+
+  map.addControl(drawControl);
+
+  var maxPolygons = 3;
+  var drawnPolygons = 0;
+
+  map.on('draw:created', function (e) {
+    if (drawnPolygons < maxPolygons) {
+      var layer = e.layer;
+      drawnItems.addLayer(layer);
+      drawnPolygons++;
+
+      if (drawnPolygons === maxPolygons) {
+        // Disable drawing after reaching the limit
+        map.removeControl(drawControl);
+        enableRemoveMode();
+      }
+    //added field
+    var geojson = drawnItems.toGeoJSON();
+    var geojsonStr = JSON.stringify(geojson);
+    console.log(geojsonStr);
+
+
+
+    }
+  });
+
+  function enableRemoveMode() {
+    // Enable remove-only mode
+    var removeControl = new L.Control.Draw({
+    draw: {
+      polygon: false,
+      polyline: false,
+      rectangle: false,
+      circle: false,
+      marker: false
+    },
+      edit: {
+        featureGroup: drawnItems,
+        remove: true
+      }
+    });
+
+    map.addControl(removeControl);
+  }
+</script>
+

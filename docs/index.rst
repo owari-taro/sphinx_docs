@@ -32,4 +32,3 @@ table of contents!
    :prog: sphinx_click_test
    :show-nested:
 
-

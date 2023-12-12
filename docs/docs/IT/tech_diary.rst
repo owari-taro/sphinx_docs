@@ -1105,3 +1105,27 @@ ________________________________
 
 
 
+
+2023/12/11
+=============================
+
+prepositionとしてのabsent
+============================
+* withtoutと同義で、formalな書き言葉で使われるらしい(Chatgptによると)。
+
+::
+
+
+  “China is facing a massive overhang with all the coal plants it has built, and many of them are still new, so absent taking those plants offline, there’s a considerable attractiveness to using carbon capture,”
+   said Roman Kramarchuk, head of future energy outlooks at S&P Global Commodity Insights. “
+
+
+
+::
+
+  #chatgptの回答
+  Is absent often used like this as a preposition?
+  >ChatGPT
+
+  The use of "absent" as a preposition is less common in everyday language, and it might sound somewhat formal or literary. In more casual or conversational English, you're likely to encounter alternatives like "without" or "excluding." 
+  However, in more formal or technical contexts, you might come across "absent" used as a preposition to indicate the absence or exclusion of something.
