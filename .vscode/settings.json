@@ -10,5 +10,9 @@
 
     "activityBar.background":"#f11111"
     }
+    ,
+    "pasteImage.defaultName": "Y-MM-DD-HH-mm-ss",
+    "pasteImage.path": "./img/${fileBasenameNoExtension}",
+    "pasteImage.showFilePathConfirmInputBox":false
     
 }

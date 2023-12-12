@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 */docker/dump/*
-
+#tmp/
 # C extensions
 *.so
 
