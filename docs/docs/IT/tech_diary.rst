@@ -1129,3 +1129,28 @@ prepositionとしてのabsent
 
   The use of "absent" as a preposition is less common in everyday language, and it might sound somewhat formal or literary. In more casual or conversational English, you're likely to encounter alternatives like "without" or "excluding." 
   However, in more formal or technical contexts, you might come across "absent" used as a preposition to indicate the absence or exclusion of something.
+
+
+2023/12/15
+================================
+
+sentinel2tcl画像のjp2→png変換
+-------------------------------
+用途
+___________
+
+
+コマンド
+_____________
+PILで一発で変換できる。
+
+
+::
+
+    >>> from PIL import Image, ImageFile
+    >>> Image.open("sample.jp2")
+    <PIL.Jpeg2KImagePlugin.Jpeg2KImageFile image mode=RGB size=1830x1830 at 0x7F5A1B1A3730>
+    >>> image=Image.open("sample.jp2")
+    >>> image.save("test.png")
+
+
