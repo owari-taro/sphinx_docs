@@ -1154,3 +1154,15 @@ PILで一発で変換できる。
     >>> image.save("test.png")
 
 
+
+
+
+https://portaltan.hatenablog.com/entry/2015/10/13/163427
+
+
+
+カレントディレクトリのすべてのファイルのみを動かす場合
+$ find . -maxdepth 1 -type f -exec mv {} out/ \;
+
+
+https://stackoverflow.com/questions/49538616/docker-userns-remap-cannot-write-to-mounted-directory
