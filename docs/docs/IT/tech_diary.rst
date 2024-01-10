@@ -1171,3 +1171,20 @@ shell command
 
 
 https://stackoverflow.com/questions/49538616/docker-userns-remap-cannot-write-to-mounted-directory
+
+
+
+
+
+
+
+https://qiita.com/Canon11/items/e6f64597d82dbf88f75f
+
+--------------------------
+2024/1
+--------------------------
+2024/1/10
+=============================
+
+windows11のwsl2でのguiツール動かす設定まわり。
+https://qiita.com/sugyam/items/5d92bddca8abf43fbf9ds
