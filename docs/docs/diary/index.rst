@@ -1,6 +1,13 @@
 ================
-2023/3
+diary
 ================
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+    
+    202404
 
 
 --------------
@@ -28,13 +35,16 @@ powershell
 =========================
 powershellではすべてがobjectであり、
 例えば文字型の場合、↓みたいにメソッド,プロパティがていぎできる
-Get-Memberで
+
 
 ::
 
     > $color="red"
+    #文字列の長さ
+    > $color.Length
+    3
     > Get-Member -InputObject $color
-
+    
 
    TypeName: System.String
 
