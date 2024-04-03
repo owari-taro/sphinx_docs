@@ -16,6 +16,7 @@ table of contents!
     
    docs/sphinx_tips
    docs/IT/index
+   docs/diary/index
    .. notebooks/decorator
 
 
