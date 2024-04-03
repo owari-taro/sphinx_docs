@@ -6,11 +6,8 @@ diary
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-    
-    diary_202404
-
-
-
+   
+   diary_202404
 
 
 --------------
@@ -18,7 +15,8 @@ diary
 --------------
 
 セキュリティ試験
-===============
+===================
+
 * djangoを使ったwebappでセキュリティ関連のsettingに漏れがないかのcheckができる
 https://qiita.com/juchilian/items/3afa2d679fb88bd70aff
 
