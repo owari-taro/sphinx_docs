@@ -2,11 +2,15 @@
 diary
 ================
 
+
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
     
-    ./202404
+    diary_202404
+
+
+
 
 
 --------------
