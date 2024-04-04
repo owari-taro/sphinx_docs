@@ -6,7 +6,7 @@
 2024/4/3
 -----------------------
 
-posgresのseqがずれてduplicate keyエラー
+posgres [#]_ のseqがずれてduplicate keyエラー
 ==========================================
 
 事象
@@ -14,6 +14,7 @@ posgresのseqがずれてduplicate keyエラー
 djangoでレコードをcreateするときにseq [#]_ の **last_value** が実際のテーブル内に存在するidの最大値と
 ずれてkeyの登録時に重複エラーが発生する 
 
+.. [#] sqliteだと発生しない。
 .. [#] デフォルトだと{app名}_{テーブル名}_id_seqがテーブル名
 
 対処法
