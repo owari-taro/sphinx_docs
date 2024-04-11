@@ -12,18 +12,20 @@ posgres [#]_ のseqがずれてduplicate keyエラー
 事象
 ---------------
 djangoでレコードをcreateするときにseq [#]_ の **last_value** が実際のテーブル内に存在するidの最大値と
-ずれてkeyの登録時に重複エラーが発生する 
+ずれていてkeyの登録時に重複エラーが発生する 
 
 .. [#] sqliteだと発生しない。
 .. [#] デフォルトだと{app名}_{テーブル名}_id_seqがテーブル名
 
 対処法
 -------------------
-seqテーブルの **last_value** を更新してやる `参考 <https://marketing-web.hatenablog.com/entry/postgres_sequence_update>`__
+seqテーブルの **last_value** を更新してやる `参考 <https://marketing-web.hatenablog.com/entry/postgres_sequence_update>`__ [#]_
 
 ::
 
     SELECT SETVAL ('シーケンステーブル名', '番号');
+
+.. [#] python3 manage.py sqlsequencereset {app名}でresetのためのsql文をアプリケーションごとにだせる
 
 原因
 -----------------------
