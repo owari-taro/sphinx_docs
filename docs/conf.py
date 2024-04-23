@@ -39,7 +39,7 @@ extensions = [
     'sphinx.ext.mathjax', 
     'sphinx.ext.todo', 
     'sphinx_design',
-    #"sphinx_last_updated_by_git",
+    "sphinx_last_updated_by_git",
    # 'nbsphinx',
 
 ]
