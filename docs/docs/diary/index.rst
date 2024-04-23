@@ -1,12 +1,13 @@
 ================
 diary
 ================
-
+技術的な日付ごとのメモ集。
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
+   old_diary
    diary_202404
 
 

@@ -1,5 +1,5 @@
 ======================
-日記
+2023/8~2024/1
 ======================
 技術関連ITなどのことについてのメモとか日記のようなもの
 
@@ -1188,3 +1188,63 @@ https://qiita.com/Canon11/items/e6f64597d82dbf88f75f
 
 windows11のwsl2でのguiツール動かす設定まわり。
 https://qiita.com/sugyam/items/5d92bddca8abf43fbf9ds
+
+
+::
+  
+    sudo apt install x11-apps
+    xeyes
+
+
+2024/1/16
+======================
+docker:実行のroot以外での実行方法
+----------------------------
+公式ドキュメントの通りだが,このマップの意味を最初よくわからなかったが、
+testが動かしたプロセスは100000からはじまるuidでマップされるという意味.
+なのでtest(uid=1000)でuid=1000で実行したいならばtest:1000:65536でとかいてやればいい
+
+::
+  
+  test:100000:65536
+
+https://docs.docker.com/engine/security/userns-remap/
+
+
+==========================
+psql接続するときはdbとuserめい指定
+----------------------------------
+psql -U dj_user -d dj_dbと両方していする。
+
+::
+
+
+      services:
+    dj_db:
+      image: postgis/postgis:16-3.4
+      restart: always
+      ports: 
+        - 5432:5432
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_USER=dj_user
+        - POSTGRES_PASSWORD=dj_password
+        - POSTGRES_DB=dj_db
+
+
+  volumes:
+    postgres_data:
+
+container間でhostの指定の仕方
+-----------------------------
+djangoのコンテナからrabbitmq,postgresに接続するときなどのhostの指定の仕方。
+docker-compose.ymlのservicesの直下に書いたタグ名で指定できる。
+
+::
+　　
+
+
+
+なぜかimage pullしなおしたら解決した。なぜだ？？sss
+https://github.com/zulip/docker-zulip/issues/158
