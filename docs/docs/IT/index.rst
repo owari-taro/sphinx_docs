@@ -12,7 +12,6 @@ IT
    airflow
    python/index
    database/index
-   tech_diary
    vscode
 
 
