@@ -16,6 +16,7 @@ templateの作成
 ---------------------------
 まずは作りたいVPCの設定を記載したtemplateを作る。templateはyaml/jsonのいずれかに対応している・
 ::  
+   
     AWSTemplateFormatVersion: 2010-09-09
     Description: Template for VPC
     
@@ -41,7 +42,9 @@ templateの作成
 スタックの削除
 -----------------------------
 作成したリソースを削除したい場合は↓のコマンドで削除できる。実行しても特に標準出力には何も表示されない。
+
 ::
-  aws cloudformation delete-stack --stack-name test
+  
+    aws cloudformation delete-stack --stack-name test
 
   
