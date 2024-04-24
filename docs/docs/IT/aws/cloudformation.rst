@@ -5,7 +5,7 @@ cloudformation
 ------------------
 tutorial
 ------------------
-vpc/private&public subnet/InternetGateWayIGWをcloudformationを使って作ってみる。
+まずはvpc/private&public　subnet/InternetGateWay(IGW)をcloudformationを使って作ってみる。
 
 
 VPCの作成
@@ -31,6 +31,11 @@ templateの作成
           Tags:
             - Key: Name
               Value: cfn-t
+
+.. attention::
+
+   regionはtemplate内では指定しない(`参考 <https://serverfault.com/questions/1103642/how-to-specify-aws-region-in-cloudformation-vpc>`__)
+
 
 スタック作成
 ---------------------------
