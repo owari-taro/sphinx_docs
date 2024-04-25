@@ -34,7 +34,8 @@ templateの作成
 
 .. attention::
 
-   regionはtemplate内では指定しない(`参考 <https://serverfault.com/questions/1103642/how-to-specify-aws-region-in-cloudformation-vpc>`__)
+   regionはtemplate内では指定できない。.aws/configのregionで指定する(`参考 <https://serverfault.com/questions/1103642/how-to-specify-aws-region-in-cloudformation-vpc>`__)
+
 
 
 スタック作成
@@ -52,6 +53,13 @@ templateの作成
   
     aws cloudformation delete-stack --stack-name test
 
+subnet/internetgatewayなどを追加
+===================================================
+
+
+
+TransferFamily
+=================================================
 
 ----------------------------
 参考文献
@@ -60,3 +68,5 @@ templateの作成
  <https://staff-blog.faith-sol-tech.com/%E3%80%90%E5%88%9D%E5%BF%83%E8%80%85%E5%90%91%E3%81%91%E3%80%91aws-cloudformation-%E3%81%A7-vpc-%E3%82%92%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B/>`__
 
 `mastering aws cloudformation packt publishing<https://www.packtpub.com/product/mastering-aws-cloudformation/9781789130935>`__
+
+`stack overflow(cloudformation) <https://stackoverflow.com/questions/64775766/how-to-create-an-aws-sftp-server-with-internet-facing-vpc-endpoint-with-cloudfor>`__
