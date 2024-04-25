@@ -31,9 +31,7 @@ seqテーブルの **last_value** を更新してやる `参考 <https://marketi
 -----------------------
 objects.createするときにidを直接指定して登録してしまうと、seqテーブルの **last_value**とレコードのidの最大値がずれる
 
-------------------
 
-------------------
 transfer family
 ==========================
 
@@ -43,6 +41,7 @@ bashでの接続方法
 
 
 ::
+    
     #sftp -i {秘密鍵} {username}@{hostname}
     sftp -i sftp_trial user1@s-25869f0eb8994531b.server.transfer.ap-northeast-1.amazonaws.com
 
