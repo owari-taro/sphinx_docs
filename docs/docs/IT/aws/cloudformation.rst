@@ -58,8 +58,16 @@ subnet/internetgatewayなどを追加
 
 
 
-TransferFamily
+TransferFamily(おまけ)
 =================================================
+おまけとしてTransferFamilyを追加する。
+
+.. attension:: 
+
+   stopしただけでは料金が課金されつづけるので要注意！！！！
+
+
+   
 
 ----------------------------
 参考文献
