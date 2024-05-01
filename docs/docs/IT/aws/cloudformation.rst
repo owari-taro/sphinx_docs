@@ -66,8 +66,17 @@ TransferFamily(おまけ)
 
    stopしただけでは料金が課金されつづけるので要注意！！！！
 
+secret managerからsecret情報の取得方法
+=================================================
+下記の形式で記載すれば取得できる ( `公式ドキュメント <https://docs.aws.amazon.com/secretsmanager/latest/userguide/cfn-example_reference-secret.html>`__)
 
-   
+* secret-id以外はオプショナル
+
+::
+
+      {{resolve:secretsmanager:secret-id:SecretString:json-key:version-stage:version-id}}
+
+
 
 ----------------------------
 参考文献
