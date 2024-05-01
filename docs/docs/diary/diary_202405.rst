@@ -17,4 +17,10 @@ julia
 
     var"test.test"=123123
     println(var"test.test")
+
+
+IAMの権限確認
+=================================
+`policy simulator<https://policysim.aws.amazon.com/home/index.jsp
+>`__ で確認できる。
   
