@@ -27,3 +27,15 @@ shell script
         default1
         123
 
+フォルダ内から特定文字列を含むファイルを検索したい
+==============================================
+
+::
+
+    #importを含むファイル名だけだしたい  
+    find . -type f -name "*.py"|xargs grep -rl import
+    #importを含む行だけ表示したい
+    find . -type f -name "*.py"|xargs grep -r -h import 
+
+pythonファイル自体はあるがrequirements.txtなどでlibraryが管理されてないコードがレポジトリにあったときに、依存ライブラリを調べるのに使った。
+
