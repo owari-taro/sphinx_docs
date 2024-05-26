@@ -17,7 +17,7 @@ table of contents!
    docs/sphinx_tips
    docs/IT/index
    docs/diary/index
-
+   docs/sphinx_markdown/index
 
 .. docs/english/index
 .. docs/src/modules
