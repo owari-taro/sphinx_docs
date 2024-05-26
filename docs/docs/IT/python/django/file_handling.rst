@@ -10,3 +10,4 @@
 =================================
 
 `FILE_UPLOAD_TEMP_DIR¶ <https://docs.djangoproject.com/en/5.0/topics/files/>`__ で指定できる。
+デフォルトだとtmpディレクトリになっている。

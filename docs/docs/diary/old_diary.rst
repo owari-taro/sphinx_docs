@@ -418,6 +418,7 @@ vpc endpointを使えばできる、ただグループポリシーとかの指�
 .. [#] `基礎から学ぶコンテナセキュリティ<https://gihyo.jp/book/2023/978-4-297-13635-2>`__
 
 * alpineの場合はbashでなくash
+
 ::
 
     docker run -it --rm myimage:test  /bin/ash
@@ -784,6 +785,157 @@ filter条件に組み込めばよい
     class PlacesWFSView(WFSView):
         """An simple view that uses the WFSView against our test model."""
 
+https://stackoverflow.com/questions/35996065/what-is-the-correct-way-to-confirm-a-publish-in-celery
+
+
+TTLの設定
+________________________________
+
+
+
+
+2023/12/11
+=============================
+
+prepositionとしてのabsent
+============================
+* withtoutと同義で、formalな書き言葉で使われるらしい(Chatgptによると)。
+
+::
+
+
+  “China is facing a massive overhang with all the coal plants it has built, and many of them are still new, so absent taking those plants offline, there’s a considerable attractiveness to using carbon capture,”
+   said Roman Kramarchuk, head of future energy outlooks at S&P Global Commodity Insights. “
+
+
+
+::
+
+  #chatgptの回答
+  Is absent often used like this as a preposition?
+  >ChatGPT
+
+  The use of "absent" as a preposition is less common in everyday language, and it might sound somewhat formal or literary. In more casual or conversational English, you're likely to encounter alternatives like "without" or "excluding." 
+  However, in more formal or technical contexts, you might come across "absent" used as a preposition to indicate the absence or exclusion of something.
+
+
+2023/12/15
+================================
+
+sentinel2tcl画像のjp2→png変換
+-------------------------------
+用途
+___________
+
+
+コマンド
+_____________
+PILで一発で変換できる。
+
+
+::
+
+    >>> from PIL import Image, ImageFile
+    >>> Image.open("sample.jp2")
+    <PIL.Jpeg2KImagePlugin.Jpeg2KImageFile image mode=RGB size=1830x1830 at 0x7F5A1B1A3730>
+    >>> image=Image.open("sample.jp2")
+    >>> image.save("test.png")
+
+
+
+
+
+https://portaltan.hatenablog.com/entry/2015/10/13/163427
+
+
+2023/12/28
+====================================
+shell command
+----------------------
+
+:: 
+    カレントディレクトリのすべてのファイルのみを動かす場合
+    $ find . -maxdepth 1 -type f -exec mv {} out/ \;
+
+
+https://stackoverflow.com/questions/49538616/docker-userns-remap-cannot-write-to-mounted-directory
+
+
+
+
+
+
+
+https://qiita.com/Canon11/items/e6f64597d82dbf88f75f
+
+--------------------------
+2024/1
+--------------------------
+2024/1/10
+=============================
+
+windows11のwsl2でのguiツール動かす設定まわり。
+https://qiita.com/sugyam/items/5d92bddca8abf43fbf9ds
+
+
+::
+  
+    sudo apt install x11-apps
+    xeyes
+
+
+2024/1/16
+======================
+
+docker:実行のroot以外での実行方法
+----------------------------------
+公式ドキュメントの通りだが,このマップの意味を最初よくわからなかったが、
+testが動かしたプロセスは100000からはじまるuidでマップされるという意味.
+なのでtest(uid=1000)でuid=1000で実行したいならばtest:1000:65536でとかいてやればいい
+
+::
+  
+  test:100000:65536
+
+https://docs.docker.com/engine/security/userns-remap/
+
+
+
+psql接続するときはdbとuserめい指定
+----------------------------------
+psql -U dj_user -d dj_dbと両方していする。
+
+::
+
+
+      services:
+    dj_db:
+      image: postgis/postgis:16-3.4
+      restart: always
+      ports: 
+        - 5432:5432
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        - POSTGRES_USER=dj_user
+        - POSTGRES_PASSWORD=dj_password
+        - POSTGRES_DB=dj_db
+
+
+  volumes:
+    postgres_data:
+
+container間でhostの指定の仕方
+-----------------------------
+djangoのコンテナからrabbitmq,postgresに接続するときなどのhostの指定の仕方。
+docker-compose.ymlのservicesの直下に書いたタグ名で指定できる。
+
+::
+　　
+
+
+
+なぜかimage pullしなおし
         xml_namespace = "http://example.org/gisserver"
 
         # The service metadata
@@ -818,7 +970,6 @@ filter条件に組み込めばよい
 
 
 
-=============================
 vimの設定($HOME/.vimrc)
 ----------------------------------
 
@@ -1044,6 +1195,7 @@ subprocessでdocker動かしたときのエラー
 subprocesで実行した場合でもreturn_codeみれば正常終了したかどうかは確認できる
 
 .. code::
+
     #script.py
     raise Exception()
 
@@ -1096,156 +1248,5 @@ queueの長さがmaxのときの設定
 ______________________________
 defaultのままだとqueueが最大に達しても、エラーも投げずにただenqueされない。（行方不明状態）
 githubのissueとかみると公式documentとかにも記載がない・・・・・
-
-https://stackoverflow.com/questions/35996065/what-is-the-correct-way-to-confirm-a-publish-in-celery
-
-
-TTLの設定
-________________________________
-
-
-
-
-2023/12/11
-=============================
-
-prepositionとしてのabsent
-============================
-* withtoutと同義で、formalな書き言葉で使われるらしい(Chatgptによると)。
-
-::
-
-
-  “China is facing a massive overhang with all the coal plants it has built, and many of them are still new, so absent taking those plants offline, there’s a considerable attractiveness to using carbon capture,”
-   said Roman Kramarchuk, head of future energy outlooks at S&P Global Commodity Insights. “
-
-
-
-::
-
-  #chatgptの回答
-  Is absent often used like this as a preposition?
-  >ChatGPT
-
-  The use of "absent" as a preposition is less common in everyday language, and it might sound somewhat formal or literary. In more casual or conversational English, you're likely to encounter alternatives like "without" or "excluding." 
-  However, in more formal or technical contexts, you might come across "absent" used as a preposition to indicate the absence or exclusion of something.
-
-
-2023/12/15
-================================
-
-sentinel2tcl画像のjp2→png変換
--------------------------------
-用途
-___________
-
-
-コマンド
-_____________
-PILで一発で変換できる。
-
-
-::
-
-    >>> from PIL import Image, ImageFile
-    >>> Image.open("sample.jp2")
-    <PIL.Jpeg2KImagePlugin.Jpeg2KImageFile image mode=RGB size=1830x1830 at 0x7F5A1B1A3730>
-    >>> image=Image.open("sample.jp2")
-    >>> image.save("test.png")
-
-
-
-
-
-https://portaltan.hatenablog.com/entry/2015/10/13/163427
-
-
-2023/12/28
-====================================
-shell command
-----------------------
-
-:: 
-    カレントディレクトリのすべてのファイルのみを動かす場合
-    $ find . -maxdepth 1 -type f -exec mv {} out/ \;
-
-
-https://stackoverflow.com/questions/49538616/docker-userns-remap-cannot-write-to-mounted-directory
-
-
-
-
-
-
-
-https://qiita.com/Canon11/items/e6f64597d82dbf88f75f
-
---------------------------
-2024/1
---------------------------
-2024/1/10
-=============================
-
-windows11のwsl2でのguiツール動かす設定まわり。
-https://qiita.com/sugyam/items/5d92bddca8abf43fbf9ds
-
-
-::
-  
-    sudo apt install x11-apps
-    xeyes
-
-
-2024/1/16
-======================
-
-docker:実行のroot以外での実行方法
-----------------------------------
-公式ドキュメントの通りだが,このマップの意味を最初よくわからなかったが、
-testが動かしたプロセスは100000からはじまるuidでマップされるという意味.
-なのでtest(uid=1000)でuid=1000で実行したいならばtest:1000:65536でとかいてやればいい
-
-::
-  
-  test:100000:65536
-
-https://docs.docker.com/engine/security/userns-remap/
-
-
-
-psql接続するときはdbとuserめい指定
-----------------------------------
-psql -U dj_user -d dj_dbと両方していする。
-
-::
-
-
-      services:
-    dj_db:
-      image: postgis/postgis:16-3.4
-      restart: always
-      ports: 
-        - 5432:5432
-      volumes:
-        - postgres_data:/var/lib/postgresql/data
-      environment:
-        - POSTGRES_USER=dj_user
-        - POSTGRES_PASSWORD=dj_password
-        - POSTGRES_DB=dj_db
-
-
-  volumes:
-    postgres_data:
-
-container間でhostの指定の仕方
------------------------------
-djangoのコンテナからrabbitmq,postgresに接続するときなどのhostの指定の仕方。
-docker-compose.ymlのservicesの直下に書いたタグ名で指定できる。
-
-::
-　　
-
-
-
-なぜかimage pullしなおしたら解決した。なぜだ？？sss
+たら解決した。なぜだ？？sss
 https://github.com/zulip/docker-zulip/issues/158

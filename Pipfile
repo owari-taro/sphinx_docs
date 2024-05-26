@@ -13,8 +13,12 @@ click = "*"
 sphinx-click = "*"
 sphinx-markdown-checkbox = "*"
 sphinxcontrib-issuetracker = "*"
+sphinx-design = "*"
+sphinx-book-theme = "*"
+myst-parser = "*"
+sphinx-last-updated-by-git = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"

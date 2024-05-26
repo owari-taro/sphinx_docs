@@ -10,6 +10,7 @@ diary
    old_diary
    diary_202404
 
+
 --------------
 2024/3/4
 --------------
@@ -17,8 +18,7 @@ diary
 セキュリティ試験
 ===================
 
-* djangoを使ったwebappでセキュリティ関連のsettingに漏れがないかのcheckができる
-https://qiita.com/juchilian/items/3afa2d679fb88bd70aff
+* djangoを使ったwebappでセキュリティ関連のsettingに漏れがないかのcheckができる　https://qiita.com/juchilian/items/3afa2d679fb88bd70aff
 
 * seurityツールによってはよりセキュリティ的には厳しいsettingしていたときになぜか失敗をあげてくるばあいもがある 
   

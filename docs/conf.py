@@ -29,6 +29,8 @@ todo_include_todos=True
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  #markdown　extension
+   "myst_parser",
     # docstringからドキュメント生成
    # "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
@@ -39,12 +41,15 @@ extensions = [
     'sphinx.ext.mathjax', 
     'sphinx.ext.todo', 
     'sphinx_design',
-    "sphinx_last_updated_by_git",
+    #"sphinx_last_updated_by_git",
    # 'nbsphinx',
 
 ]
 
-
+myst_enable_extensions = [
+    
+    "colon_fence",
+]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
@@ -53,7 +58,7 @@ templates_path = ["_templates"]
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = "jp"
+language = "ja"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -66,7 +71,7 @@ exclude_patterns = ["venv","_build", "Thumbs.db", ".DS_Store",'**.ipynb_checkpoi
 # a list of builtin themes.
 
 #html_theme = "cloud"
-html_theme = 'pydata_sphinx_theme'
+html_theme =  "sphinx_book_theme"
 #html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -80,5 +85,6 @@ html_js_files = ["js/custom.js"]
 numfig = True
 
 html_theme_options = {
-  "footer_items": ["copyright", "sphinx-version", "last-updated"],
+      "use_download_button": True,
+    #  "footer_items": ["copyright", "sphinx-version", "last-updated"],
 }

@@ -6,32 +6,35 @@
 2024/4/3
 -----------------------
 
-posgres [#]_ のseqがずれてduplicate keyエラー
-==========================================
+
+posgresのseqがずれてduplicate keyエラー
+===========================================
 
 事象
 ---------------
 djangoでレコードをcreateするときにseq [#]_ の **last_value** が実際のテーブル内に存在するidの最大値と
-ずれていてkeyの登録時に重複エラーが発生する 
+ずれてkeyの登録時に重複エラーが発生する 
 
-.. [#] sqliteだと発生しない。
 .. [#] デフォルトだと{app名}_{テーブル名}_id_seqがテーブル名
 
 対処法
 -------------------
-seqテーブルの **last_value** を更新してやる `参考 <https://marketing-web.hatenablog.com/entry/postgres_sequence_update>`__ [#]_
+seqテーブルの **last_value** を更新してやる `参考 <https://marketing-web.hatenablog.com/entry/postgres_sequence_update>`__
 
 ::
 
     SELECT SETVAL ('シーケンステーブル名', '番号');
 
-.. [#] python3 manage.py sqlsequencereset {app名}でresetのためのsql文をアプリケーションごとにだせる
 
 原因
 -----------------------
+
 objects.createするときにidを直接指定して登録してしまうと、seqテーブルの **last_value**とレコードのidの最大値がずれる
 
 
+------------------
+2024/4/5
+------------------
 transfer family
 ==========================
 
@@ -49,3 +52,4 @@ bashでの接続方法
 名前解決
 --------------------------
 https://dev.classmethod.jp/articles/from-ec2-to-transfer/
+\
