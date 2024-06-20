@@ -1,0 +1,27 @@
+=============================
+2024/06
+=============================
+
+----------------------------
+2024/06/20
+----------------------------
+
+pydantic
+================
+* インスタンス作成時はvalidationされるが、その後に個別にフィールド書き換えるとvalidationされなかった
+
+::
+
+    from pydantic import BaseModel
+    >>> 
+    >>> 
+    >>> class User(BaseModel):
+    ...     id: int
+    ...     name: str = 'Jane Doe'
+    ... 
+    >>> user=User(id="123")                                                                                                                                                                                                                                                     
+    >>> user.id
+    123
+    >>> user.id="asdasdf"
+    >>> user.id
+  'asdasdf'
