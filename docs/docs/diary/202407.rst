@@ -5,9 +5,9 @@
 -------------------
 7/24
 -------------------
-django ninja
+django
 =========================
-openapiのversion変更方法
+(ninja)openapiのversion変更方法
 --------------------------------
 * openversionはコードを直接書きかえればいい。(`issue <https://github.com/vitalik/django-ninja/pull/923>`__　の変更ファイルを確認するとわかる。fastapiのように公開インターフェースから書き換える方法はなく直接コードを書き換える必要がある)  
 * defaultでopenapi versionが3.1.0になっている。
@@ -25,8 +25,10 @@ openapiのversion変更方法
                 (
                     "info",
                     {
-uploadfileを保存する
---------------------------------
+
+clientからのuploadfileをserverのlocalfolderに保存する
+-----------------------------------------------------------
+
 *  FileSystemStorageを使う
 * `stack-overflow <https://stackoverflow.com/questions/26274021/simply-save-file-to-folder-in-django>`__
 
@@ -49,3 +51,6 @@ uploadfileを保存する
         else:
              return render(request, 'upload.html')
 
+特定のカラムが特定の値のときだけユニーク制約をかける
+-------------------------------------------------------------
+https://stackoverflow.com/questions/32124186/django-uniqueness-constraint-when-a-specific-field-is-true
