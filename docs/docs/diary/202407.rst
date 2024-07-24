@@ -9,8 +9,7 @@ django ninja
 =========================
 openapiのversion変更方法
 --------------------------------
-* openversionはコードを直接書きかえればいい。(`issue <https://github.com/vitalik/django-ninja/pull/923>`__　の変更ファイルを確認するとわかる。
-fastapiのように公開インターフェースから書き換える方法はなく直接コードを書き換える必要がある)
+* openversionはコードを直接書きかえればいい。(`issue <https://github.com/vitalik/django-ninja/pull/923>`__　の変更ファイルを確認するとわかる。fastapiのように公開インターフェースから書き換える方法はなく直接コードを書き換える必要がある)  
 * defaultでopenapi versionが3.1.0になっている。
 
 
