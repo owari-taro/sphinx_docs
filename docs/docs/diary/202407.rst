@@ -25,3 +25,26 @@ openapiのversion変更方法
                 (
                     "info",
                     {
+uploadfileを保存する
+--------------------------------
+*  FileSystemStorageを使う
+* `stack-overflow <https://stackoverflow.com/questions/26274021/simply-save-file-to-folder-in-django>`__
+```
+from django.shortcuts import render
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+
+def upload(request):
+    folder='my_folder/' 
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage(location=folder) #defaults to   MEDIA_ROOT  
+        filename = fs.save(myfile.name, myfile)
+        file_url = fs.url(filename)
+        return render(request, 'upload.html', {
+            'file_url': file_url
+        })
+    else:
+         return render(request, 'upload.html')
+```
+
