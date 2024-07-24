@@ -1,0 +1,26 @@
+=====================
+2024/07
+=====================
+
+-------------------
+7/24
+-------------------
+django ninja
+=========================
+* openversionはコードを直接書きかえればいいようだ。(`issue <https://github.com/vitalik/django-ninja/pull/923>`__　の変更ファイルを確認するとわかる)
+
+fastapiのように公開インターフェースから書き換える方法はなく直接コードを書き換える必要がある
+
+
+
+::
+    
+      #ninja/openapi/schema.py
+      extra_info = api.openapi_extra.get("info", {})
+        super().__init__(
+            [
+                ("openapi", "3.0.2"),
+                ("openapi", "3.1.0"),
+                (
+                    "info",
+                    {
