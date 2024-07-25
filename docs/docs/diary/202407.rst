@@ -54,3 +54,12 @@ clientからのuploadfileをserverのlocalfolderに保存する
 特定のカラムが特定の値のときだけユニーク制約をかける
 -------------------------------------------------------------
 https://stackoverflow.com/questions/32124186/django-uniqueness-constraint-when-a-specific-field-is-true
+
+--------------------------
+7/25
+--------------------------
+RabbitMQ
+========================
+docker compose downしたするとqueueが消えてしまう
+-------------------------------------------------------
+hostnameをしていしてやれば解決する `github issue参考 <https://github.com/docker-library/rabbitmq/issues/392>`__
