@@ -75,8 +75,9 @@ celery
 名前していしてないとdefaultのqueue以外は実行されない
 
 ::
-        # celeryの実行
-        celery -A config worker --loglevel=INFO -Q sample
+  
+    # celeryの実行
+    celery -A config worker --loglevel=INFO -Q sample
 
 
 (django)__init__.pyにimortを記載する
