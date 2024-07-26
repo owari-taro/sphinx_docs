@@ -60,6 +60,37 @@ https://stackoverflow.com/questions/32124186/django-uniqueness-constraint-when-a
 --------------------------
 RabbitMQ
 ========================
-docker compose downしたするとqueueが消えてしまう
+docker compose downするとqueueが消えてしまう
 -------------------------------------------------------
 hostnameをしていしてやれば解決する `github issue参考 <https://github.com/docker-library/rabbitmq/issues/392>`__
+
+-------------------------
+7/26
+-------------------------
+celery
+====================================
+
+実行時にはqueue名を指定する
+-------------------------------------
+名前していしてないとdefaultのqueue以外は実行されない
+
+::
+        # celeryの実行
+        celery -A config worker --loglevel=INFO -Q sample
+
+
+(django)__init__.pyにimortを記載する
+-----------------------------------------------
+* 公式ドキュメント <https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html>`__ 記載のようにconfig/__init__.pyに記載する
+* この記載をしておかないとdelayで非同期実行したときに **PLAIN login refused: user 'guest' - invalid credentials** とでて実行できない
+ (エラーメッセージだけだとよくわからないかったので時間がかかった・・・)
+
+::
+
+    # This will make sure the app is always imported when
+    # Django starts so that shared_task will use this app.
+    from .celery import app as celery_app
+    
+    __all__ = ('celery_app',)
+    
+    N    
