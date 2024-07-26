@@ -81,7 +81,7 @@ celery
 
 (django)__init__.pyにimortを記載する
 -----------------------------------------------
-* 公式ドキュメント <https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html>`__ 記載のようにconfig/__init__.pyに記載する
+* `公式ドキュメント <https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html>`__ 記載のようにconfig/__init__.pyに記載する
 * この記載をしておかないとdelayで非同期実行したときに **PLAIN login refused: user 'guest' - invalid credentials** とでて実行できない
  (エラーメッセージだけだとよくわからないかったので時間がかかった・・・)
 
