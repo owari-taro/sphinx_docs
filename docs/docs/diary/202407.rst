@@ -95,3 +95,16 @@ celery
     __all__ = ('celery_app',)
     
     N    
+
+
+-----------
+7/31
+-----------
+
+dockerプロセスの名前空間の分離
+=========================
+
+* etc/docker/daemon.jsonを書き換える
+* /etc/subuid /etc/subgid
+
+詳しくはx `doker公式 <https://docs.docker.com/engine/security/userns-remap/>`__
