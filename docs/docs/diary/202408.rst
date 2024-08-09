@@ -26,8 +26,7 @@ ____________________
 * pathparamには片を指定する {int:ID}
 * 上のほうによりspecificなurlを書く
 
-```
-/shopping/comments
-/shopping/{product_name}
-```
-
+::
+    
+    /shopping/comments
+    /shopping/{product_name}
