@@ -1,0 +1,33 @@
+==============================
+2024/08
+==============================
+
+------------------
+9
+------------------
+
+django(ninja)
+===================
+method not allowed
+---------------------------------
+下のようなエンドポイントがあったとするとGET shopping/commentをテストするとMETHOD not allowed[DELETE]のようなエラーが返ってくる現象が起きる
+
+pathparamの{ID}の部分にcommentが引っかかってしまうからこうなるようだ `ninja issue <https://github.com/vitalik/django-ninja/issues/203>`__
+
+* POST:shopping
+* DELETE:shopping/{ID}
+* GET:shopping/comments
+* DELETE shopping/comments/{pk}
+
+
+
+対策
+____________________
+* pathparamには片を指定する {int:ID}
+* 上のほうによりspecificなurlを書く
+
+```
+/shopping/comments
+/shopping/{product_name}
+```
+
