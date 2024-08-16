@@ -30,3 +30,20 @@ ____________________
     
     /shopping/comments
     /shopping/{product_name}
+
+------------------
+16
+------------------
+tile生成
+===================================
+1. gdalbuildvrtでvrt生成
+::
+
+    gdalbuildvrt doq_index.vrt doq/*.tif
+
+2.gdal2tiles.pyでtile生成(実行環境にもよるがすぐに終わらない)
+::
+    gdal2tiles.py source.vrt target_dir -z14-18 --xyz
+
+
+https://qiita.com/ozo360/items/f78c95795827d7732dff
