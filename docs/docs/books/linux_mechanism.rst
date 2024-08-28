@@ -17,6 +17,12 @@ Linuxのしくみ(技術評論社)
     //インストールは↓
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+    #なおpyとrustでくらべると行数もかなり違う・・・・  
+    $ wc -l hello*.log
+     697 hello_py.log
+      68 hello_rust.log
+
+
 4. 
 
 
