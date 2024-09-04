@@ -24,3 +24,27 @@ IAMの権限確認
 `policy simulator<https://policysim.aws.amazon.com/home/index.jsp
 >`__ で確認できる。
   
+----------------
+2024/05/09
+----------------
+
+sftp
+==================
+
+
+
+sftpで,userが操作ミスなどでgetしすぎてサーバー負荷がかかるのを回避して隊
+がsftpってそもそもrate limitはそもそもできるのか??
+https://github.com/ronf/asyncssh/discussions/420
+
+awsならlambdaで署名付きURLを発行プラス発行履歴を管理すればrate limit
+ができる？
+
+
+--------------
+2024/5/24
+--------------
+
+sphinxでなぜだかadmonitionがうつらない！
+=======================================
+git-last-updateをいれているせいっぽい。gitで管理してないページがあるとそのページのbuidだけうまくいかなかった。

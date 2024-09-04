@@ -2,6 +2,26 @@
 2024/06
 =============================
 
+-----------
+6/5
+-----------
+
+
+::
+
+    admin:~/.ssh $ aws transfer list-users --server-id s-f470ea95c62a44068                                                                                                            
+    {
+        "Users": [
+            {
+                "Arn": "arn:aws:transfer:ap-northeast-1:905418223580:user/s-f470ea95c62a44068/test",
+                "HomeDirectoryType": "LOGICAL",
+                "Role": "arn:aws:iam::905418223580:role/transfer_sample_role",
+                "SshPublicKeyCount": 1,
+                "UserName": "test"
+            }
+        ],
+        "ServerId": "s-f470ea95c62a44068"
+    }
 ----------------------------
 2024/06/20
 ----------------------------
@@ -29,9 +49,11 @@ pydantic
 
 sphinx-my-stpasrser
 ===============================
+
 別mdドキュメントへのリンク
 -----------------------------
 下記のように書く。 **.md** 拡張子はいらない
+
 :::
 
     ( {doc}`./models` も参照)

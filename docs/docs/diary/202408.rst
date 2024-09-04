@@ -47,3 +47,33 @@ tile生成
 
 
 https://qiita.com/ozo360/items/f78c95795827d7732dff
+
+
+---------------
+30
+---------------
+python
+====================
+clickのdocstringの改行について
+------------------------------------
+* デフォルトだと画面サイズに合わせて改行されてしまう、
+* 改行をそのまま反映させたい場合は\bを入れる.ただし直下のブロックでしか有効にならないので注意
+
+::
+
+    \b
+    このコマンドは〇〇です。
+    入力ファイルは。。。。。
+
+    この文章は改行が反映されないです
+    ここで改行されないよ！
+
+
+一応原文もはっとく(`preventing-rewrapping <https://click.palletsprojects.com/en/8.1.x/documentation/#preventing-rewrapping>`__ )
+
+::
+
+
+    The default behavior of Click is to rewrap text based on the width of the terminal, to a maximum 80 characters. In some circumstances, this can become a problem. The main issue is when showing code examples, where newlines are significant.
+
+    Rewrapping can be disabled on a per-paragraph basis by adding a line with solely the \b escape marker in it. This line will be removed from the help text and rewrapping will be disabled.

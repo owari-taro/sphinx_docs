@@ -1,0 +1,25 @@
+=========================
+2024/9
+=========================
+
+----------------
+2024/9/4
+----------------
+液状化のハザードマップ
+===============================
+新聞に液状化のハザードマップを自治体が公開しているとか言ってあたので表示の仕方とかの参考までに。
+
+*  `東京の液状化予測図 令和5年度改訂版 <https://doboku.metro.tokyo.lg.jp/start/03-jyouhou/ekijyouka/top.aspx>`__
+
+django
+==================================
+or条件の動的生成
+-----------------
+`stack overflow <https://stackoverflow.com/questions/852414/how-to-dynamically-compose-an-or-query-filter-in-django>`__
+
+::
+
+    import operator
+    questions = [('question__contains', 'test'), ('question__gt', 23 )]
+    q_list = [Q(x) for x in questions]
+    Poll.objects.filter(reduce(operator.or_, q_list))
