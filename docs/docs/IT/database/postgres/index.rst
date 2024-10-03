@@ -7,4 +7,16 @@ postgres
    :caption: Contents:
    
    role
+
+
+
+---------------------
+memo
+---------------------
+clientのインストール(ubuntuの場合)
+===================================
+
+::
+
+    sudo apt-get install -y postgresql-client
    
