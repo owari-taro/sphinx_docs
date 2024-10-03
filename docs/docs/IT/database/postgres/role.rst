@@ -14,7 +14,7 @@ role
     group
         他のロールを含むロール。
 
-作成
+role作成
 ==================
 
 ::
@@ -30,6 +30,17 @@ untilをつけると期限付きのroleが作れる。
     create role test with password 'dummy';
     create role tmp_test with password 'dummy' 
     valid until '2023-12-24 00:00:00';
+
+特定databaseの権限付与
+=========================
+
+::
+
+    create datasbse {db-name}
+    GRANT ALL PRIVILEGES ON DATABASE {database-name} to {role-name};
+
+        
+
 
 一覧表示
 ===================
