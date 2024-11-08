@@ -8,3 +8,47 @@ factory-boyでほかのフィールド値を使って値を設定したい場合
 ========================================================
 
 https://stackoverflow.com/questions/33965786/factory-boy-define-field-that-depends-on-other-field
+
+----------------------
+2024/10/29
+----------------------
+IAM  roleの更新が反映されない！
+=====================================
+事象
+------------------
+codebuildのtutorialを実行しようとしたらecrの接続で失敗してしまった。
+
+原因
+-------------------
+| どうやらIAM-roleはすぐに反映されないせいらしい。(ecrの権限をroleに与えるのを忘れていたのでproject作成後に追加した)
+| 結局もう一度build-projectの作成からやりなおしたらもんだいなくできた。(EC2で↓のような記事をみつけたので同じ現象？)
+
+`EC2 インスタンスにつけた IAM ロールが反映されるまで <https://nasrinjp1.hatenablog.com/entry/2018/04/10/205859>`__
+-----------------
+2024/11/08
+-----------------
+athena
+========================
+
+
+文字列→日付
+-------------------
+* **2024-07-03T20:06:35Z** のように文字列の値をtimestampにしてutcに変換する例↓、
+* 時刻だけを取り出すならextractでできる。
+
+
+::
+
+    SELECT  
+        extract (hour from from_iso8601_timestamp(eventtime)) as hour ,
+        from_iso8601_timestamp(eventtime)+interval '9' hour as jst 
+    FROM "default"."table_name" limit 2
+
+特定時間帯のcloudtrailのログを検索するサンプル
+-------------------------------------------------
+
+::
+
+    SELECT  * FROM "default"."{table_name}" 
+        where extract( hour from from_iso8601_timestamp(eventtime) + interval '9' hour  )  between 0 and 8 
+            and from_iso8601_timestamp(eventtime)  > TIMESTAMP '2024-07-31 15:00:00' limit 10;
