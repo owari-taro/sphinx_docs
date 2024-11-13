@@ -52,3 +52,15 @@ athena
     SELECT  * FROM "default"."{table_name}" 
         where extract( hour from from_iso8601_timestamp(eventtime) + interval '9' hour  )  between 0 and 8 
             and from_iso8601_timestamp(eventtime)  > TIMESTAMP '2024-07-31 15:00:00' limit 10;
+
+
+
+-------------------------
+-------------------------
+cloudtrail
+===========================
+
+コンソールログインのチェック
+----------------------------------------
+*  "eventName": "ConsoleLogin"で検索する
+* 
